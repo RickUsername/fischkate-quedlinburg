@@ -406,14 +406,14 @@ erif font-bold text-stone-800 mb-4 text-center">
                 <!-- Wird dynamisch gefüllt -->
             </div>
             <div class="text-center mt-4">
-                <a href="#vollstaendige-speisekarte" class="text-blue-700 hover:underline text-sm">
+                <a href="#speisekarte" class="text-blue-700 hover:underline text-sm">
                     → Zur vollständigen Speisekarte scrollen
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="vollstaendige-speisekarte" class="py-12 md:py-24 max-w-6xl mx-auto px-4">
+    <section id="speisekarte" class="py-12 md:py-24 max-w-6xl mx-auto px-4">
         <div class="text-center mb-12 md:mb-16">
             <i data-lucide="utensils-crossed" class="mx-auto text-blue-900 mb-4 w-10 h-10"></i>
             <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-6">Unsere Speisekarte</h2>
@@ -421,563 +421,631 @@ erif font-bold text-stone-800 mb-4 text-center">
                 Täglich wechselnde Angebote, je nachdem, was der Fang hergibt.</p>
         </div>
 
-        <!-- VORSPEISEN -->
-        <div class="mb-16">
-            <div class="bg-blue-900 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Vorspeisen</h3>
-                <p class="text-blue-200 text-sm mt-1">Frisch vom Markt und unserem einheimischen Bauern</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-1" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Fischsuppe „A la Bouillabaisse"</h4><span
-                            class="font-mono text-blue-900 font-bold">9,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="9.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Provenzalische Delikatesse (mit
-                        Wermut), dazu Baguette
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="h,m,k,f,b,g,4,e1,i">(h,m,k,f,b,g,4,e1,i)</p>
+        <!-- VORSPEISEN (Category 1: image LEFT, dishes RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-1">
+                    <img src="Kraeuter2.jpg" alt="Frische Kräuter und Zutaten" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">FRISCHE ZUTATEN</span>
                 </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-2" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Kleiner Vorspeisensalat</h4><span
-                            class="font-mono text-blue-900 font-bold">4,90 €</span>
+                <!-- Dishes side -->
+                <div class="md:order-2">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Vorspeisen</h3>
+                        <p class="text-stone-500 text-sm mt-1">Frisch vom Markt und unserem einheimischen Bauern</p>
                     </div>
-                    <meta itemprop="price" content="4.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
-                    <p itemprop="description" class="text-stone-600 text-sm italic">mit hauseigenem Honigdressing</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-3" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Hausgemachtes Baguette im Körbchen</h4>
-                        <span class="font-mono text-blue-900 font-bold">4,00 €</span>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-1" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Fischsuppe „A la Bouillabaisse"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">9,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="9.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Provenzalische Delikatesse (mit Wermut), dazu Baguette</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="h,m,k,f,b,g,4,e1,i">(h,m,k,f,b,g,4,e1,i)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-2" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Kleiner Vorspeisensalat</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="4.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit hauseigenem Honigdressing</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-3" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Hausgemachtes Baguette im Körbchen</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,00 €</span>
+                            </div>
+                            <meta itemprop="price" content="4.00">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Aioli – p.P.</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="8,e-1,i,g">(8,e-1,i,g)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-4" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Ein hausgeräuchertes Forellenfilet</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">9,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="9.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Apfelmeerrettich, dazu Baguette</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="e407">(e407)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-5" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">14,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="14.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Aioli, dazu Salat und Baguette</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-6" data-category="vorspeisen">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Zwei vegane Linsenbratlinge</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">14,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="14.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="suitableForDiet" content="https://schema.org/VeganDiet">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Apfel-Sellerie-Fenchelsalat</p>
+                            <p class="text-stone-600 text-xs font-semibold mt-1">oder: ein Linsenbratling + ein geräuchertes Forellenfilet – 15,90 €</p>
+                        </div>
                     </div>
-                    <meta itemprop="price" content="4.00">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Aioli – p.P.</p>
-                    <p class="text-xs text-stone-400" data-allergens="8,e-1,i,g">(8,e-1,i,g)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-4" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Ein hausgeräuchertes Forellenfilet</h4>
-                        <span class="font-mono text-blue-900 font-bold">9,90 €</span>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
                     </div>
-                    <meta itemprop="price" content="9.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Apfelmeerrettich, dazu
-                        Baguette</p>
-                    <p class="text-xs text-stone-400" data-allergens="e407">(e407)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-5" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4><span
-                            class="font-mono text-blue-900 font-bold">14,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="14.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Aioli, dazu Salat und
-                        Baguette</p>
-                    <p class="text-xs text-stone-400" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-6" data-category="vorspeisen">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei vegane Linsenbratlinge</h4><span
-                            class="font-mono text-blue-900 font-bold">14,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="14.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <meta itemprop="suitableForDiet" content="https://schema.org/VeganDiet">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Apfel-Sellerie-Fenchelsalat
-                    </p>
-                    <p class="text-stone-600 text-xs font-semibold mt-1">oder: ein Linsenbratling + ein geräuchertes
-                        Forellenfilet – 15,90 €</p>
-                </div>
-            </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
-        </div>
-
-        <!-- TAGESEMPFEHLUNG -->
-        <div class="mb-16">
-            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Tagesempfehlung</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-1" data-category="tagesempfehlung">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Räucherfisch-Trilogie</h4><span
-                            class="font-mono text-red-700 font-bold">16,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="16.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Drei unterschiedliche
-                        Räucherfischfilets, dazu
-                        Baguette und Meerrettich</p>
-                    <p class="text-xs text-stone-400" data-allergens="e407">(e407)</p>
-                </div>
-                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-2" data-category="tagesempfehlung">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Matjes-Bruschetta</h4><span
-                            class="font-mono text-red-700 font-bold">9,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="9.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1"></p>
-                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
-                </div>
-                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-3" data-category="tagesempfehlung">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4><span
-                            class="font-mono text-red-700 font-bold">19,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="19.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit hauseigenem Tomatenpesto
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
-                </div>
-                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-4" data-category="tagesempfehlung">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Dreierlei vom Matjes</h4><span
-                            class="font-mono text-red-700 font-bold">19,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="19.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Sherrymatjes, geräuchertes
-                        Matjesfilet und klassisches
-                        Filet, dazu Bratkartoffeln und Remoulade</p>
-                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
                 </div>
             </div>
         </div>
 
-        <!-- ZWISCHENGERICHTE -->
-        <div class="mb-16">
-            <div class="bg-green-700 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Zwischengerichte</h3>
+        <!-- TAGESEMPFEHLUNG (Category 2: dishes LEFT, image RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-2">
+                    <img src="FischSchneiden.jpg" alt="Fisch wird tagesfrisch geschnitten" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">TAGESFRISCH</span>
+                </div>
+                <!-- Dishes side -->
+                <div class="md:order-1">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Tagesempfehlung</h3>
+                        <p class="text-stone-500 text-sm mt-1">Täglich wechselnde Empfehlungen unserer Küche</p>
+                    </div>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="tages-1" data-category="tagesempfehlung">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Räucherfisch-Trilogie</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">16,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="16.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Drei unterschiedliche Räucherfischfilets, dazu Baguette und Meerrettich</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="e407">(e407)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="tages-2" data-category="tagesempfehlung">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Matjes-Bruschetta</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">9,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="9.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1"></p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="tages-3" data-category="tagesempfehlung">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">19,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="19.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit hauseigenem Tomatenpesto</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="tages-4" data-category="tagesempfehlung">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Dreierlei vom Matjes</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">19,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="19.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Sherrymatjes, geräuchertes Matjesfilet und klassisches Filet, dazu Bratkartoffeln und Remoulade</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-1" data-category="zwischengerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Große Backkartoffel</h4><span
-                            class="font-mono text-blue-900 font-bold">15,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="15.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit hauseigenem Kräuterquark,
-                        dazu wählen Sie:
-                        Räucherlachs oder Matjesfilets oder Geräuchertes Forellenfilet</p>
-                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-2" data-category="zwischengerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Hauseigener Heringssalat</h4><span
-                            class="font-mono text-blue-900 font-bold">15,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="15.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Salzkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="e-1,i,g">(e-1,i,g)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-3" data-category="zwischengerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilets aus Emden</h4><span
-                            class="font-mono text-blue-900 font-bold">18,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="18.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Speckbohnen, dazu
-                        Bratkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="7,14,k">(7,14,k)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-4" data-category="zwischengerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilet „Hausfrauen Art"</h4><span
-                            class="font-mono text-blue-900 font-bold">16,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="16.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit einer Sahnesoße, klassisch
-                        dazu Salzkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="g,8,2">(g,8,2)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-5" data-category="zwischengerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Bratheringsfilets</h4><span
-                            class="font-mono text-blue-900 font-bold">17,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="17.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit frischen Zwiebelringen und
-                        Bratkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="7,14,e">(7,14,e)</p>
-                </div>
-            </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
         </div>
 
-        <!-- AUF'S OFFENE MEER -->
-        <div class="mb-16">
-            <div class="bg-stone-800 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Auf's Offene Meer</h3>
-            </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-1" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">„Fischbörse" – Fang des Tages</h4><span
-                            class="font-mono text-blue-900 font-bold">19,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="19.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Fischfilet mit heimischem
-                        Gemüse, dazu Bratkartoffeln
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
+        <!-- ZWISCHENGERICHTE (Category 3: image LEFT, dishes RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-1">
+                    <img src="Kuehltheke.jpg" alt="Frische Kühltheke mit Tradition" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">TRADITION</span>
                 </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-2" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Harzer Forelle aus Altenbrak</h4><span
-                            class="font-mono text-blue-900 font-bold">23,90 €</span>
+                <!-- Dishes side -->
+                <div class="md:order-2">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Zwischengerichte</h3>
+                        <p class="text-stone-500 text-sm mt-1">Klassiker aus unserer Küche</p>
                     </div>
-                    <meta itemprop="price" content="23.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Zwei Filets „Müllerin Art" mit
-                        Salzkartoffeln und
-                        Kräuterbutter ODER mit Kartoffelsalat und Apfelmeerrettich ODER mit Apfel-Zwiebelspalten und
-                        Salzkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="k,g,e,b">(k,g,e,b)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-3" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Glasig gebratenes Lachsfilet</h4><span
-                            class="font-mono text-blue-900 font-bold">26,90 €</span>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-1" data-category="zwischengerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Große Backkartoffel</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">15,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="15.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit hauseigenem Kräuterquark, dazu wählen Sie: Räucherlachs oder Matjesfilets oder Geräuchertes Forellenfilet</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-2" data-category="zwischengerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Hauseigener Heringssalat</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">15,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="15.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Salzkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="e-1,i,g">(e-1,i,g)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-3" data-category="zwischengerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilets aus Emden</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">18,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="18.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Speckbohnen, dazu Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="7,14,k">(7,14,k)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-4" data-category="zwischengerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilet „Hausfrauen Art"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">16,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="16.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit einer Sahnesoße, klassisch dazu Salzkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="g,8,2">(g,8,2)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-5" data-category="zwischengerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Bratheringsfilets</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">17,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="17.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit frischen Zwiebelringen und Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="7,14,e">(7,14,e)</p>
+                        </div>
                     </div>
-                    <meta itemprop="price" content="26.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Bandnudeln auf einer
-                        Pilzsoße</p>
-                    <p class="text-xs text-stone-400" data-allergens="k,b,e,i">(k,b,e,i)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-4" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Schollenfilet „Büsumer Art"</h4><span
-                            class="font-mono text-blue-900 font-bold">25,90 €</span>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
                     </div>
-                    <meta itemprop="price" content="25.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit gebratenen Shrimps,
-                        Speckbohnen und Bratkartoffeln
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="k,h,7,14">(k,h,7,14)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-5" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Oma's handgeriebene Reibekuchen
-                            „Hafenmeister Art"</h4>
-                        <span class="font-mono text-blue-900 font-bold">21,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="21.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Shrimps gebacken,
-                        schottischem Räucherlachs und
-                        Sahnemeerrettich</p>
-                    <p class="text-xs text-stone-400" data-allergens="3,2,h,e-1,k,i,b">(3,2,h,e-1,k,i,b)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-6" data-category="hauptgerichte">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Quedlinburger „Flotter Dreier"</h4><span
-                            class="font-mono text-blue-900 font-bold">27,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="27.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">verschiedene Fischfilets mit
-                        heimischem Gemüse und
-                        Bratkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
                 </div>
             </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
         </div>
 
-        <!-- AUF WELLENLÄNGE -->
-        <div class="mb-16">
-            <div class="bg-blue-600 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Auf Wellenlänge</h3>
+        <!-- AUF'S OFFENE MEER (Category 4: dishes LEFT, video RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side (video) -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-2">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]">
+                        <source src="VideoBrotSchneiden.mp4" type="video/mp4">
+                    </video>
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">ECHTES HANDWERK</span>
+                </div>
+                <!-- Dishes side -->
+                <div class="md:order-1">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Auf's Offene Meer</h3>
+                        <p class="text-stone-500 text-sm mt-1">Hauptgerichte frisch aus unserer Küche</p>
+                    </div>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-1" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">„Fischbörse" – Fang des Tages</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">19,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="19.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Fischfilet mit heimischem Gemüse, dazu Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,7,14">(k,7,14)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-2" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Harzer Forelle aus Altenbrak</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">23,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="23.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Zwei Filets „Müllerin Art" mit Salzkartoffeln und Kräuterbutter ODER mit Kartoffelsalat und Apfelmeerrettich ODER mit Apfel-Zwiebelspalten und Salzkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,g,e,b">(k,g,e,b)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-3" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Glasig gebratenes Lachsfilet</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">26,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="26.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Bandnudeln auf einer Pilzsoße</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,b,e,i">(k,b,e,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-4" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Schollenfilet „Büsumer Art"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">25,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="25.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit gebratenen Shrimps, Speckbohnen und Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,h,7,14">(k,h,7,14)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-5" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Oma's handgeriebene Reibekuchen „Hafenmeister Art"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">21,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="21.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Shrimps gebacken, schottischem Räucherlachs und Sahnemeerrettich</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="3,2,h,e-1,k,i,b">(3,2,h,e-1,k,i,b)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="haupt-6" data-category="hauptgerichte">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Quedlinburger „Flotter Dreier"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">27,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="27.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">verschiedene Fischfilets mit heimischem Gemüse und Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,7,14">(k,7,14)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 p-4 rounded-sm shadow-sm border-2 border-blue-300" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-1" data-category="premium">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">„Kapitäns Dinner"</h4><span
-                            class="font-mono text-blue-900 font-bold">58,00 €</span>
-                    </div>
-                    <meta itemprop="price" content="58.00">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Rechaud für 2 Personen: 2
-                        Salatschälchen vorweg, 3
-                        gebratene Fischfilets mit Gemüse und 2 hausgemachten Reibekuchen, zum Verdauen 2cl Fischergeist
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
-                </div>
-                <div class="bg-blue-50 p-4 rounded-sm shadow-sm border-2 border-blue-300" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-2" data-category="premium">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">„Edelfischplatte"</h4><span
-                            class="font-mono text-blue-900 font-bold">29,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="29.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Zanderfilet, Lachs und Kabeljau
-                        glasig gebraten mit
-                        saisonalem Gemüse und Bratkartoffeln, dazu Riesengarnele und Grünschalenmuschel</p>
-                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-3" data-category="premium">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Bandnudeln"</h4><span
-                            class="font-mono text-blue-900 font-bold">27,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="27.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">auf der Haut gebraten, in
-                        leichter
-                        Weißwein-Riesengarnele-Sahnesoße, dazu frische Bandnudeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-4" data-category="premium">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Klassisch"</h4><span
-                            class="font-mono text-blue-900 font-bold">27,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="27.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">knusprig gebraten, dazu
-                        Salzkartoffeln und
-                        Apfelzwiebelspalten</p>
-                    <p class="text-xs text-stone-400" data-allergens="k">(k)</p>
-                </div>
-            </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
         </div>
 
-        <!-- FÜR UNSERE FLEISCHESSER -->
-        <div class="mb-16">
-            <div class="bg-orange-700 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Für unsere Fleischesser</h3>
+        <!-- AUF WELLENLÄNGE (Category 5: image LEFT, dishes RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-1">
+                    <img src="Kuehltheke2.jpg" alt="Premium Auswahl" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">PREMIUM</span>
+                </div>
+                <!-- Dishes side -->
+                <div class="md:order-2">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Auf Wellenlänge</h3>
+                        <p class="text-stone-500 text-sm mt-1">Unsere Premium-Auswahl für besondere Anlässe</p>
+                    </div>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="premium-1" data-category="premium">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">„Kapitäns Dinner"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">58,00 €</span>
+                            </div>
+                            <meta itemprop="price" content="58.00">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Rechaud für 2 Personen: 2 Salatschälchen vorweg, 3 gebratene Fischfilets mit Gemüse und 2 hausgemachten Reibekuchen, zum Verdauen 2cl Fischergeist</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="premium-2" data-category="premium">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">„Edelfischplatte"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">29,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="29.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">Zanderfilet, Lachs und Kabeljau glasig gebraten mit saisonalem Gemüse und Bratkartoffeln, dazu Riesengarnele und Grünschalenmuschel</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="premium-3" data-category="premium">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Bandnudeln"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">27,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="27.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">auf der Haut gebraten, in leichter Weißwein-Riesengarnele-Sahnesoße, dazu frische Bandnudeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="premium-4" data-category="premium">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Klassisch"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">27,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="27.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">knusprig gebraten, dazu Salzkartoffeln und Apfelzwiebelspalten</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k">(k)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-1" data-category="fleisch">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Quedlinburger „Saure Sülze"</h4><span
-                            class="font-mono text-blue-900 font-bold">16,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="16.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">vom heimischen Fleischer
-                        Oswald, mit Remouladen
-                        soße
-                        und Bratkartoffeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="8,2,b,7,14">(8,2,b,7,14)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-2" data-category="fleisch">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Geräucherte Hähnchenbrust</h4><span
-                            class="font-mono text-blue-900 font-bold">19,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="19.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit einer Weißweinsoße, dazu
-                        Bandnudeln</p>
-                    <p class="text-xs text-stone-400" data-allergens="e,i,h">(e,i,h)</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-3" data-category="fleisch">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Frische Bowl (kalt)</h4><span
-                            class="font-mono text-blue-900 font-bold">15,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="15.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">versch. Salate dazu geräucherte
-                        Hähnchenbrust oder
-                        Räucherlachs</p>
-                    <p class="text-xs text-stone-400" data-allergens="e,i,h">(e,i,h)</p>
-                </div>
-            </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
         </div>
 
-        <!-- FÜR UNSERE PIRATENKIDS -->
-        <div class="mb-16">
-            <div class="bg-yellow-500 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Für unsere Piratenkids</h3>
-                <p class="text-yellow-100 text-sm mt-1">nur für Kinder!</p>
+        <!-- FÜR UNSERE FLEISCHESSER (Category 6: dishes LEFT, image RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-2">
+                    <img src="BrotteigHaende.jpg" alt="Handgemachte Zubereitung" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">HANDGEMACHT</span>
+                </div>
+                <!-- Dishes side -->
+                <div class="md:order-1">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Für unsere Fleischesser</h3>
+                        <p class="text-stone-500 text-sm mt-1">Deftige Klassiker vom Land</p>
+                    </div>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-1" data-category="fleisch">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Quedlinburger „Saure Sülze"</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">16,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="16.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">vom heimischen Fleischer Oswald, mit Remouladensoße und Bratkartoffeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="8,2,b,7,14">(8,2,b,7,14)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-2" data-category="fleisch">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Geräucherte Hähnchenbrust</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">19,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="19.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit einer Weißweinsoße, dazu Bandnudeln</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="e,i,h">(e,i,h)</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-3" data-category="fleisch">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Frische Bowl (kalt)</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">15,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="15.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">versch. Salate dazu geräucherte Hähnchenbrust oder Räucherlachs</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="e,i,h">(e,i,h)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-3 gap-4">
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-1" data-category="kinder">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Kleines Seelachs filet</h4><span
-                            class="font-mono text-blue-900 font-bold">9,90 €</span>
-                    </div>
-                    <meta itemprop="price" content="9.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Salzkartoffeln und Gemüse
-                    </p>
-                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
+        </div>
+
+        <!-- FÜR UNSERE PIRATENKIDS (Category 7: image LEFT, dishes RIGHT) -->
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Media side -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-1">
+                    <img src="Fischbroetchen.jpg" alt="Leckeres für die Kleinen" class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]" loading="lazy">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">FÜR DIE KLEINEN</span>
                 </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-2" data-category="kinder">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Hausgeriebene Kartoffelpuffer</h4><span
-                            class="font-mono text-blue-900 font-bold">7,90 €</span>
+                <!-- Dishes side -->
+                <div class="md:order-2">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Für unsere Piratenkids</h3>
+                        <p class="text-stone-500 text-sm mt-1">Kleine Portionen für kleine Seeräuber <span class="italic">(nur für Kinder!)</span></p>
                     </div>
-                    <meta itemprop="price" content="7.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
-                    <p itemprop="description" class="text-stone-600 text-sm italic">mit Apfelmus</p>
-                </div>
-                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
-                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-3" data-category="kinder">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 itemprop="name" class="font-bold text-stone-800">Dessert</h4><span
-                            class="font-mono text-blue-900 font-bold">7,90 €</span>
+                    <div class="space-y-5">
+                        <!-- Featured dish -->
+                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="kinder-1" data-category="kinder">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Kleines Seelachs filet</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">9,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="9.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Salzkartoffeln und Gemüse</p>
+                            <p class="text-xs text-stone-400 mt-1" data-allergens="k,7,14">(k,7,14)</p>
+                        </div>
+                        <!-- Regular dishes -->
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="kinder-2" data-category="kinder">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Hausgeriebene Kartoffelpuffer</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">7,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="7.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Apfelmus</p>
+                        </div>
+                        <div class="py-2" itemscope
+                            itemtype="https://schema.org/MenuItem" data-dish-id="kinder-3" data-category="kinder">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 itemprop="name" class="font-bold text-stone-800">Dessert</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">7,90 €</span>
+                            </div>
+                            <meta itemprop="price" content="7.90">
+                            <meta itemprop="priceCurrency" content="EUR">
+                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">täglich wechselnd – einfach das nette Personal fragen!</p>
+                        </div>
                     </div>
-                    <meta itemprop="price" content="7.90">
-                    <meta itemprop="priceCurrency" content="EUR">
-                    <p itemprop="description" class="text-stone-600 text-sm italic">täglich wechselnd – einfach das
-                        nette Personal fragen!</p>
+                    <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
+                        <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
+                        <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
                 </div>
             </div>
-            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
-            </p>
         </div>
 
         <!-- FISCH-BAGUETTES & WRAPS -->
-        <div class="mb-16">
-            <div class="bg-amber-600 text-white px-6 py-3 mb-6 rounded-sm">
-                <h3 class="font-serif text-2xl font-bold">Fisch-Baguettes & Wraps</h3>
-                <p class="text-amber-100 text-sm mt-1">Alle Brötchen & Wraps nur außer Haus · Verpackung: 0,10 €</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-3">
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Backfisch</h4><span
-                            class="font-mono text-red-700 font-bold text-sm">6,00 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Remoulade, Salat</p>
+        <div class="mb-20 md:mb-28">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+                <!-- Gerichte links -->
+                <div class="relative rounded-lg overflow-hidden shadow-lg md:order-2">
+                    <img id="ziel-team" src="TeamPause.jpg" alt="Unser Team bei der Arbeit"
+                        class="w-full h-full object-cover min-h-[300px] md:min-h-[500px]">
+                    <span class="absolute bottom-4 left-4 bg-black/60 text-white text-xs font-bold px-3 py-1.5 tracking-widest uppercase">Zum Mitnehmen</span>
                 </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Krebsfleisch (Surimi)</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                <!-- Gerichte links -->
+                <div class="md:order-1">
+                    <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                        <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Fisch-Baguettes & Wraps</h3>
+                        <p class="text-stone-500 text-sm mt-1">Alle Brötchen & Wraps nur außer Haus · Verpackung: 0,10 €</p>
                     </div>
-                    <p class="text-stone-600 text-xs">Aioli, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Bismarckhering</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
+
+                    <!-- Baguettes -->
+                    <div class="space-y-3">
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Backfisch</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">6,00 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Remoulade, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Krebsfleisch (Surimi)</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">5,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Aioli, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Bismarckhering</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Gurke, Zwiebel, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Matjes aus Emden</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Gurke, Zwiebel, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Brathering</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Gurke, Zwiebel, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Seelachsschnitzel</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">4,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Ei, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Eismeershrimps</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">5,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Aioli, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Harzer Forellenfilet (geräu.)</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">5,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Meerrettich, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Räucherlachs</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">5,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Meerrettich, Salat</p>
+                        </div>
+                        <div class="py-1.5">
+                            <div class="flex justify-between items-baseline gap-4">
+                                <h4 class="font-bold text-stone-800">Thunfisch</h4>
+                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">5,50 €</span>
+                            </div>
+                            <p class="text-stone-500 text-sm italic">Salat, Ei</p>
+                        </div>
                     </div>
-                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Matjes aus Emden</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Brathering</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Seelachsschnitzel</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Ei, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Eismeershrimps</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Aioli, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Harzer Forellenfilet (geräu.)</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Meerrettich, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Räucherlachs</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Meerrettich, Salat</p>
-                </div>
-                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
-                    <div class="flex justify-between items-baseline mb-1">
-                        <h4 class="font-bold text-sm text-stone-800">Thunfisch</h4><span
-                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
-                    </div>
-                    <p class="text-stone-600 text-xs">Salat, Ei</p>
-                </div>
-            </div>
-            <div class="mt-6">
-                <h4 class="font-bold text-stone-800 mb-3">Frisch gerollte Wraps – je 5,50 €</h4>
-                <div class="grid md:grid-cols-4 gap-3">
-                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
-                        <p class="text-stone-700 text-sm font-semibold">Krebsfleisch (Surimi), Aioli, Salat</p>
-                    </div>
-                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
-                        <p class="text-stone-700 text-sm font-semibold">Räucherlachs, Ei, Salat</p>
-                    </div>
-                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
-                        <p class="text-stone-700 text-sm font-semibold">Thunfisch, Ei, Weißkrautsalat</p>
-                    </div>
-                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
-                        <p class="text-stone-700 text-sm font-semibold">Eismeershrimps, Salat, Aioli</p>
+
+                    <!-- Wraps -->
+                    <div class="mt-8 pt-6 border-t border-stone-200">
+                        <h4 class="font-serif text-xl font-bold text-stone-800 mb-4">Frisch gerollte Wraps <span class="text-amber-700 font-mono text-base">je 5,50 €</span></h4>
+                        <div class="space-y-2">
+                            <p class="text-stone-600 text-sm pl-4 border-l-2 border-amber-300 py-1">Krebsfleisch (Surimi), Aioli, Salat</p>
+                            <p class="text-stone-600 text-sm pl-4 border-l-2 border-amber-300 py-1">Räucherlachs, Ei, Salat</p>
+                            <p class="text-stone-600 text-sm pl-4 border-l-2 border-amber-300 py-1">Thunfisch, Ei, Weißkrautsalat</p>
+                            <p class="text-stone-600 text-sm pl-4 border-l-2 border-amber-300 py-1">Eismeershrimps, Salat, Aioli</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1488,25 +1556,25 @@ erif font-bold text-stone-800 mb-4 text-center">
 
             <div class="bg-amber-50 rounded-lg border border-amber-100 overflow-hidden">
                 <div class="flex flex-col md:flex-row">
-                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                    <div class="p-6 md:p-8 md:w-3/5 flex flex-col justify-center">
                         <h4 class="flex items-center gap-2 font-bold text-stone-800 mb-4 text-xl">
-                            <i data-lucide="accessibility" class="text-amber-600 w-6 h-6"></i> Barrierefreiheit
+                            <i data-lucide="accessibility" class="text-amber-600 w-6 h-6"></i> Hinweis zur Barrierefreiheit
                         </h4>
                         <p class="text-stone-700 leading-relaxed mb-4">
-                            Unser historisches Fachwerkhaus ist <strong>leider nicht barrierefrei</strong>.
-                            Es gibt Stufen am Eingang und wir verfügen über kein behindertengerechtes WC.
+                            <strong>Unser Lokal ist nicht barrierefrei.</strong>
+                            Der Eingangsbereich hat eine Stufe und ein barrierefreies WC ist leider nicht vorhanden.
+                            Wir möchten Menschen mit eingeschränkter Mobilität die Möglichkeit geben, anhand des Fotos
+                            selbst einzuschätzen, ob der Zugang für sie machbar ist.
                         </p>
                         <div class="bg-white/60 p-3 rounded text-sm text-stone-600 flex gap-2 items-start">
                             <i data-lucide="alert-circle" class="shrink-0 text-amber-600 mt-0.5 w-4 h-4"></i>
-                            <p>Wir helfen beim Überwinden der Stufen aber jederzeit gerne.</p>
+                            <p><strong class="text-amber-700">Gerne helfen wir Ihnen beim Einstieg!</strong></p>
                         </div>
                     </div>
-                    <div class="md:w-1/2 bg-stone-200 min-h-[250px] relative">
-                        <img id="ziel-team" src="TeamPause.jpg"
-                            onerror="this.src='https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&q=80'"
-                            class="w-full h-full object-cover absolute inset-0">
-                        onerror="this.src='https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&q=80'"
-                        class="w-full h-full object-cover absolute inset-0">
+                    <!-- Eingangsbild rechts (Hochkant) -->
+                    <div class="md:w-2/5 relative">
+                        <img src="Eingang.jpeg" alt="Eingangsbereich mit Stufe"
+                            class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -1618,27 +1686,6 @@ erif font-bold text-stone-800 mb-4 text-center">
                 </div>
             </div>
 
-            <div class="mt-12">
-                <!-- Barrierefreiheit: Eingangsbereich -->
-                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600">
-                    <div class="flex items-start gap-4 mb-4">
-                        <i data-lucide="accessibility" class="text-blue-600 w-6 h-6 flex-shrink-0 mt-1"></i>
-                        <div>
-                            <h3 class="text-xl font-bold text-stone-800 mb-2">Barrierefreier Zugang</h3>
-                            <p class="text-stone-600 text-sm">
-                                Unser Eingangsbereich hat eine Stufe. Wir möchten Menschen mit eingeschränkter
-                                Mobilität
-                                die Möglichkeit geben, selbst einzuschätzen, ob der Zugang machbar ist.
-                                <strong class="text-blue-700">Gerne helfen wir Ihnen beim Einstieg!</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="rounded-lg overflow-hidden shadow-lg">
-                        <img src="Eingang.jpeg" alt="Eingangsbereich mit Stufen - für Barrierefreiheit-Einschätzung"
-                            class="w-full h-auto max-h-[600px] object-contain">
-                    </div>
-                </div>
-            </div>
         </div>
         </div>
     </section>
@@ -1650,25 +1697,39 @@ erif font-bold text-stone-800 mb-4 text-center">
                 <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-6">Mediathek</h2>
                 <p class="text-stone-600 max-w-xl mx-auto text-lg">Einblicke in unseren Alltag und die Zubereitung.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="mediathek-gallery">
                 <img src="BroteFertig.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Frische Brote">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Frische Brote" onclick="openLightbox(0)">
                 <img src="Brotteig2.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Teigverarbeitung">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Teigverarbeitung" onclick="openLightbox(1)">
                 <img src="Kuehltheke2.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Auslage">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Auslage" onclick="openLightbox(2)">
                 <img src="Kraeuter1.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Kräuter">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Kräuter" onclick="openLightbox(3)">
                 <img src="FischSchneiden.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Fischzubereitung">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Fischzubereitung" onclick="openLightbox(4)">
                 <img src="Fischbroetchen.jpg"
-                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
-                    alt="Leckeres Fischbrötchen">
+                    class="gallery-img rounded-lg shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 w-full h-40 md:h-64 object-cover cursor-pointer"
+                    alt="Leckeres Fischbrötchen" onclick="openLightbox(5)">
+            </div>
+
+            <!-- Lightbox Modal -->
+            <div id="lightbox-overlay" class="fixed inset-0 bg-black/90 z-[200] hidden items-center justify-center" onclick="closeLightbox(event)">
+                <button onclick="closeLightbox(event, true)" class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl z-[210] w-12 h-12 flex items-center justify-center">&times;</button>
+                <button onclick="event.stopPropagation(); lightboxPrev()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl z-[210] w-14 h-14 flex items-center justify-center">&#8249;</button>
+                <button onclick="event.stopPropagation(); lightboxNext()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white text-5xl z-[210] w-14 h-14 flex items-center justify-center">&#8250;</button>
+                <div class="flex flex-col items-center max-w-[90vw] max-h-[90vh]" onclick="event.stopPropagation()">
+                    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl transition-opacity duration-300">
+                    <div class="mt-4 text-center">
+                        <p id="lightbox-alt" class="text-white/80 text-sm mb-1"></p>
+                        <p id="lightbox-counter" class="text-white/50 text-xs"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -2153,7 +2214,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                 display.classList.remove('hidden');
                 warning.classList.add('hidden');
                 list.innerHTML = '';
-                const titles = selectedJobs.map(id => document.querySelector(`[data - id= "${id}"]`).getAttribute('data-title'));
+                const titles = selectedJobs.map(id => document.querySelector(`[data-id="${id}"]`).getAttribute('data-title'));
                 titles.forEach(title => {
                     const li = document.createElement('li');
                     li.textContent = title;
@@ -2167,7 +2228,7 @@ erif font-bold text-stone-800 mb-4 text-center">
 
         function sendApplication(e) {
             const hiddenInput = document.getElementById('hidden-jobs-input');
-            const titles = selectedJobs.map(id => document.querySelector(`[data - id= "${id}"]`).getAttribute('data-title'));
+            const titles = selectedJobs.map(id => document.querySelector(`[data-id="${id}"]`).getAttribute('data-title'));
 
             if (selectedJobs.length === 0) {
                 e.preventDefault();
@@ -2222,7 +2283,64 @@ erif font-bold text-stone-800 mb-4 text-center">
         }
         window.addEventListener('load', initCookieBanner);
 
-        // ===== FISCHGUIDE FILTER SYSTEM =====
+        // ===== LIGHTBOX / GALERIE =====
+        let lightboxCurrentIndex = 0;
+        const galleryImages = [];
+
+        function initLightbox() {
+            document.querySelectorAll('#mediathek-gallery .gallery-img').forEach(img => {
+                galleryImages.push({ src: img.src, alt: img.alt });
+            });
+        }
+
+        function openLightbox(index) {
+            lightboxCurrentIndex = index;
+            const overlay = document.getElementById('lightbox-overlay');
+            const img = document.getElementById('lightbox-img');
+            const alt = document.getElementById('lightbox-alt');
+            const counter = document.getElementById('lightbox-counter');
+
+            img.src = galleryImages[index].src;
+            img.alt = galleryImages[index].alt;
+            alt.textContent = galleryImages[index].alt;
+            counter.textContent = `${index + 1} / ${galleryImages.length}`;
+
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeLightbox(event, force) {
+            if (force || event.target === document.getElementById('lightbox-overlay')) {
+                const overlay = document.getElementById('lightbox-overlay');
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                document.body.classList.remove('modal-open');
+            }
+        }
+
+        function lightboxNext() {
+            lightboxCurrentIndex = (lightboxCurrentIndex + 1) % galleryImages.length;
+            openLightbox(lightboxCurrentIndex);
+        }
+
+        function lightboxPrev() {
+            lightboxCurrentIndex = (lightboxCurrentIndex - 1 + galleryImages.length) % galleryImages.length;
+            openLightbox(lightboxCurrentIndex);
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const overlay = document.getElementById('lightbox-overlay');
+            if (overlay && !overlay.classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') lightboxNext();
+                if (e.key === 'ArrowLeft') lightboxPrev();
+                if (e.key === 'Escape') closeLightbox(null, true);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', initLightbox);
+
+        // ===== FISCHGUIDE FILTER SYSTEM (v2 - Harter Ausschluss) =====
         class FischguideFilter {
             constructor() {
                 this.activeFilters = {
@@ -2236,109 +2354,224 @@ erif font-bold text-stone-800 mb-4 text-center">
             }
 
             init() {
-                console.log('🐟 Fischguide initialisiert');
-
-                // Event Listeners für alle Filter-Inputs
                 document.querySelectorAll('.filter-input').forEach(input => {
-                    input.addEventListener('change', () => {
-                        console.log('Filter geändert:', input.name, input.value, input.checked);
-                        this.applyFilters();
-                    });
+                    input.addEventListener('change', () => this.applyFilters());
                 });
-
-                // Reset Button
-                document.getElementById('reset-filters')?.addEventListener('click', () => {
-                    console.log('🔄 Filter zurückgesetzt');
-                    this.resetFilters();
-                });
+                document.getElementById('reset-filters')?.addEventListener('click', () => this.resetFilters());
             }
 
             applyFilters() {
-                // Sammle aktive Filter
                 this.activeFilters.gaenge = document.querySelector('input[name="gaenge"]:checked')?.value || null;
                 this.activeFilters.intensitaet = document.querySelector('input[name="intensitaet"]:checked')?.value || null;
                 this.activeFilters.portion = document.querySelector('input[name="portion"]:checked')?.value || null;
+                this.activeFilters.beilagen = Array.from(document.querySelectorAll('input[name="beilagen"]:checked')).map(cb => cb.value);
+                this.activeFilters.extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(cb => cb.value);
 
-                this.activeFilters.beilagen = Array.from(
-                    document.querySelectorAll('input[name="beilagen"]:checked')
-                ).map(cb => cb.value);
-
-                this.activeFilters.extras = Array.from(
-                    document.querySelectorAll('input[name="extras"]:checked')
-                ).map(cb => cb.value);
-
-                console.log('Aktive Filter:', this.activeFilters);
-
-                // Prüfe ob Filter gesetzt sind
-                const hasFilters = this.activeFilters.gaenge ||
-                    this.activeFilters.intensitaet ||
-                    this.activeFilters.portion ||
-                    this.activeFilters.beilagen.length > 0 ||
-                    this.activeFilters.extras.length > 0;
+                const hasFilters = this.activeFilters.gaenge || this.activeFilters.intensitaet ||
+                    this.activeFilters.portion || this.activeFilters.beilagen.length > 0 || this.activeFilters.extras.length > 0;
 
                 if (hasFilters) {
-                    // Generiere Top 5
-                    this.generateTop5();
+                    this.filterAndDisplay();
                 } else {
-                    // Verstecke Top 5 wenn keine Filter
                     document.getElementById('top5-recommendations').classList.add('hidden');
+                    // Alle Gerichte wieder einblenden
+                    document.querySelectorAll('[data-dish-id]').forEach(d => {
+                        d.style.display = '';
+                        d.style.opacity = '';
+                    });
                     this.updateResultDisplay();
                 }
             }
 
-            generateTop5() {
-                console.log('🔍 === GENERATE TOP 5 GESTARTET ===');
+            // ===== HARTE AUSSCHLUSS-PRÜFUNGEN =====
 
-                // Hole alle Gerichte
-                const allDishes = document.querySelectorAll('[data-dish-id]');
-                console.log(`📊 Gefundene Gerichte insgesamt: ${allDishes.length} `);
+            // Prüft ob ein Gericht durch harte Filter ausgeschlossen wird
+            isDishExcluded(dish) {
+                const category = dish.getAttribute('data-category');
+                const dietary = dish.querySelector('[itemprop="suitableForDiet"]')?.content || '';
+                const name = (dish.querySelector('[itemprop="name"]')?.textContent || '').toLowerCase();
+                const desc = (dish.querySelector('[itemprop="description"]')?.textContent || '').toLowerCase();
+                const text = name + ' ' + desc;
 
-                const scoredDishes = [];
-
-                allDishes.forEach((dish, index) => {
-                    const dishName = dish.querySelector('[itemprop="name"]')?.textContent || 'Unbekannt';
-                    const category = dish.getAttribute('data-category');
-
-                    console.log(`\n-- - Gericht ${index + 1}: ${dishName} (${category})--- `);
-
-                    const score = this.scoreDish(dish);
-
-                    console.log(`   ✅ GESAMT - SCORE: ${score}/15 Punkte`);
-
-                    // Detaillierte Ausgabe für Debugging
-                    if (score > 0) {
-                        console.log(`      📊 Details: Gänge=${this.scoreGaenge(dish)} | Intensität=${this.scoreIntensitaet(dish)} | Beilagen=${this.scoreBeilagen(dish)} | Portion=${this.scorePortion(dish)} | Extras=${this.scoreExtras(dish)}`);
+                // 1. GÄNGE - Harter Ausschluss
+                if (this.activeFilters.gaenge) {
+                    if (this.activeFilters.gaenge === 'nur_haupt') {
+                        // Nur Hauptgerichte, Premium, Tagesempfehlung erlaubt
+                        if (!['hauptgerichte', 'premium', 'tagesempfehlung'].includes(category)) return true;
                     }
+                    if (this.activeFilters.gaenge === 'nur_vor') {
+                        // Nur Vorspeisen erlaubt
+                        if (category !== 'vorspeisen') return true;
+                    }
+                    if (this.activeFilters.gaenge === 'vor_und_haupt') {
+                        // Vorspeisen + Hauptgerichte + Premium + Tagesempfehlung erlaubt
+                        if (!['vorspeisen', 'hauptgerichte', 'premium', 'tagesempfehlung'].includes(category)) return true;
+                    }
+                }
 
-                    if (score > 0) {
-                        scoredDishes.push({
+                // 2. VEGAN - Harter Ausschluss
+                if (this.activeFilters.extras.includes('vegan')) {
+                    const isVegan = dietary.includes('Vegan') || name.includes('vegan');
+                    if (!isVegan) return true;
+                }
+
+                // 3. WARM/KALT - Harter Ausschluss
+                if (this.activeFilters.extras.includes('warm') && !this.activeFilters.extras.includes('kalt')) {
+                    // Nur warme Gerichte: Kalte Gerichte (Salate, Baguettes, Matjes roh, Räucherfisch kalt) ausschließen
+                    const isCold = category === 'baguettes' || name.includes('salat') ||
+                        (text.match(/matjes|räucher|geräuchert/i) && !text.match(/gebraten|gegrillt|warm/i));
+                    if (isCold) return true;
+                }
+                if (this.activeFilters.extras.includes('kalt') && !this.activeFilters.extras.includes('warm')) {
+                    // Nur kalte Gerichte: Warme Gerichte ausschließen
+                    const isCold = category === 'baguettes' || name.includes('salat') ||
+                        text.match(/matjes|räucher|geräuchert/i) || text.includes('bruschetta');
+                    if (!isCold) return true;
+                }
+
+                // 4. PORTIONSGRÖSSE - Harter Ausschluss für Kinder
+                if (this.activeFilters.portion === 'kinder') {
+                    if (category !== 'kinder' && category !== 'baguettes') {
+                        const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
+                        if (price > 10) return true; // Teure Gerichte nicht für Kinder
+                    }
+                }
+
+                return false; // Nicht ausgeschlossen
+            }
+
+            // ===== WEICHES SCORING (nur für nicht-ausgeschlossene Gerichte) =====
+
+            scoreDish(dish) {
+                let score = 0;
+                score += this.scoreIntensitaet(dish);
+                score += this.scoreBeilagen(dish);
+                score += this.scorePortion(dish);
+                // Gänge und Extras (vegan/warm/kalt) sind harte Filter, kein Score nötig
+                // Bonus: Passendes Gericht in seiner Kategorie
+                score += this.scoreCategoryBonus(dish);
+                return score;
+            }
+
+            scoreCategoryBonus(dish) {
+                if (!this.activeFilters.gaenge) return 0;
+                const category = dish.getAttribute('data-category');
+                // Premium und Tagesempfehlung bekommen Bonus
+                if (category === 'premium') return 2;
+                if (category === 'tagesempfehlung') return 1;
+                return 0;
+            }
+
+            scoreIntensitaet(dish) {
+                if (!this.activeFilters.intensitaet) return 0;
+                const name = (dish.querySelector('[itemprop="name"]')?.textContent || '').toLowerCase();
+                const desc = (dish.querySelector('[itemprop="description"]')?.textContent || '').toLowerCase();
+                const text = name + ' ' + desc;
+
+                if (this.activeFilters.intensitaet === 'sehr_mild') {
+                    if (text.includes('forelle') || text.includes('seelachs') || text.includes('glasig')) return 3;
+                    if (text.includes('lachs') || text.includes('zander')) return 2;
+                    if (text.includes('matjes') || text.match(/geräuchert/i) || text.includes('hering')) return 0;
+                    return 1;
+                }
+                if (this.activeFilters.intensitaet === 'mittel') {
+                    if (text.includes('lachs') || text.includes('zander') || text.includes('scholle') || text.includes('kabeljau')) return 3;
+                    if (text.includes('forelle') || text.includes('garnelen')) return 2;
+                    if (text.includes('matjes') || text.includes('hering')) return 1;
+                    return 2;
+                }
+                if (this.activeFilters.intensitaet === 'kraeftig') {
+                    if (text.includes('matjes') || text.includes('hering') || text.match(/geräuchert|räucher/i)) return 3;
+                    if (text.includes('garnelen')) return 2;
+                    if (text.includes('lachs') && !text.match(/geräuchert/i)) return 1;
+                    if (text.includes('forelle') && !text.match(/geräuchert/i)) return 0;
+                    return 1;
+                }
+                return 0;
+            }
+
+            scoreBeilagen(dish) {
+                if (this.activeFilters.beilagen.length === 0) return 0;
+                const desc = (dish.querySelector('[itemprop="description"]')?.textContent || '').toLowerCase();
+                let maxScore = 0;
+
+                this.activeFilters.beilagen.forEach(beilage => {
+                    let score = 0;
+                    if (beilage === 'kartoffeln' && (desc.includes('bratkartoffel') || desc.includes('salzkartoffel') || desc.includes('backkartoffel') || desc.includes('kartoffelsalat') || desc.includes('rosmarinkartoffel'))) score = 3;
+                    if (beilage === 'nudeln' && (desc.includes('bandnudeln') || desc.includes('nudel'))) score = 3;
+                    if (beilage === 'salat' && (desc.includes('salat') || desc.includes('gemüse'))) score = 3;
+                    if (beilage === 'brot' && (desc.includes('baguette') || desc.includes('brot'))) score = 3;
+                    maxScore = Math.max(maxScore, score);
+                });
+                return maxScore;
+            }
+
+            scorePortion(dish) {
+                if (!this.activeFilters.portion) return 0;
+                const category = dish.getAttribute('data-category');
+                const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
+                const desc = (dish.querySelector('[itemprop="description"]')?.textContent || '').toLowerCase();
+                const name = (dish.querySelector('[itemprop="name"]')?.textContent || '').toLowerCase();
+
+                if (this.activeFilters.portion === 'kinder') {
+                    if (category === 'kinder') return 3;
+                    if (category === 'baguettes') return 2;
+                    return 1;
+                }
+                if (this.activeFilters.portion === 'normal') {
+                    if (['hauptgerichte', 'zwischengerichte', 'vorspeisen', 'tagesempfehlung'].includes(category)) return 3;
+                    if (desc.includes('für 2')) return 1;
+                    return 2;
+                }
+                if (this.activeFilters.portion === 'senior') return 3;
+                if (this.activeFilters.portion === 'teilen') {
+                    if (desc.includes('für 2') || name.includes('dinner')) return 3;
+                    if (price > 25) return 2;
+                    if (price > 18) return 1;
+                    return 0;
+                }
+                return 0;
+            }
+
+            // ===== FILTER + ANZEIGE =====
+
+            filterAndDisplay() {
+                const allDishes = document.querySelectorAll('[data-dish-id]');
+                const passedDishes = [];
+
+                allDishes.forEach(dish => {
+                    if (this.isDishExcluded(dish)) {
+                        // Hart ausgeschlossen: ausblenden
+                        dish.style.display = 'none';
+                    } else {
+                        // Nicht ausgeschlossen: einblenden und scoren
+                        dish.style.display = '';
+                        dish.style.opacity = '';
+                        const score = this.scoreDish(dish);
+                        passedDishes.push({
                             element: dish,
                             score: score,
-                            name: dishName,
+                            name: dish.querySelector('[itemprop="name"]')?.textContent || 'Unbekannt',
                             price: dish.querySelector('[itemprop="price"]')?.content || 0,
                             description: dish.querySelector('[itemprop="description"]')?.textContent || ''
                         });
                     }
                 });
 
-                console.log(`\n🎯 Gerichte mit Score > 0: ${scoredDishes.length}`);
+                // Sortiere nach Score
+                passedDishes.sort((a, b) => b.score - a.score);
+                const top5 = passedDishes.slice(0, 5);
 
-                // Sortiere nach Score (höchste zuerst)
-                scoredDishes.sort((a, b) => b.score - a.score);
-
-                // Nimm Top 5
-                const top5 = scoredDishes.slice(0, 5);
-
-                console.log('\n🏆 === TOP 5 ERGEBNIS ===');
-                top5.forEach((d, i) => console.log(`${i + 1}. ${d.name}: ${d.score} Punkte`));
-
-                // Zeige Top 5 in UI
                 this.displayTop5(top5);
 
-                // Update Result Display
                 const resultDiv = document.getElementById('filter-results');
-                resultDiv.textContent = `✨ ${top5.length} Top-Empfehlungen gefunden (von ${scoredDishes.length} passenden Gerichten)`;
-                resultDiv.classList.add('text-yellow-300');
+                if (passedDishes.length === 0) {
+                    resultDiv.textContent = '😕 Keine passenden Gerichte gefunden. Versuche andere Filter.';
+                    resultDiv.classList.add('text-yellow-300');
+                } else {
+                    resultDiv.textContent = `✨ ${passedDishes.length} passende Gerichte gefunden`;
+                    resultDiv.classList.add('text-yellow-300');
+                }
             }
 
             displayTop5(top5) {
@@ -2350,20 +2583,18 @@ erif font-bold text-stone-800 mb-4 text-center">
                     return;
                 }
 
-                // Leere Container
                 container.innerHTML = '';
+                const maxScore = Math.max(...top5.map(d => d.score), 1);
 
-                // Füge Top 5 Gerichte hinzu
                 top5.forEach((dish, index) => {
                     const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '⭐';
-                    const scoreBar = Math.round((dish.score / 15) * 100);
-
+                    const scoreBar = Math.round((dish.score / maxScore) * 100);
                     const card = document.createElement('div');
                     card.className = 'bg-white p-4 rounded-lg shadow-md border-2 border-blue-200 hover:shadow-lg transition-shadow';
                     card.innerHTML = `
-                    <div class="flex items-start justify-between mb-2">
+                        <div class="flex items-start justify-between mb-2">
                             <span class="text-2xl">${medal}</span>
-                            <span class="text-xs text-blue-700 font-bold">${dish.score}/15 Punkte</span>
+                            <span class="text-xs text-blue-700 font-bold">${dish.score} Punkte</span>
                         </div>
                         <h4 class="font-bold text-stone-800 text-lg mb-1">${dish.name}</h4>
                         <p class="text-stone-600 text-sm mb-2 line-clamp-2">${dish.description}</p>
@@ -2377,255 +2608,25 @@ erif font-bold text-stone-800 mb-4 text-center">
                     container.appendChild(card);
                 });
 
-                // Zeige Section
                 section.classList.remove('hidden');
             }
 
-
             updateResultDisplay() {
-                const hasFilters = this.activeFilters.gaenge ||
-                    this.activeFilters.intensitaet ||
-                    this.activeFilters.portion ||
-                    this.activeFilters.beilagen.length > 0 ||
-                    this.activeFilters.extras.length > 0;
-
                 const resultDiv = document.getElementById('filter-results');
-
-                if (hasFilters) {
-                    resultDiv.textContent = '✨ Filter aktiv - Berechnung läuft...';
-                    resultDiv.classList.add('text-yellow-300');
-                } else {
-                    resultDiv.textContent = 'Wähle Filter aus um Empfehlungen zu erhalten';
-                    resultDiv.classList.remove('text-yellow-300');
-                }
+                resultDiv.textContent = 'Wähle Filter aus um Empfehlungen zu erhalten';
+                resultDiv.classList.remove('text-yellow-300');
             }
 
             resetFilters() {
-                // Alle Inputs zurücksetzen
-                document.querySelectorAll('.filter-input').forEach(input => {
-                    input.checked = false;
-                });
-
-                this.activeFilters = {
-                    gaenge: null,
-                    intensitaet: null,
-                    beilagen: [],
-                    portion: null,
-                    extras: []
-                };
-
+                document.querySelectorAll('.filter-input').forEach(input => { input.checked = false; });
+                this.activeFilters = { gaenge: null, intensitaet: null, beilagen: [], portion: null, extras: [] };
                 this.updateResultDisplay();
-
-                // Verstecke Top 5
                 document.getElementById('top5-recommendations').classList.add('hidden');
-            }
-
-            // ===== SCORING FUNKTIONEN =====
-
-            scoreDish(dish) {
-                let score = 0;
-
-                // Frage 1: Gänge (0-3 Punkte)
-                const gaengeScore = this.scoreGaenge(dish);
-                score += gaengeScore;
-                console.log(`   1️⃣ Gänge: ${gaengeScore}/3`);
-
-                // Frage 2: Intensität (0-3 Punkte)
-                const intensitaetScore = this.scoreIntensitaet(dish);
-                score += intensitaetScore;
-                console.log(`   2️⃣ Intensität: ${intensitaetScore}/3`);
-
-                // Frage 3: Beilagen (0-3 Punkte)
-                const beilagenScore = this.scoreBeilagen(dish);
-                score += beilagenScore;
-                console.log(`   3️⃣ Beilagen: ${beilagenScore}/3`);
-
-                // Frage 4: Portionsgröße (0-3 Punkte)
-                const portionScore = this.scorePortion(dish);
-                score += portionScore;
-                console.log(`   4️⃣ Portion: ${portionScore}/3`);
-
-                // Frage 5: Besonderes (0-3 Punkte)
-                const extrasScore = this.scoreExtras(dish);
-                score += extrasScore;
-                console.log(`   5️⃣ Extras: ${extrasScore}/3`);
-
-                return score; // Max 15 Punkte
-            }
-
-            scoreGaenge(dish) {
-                if (!this.activeFilters.gaenge) return 0;
-
-                const category = dish.getAttribute('data-category');
-                const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
-
-                if (this.activeFilters.gaenge === 'nur_haupt') {
-                    // Nur Hauptgerichte sollten hohe Punkte bekommen
-                    if (['hauptgerichte', 'premium', 'tagesempfehlung'].includes(category)) return 3;
-                    if (category === 'zwischengerichte') return 2;
-                    // WICHTIG: Vorspeisen passen NICHT zu "nur Hauptgericht" -> 0 Punkte!
-                    return 0;
-                }
-
-                if (this.activeFilters.gaenge === 'nur_vor') {
-                    if (category === 'vorspeisen' && price < 10) return 3;
-                    if (category === 'vorspeisen' && price >= 10) return 2;
-                    if (category === 'zwischengerichte') return 1;
-                    return 0;
-                }
-
-                if (this.activeFilters.gaenge === 'vor_und_haupt') {
-                    if (['vorspeisen', 'hauptgerichte', 'premium'].includes(category)) return 3;
-                    if (category === 'zwischengerichte') return 2;
-                    return 0;
-                }
-
-                return 0;
-            }
-
-            scoreIntensitaet(dish) {
-                if (!this.activeFilters.intensitaet) return 0;
-
-                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
-                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
-                const text = name + ' ' + desc;
-
-                if (this.activeFilters.intensitaet === 'sehr_mild') {
-                    if (text.includes('forelle') || text.includes('seelachs')) return 3;
-                    if (text.includes('glasig')) return 3;
-                    if (text.includes('lachs') || text.includes('zander')) return 2;
-                    if (text.includes('matjes') || text.match(/geräuchert/i) || text.includes('hering')) return 0;
-                    return 1;
-                }
-
-                if (this.activeFilters.intensitaet === 'mittel') {
-                    if (text.includes('lachs') || text.includes('zander') || text.includes('scholle')) return 3;
-                    if (text.includes('kabeljau') || text.includes('thunfisch')) return 3;
-                    if (text.includes('forelle') && !text.match(/geräuchert/i)) return 2;
-                    if (text.includes('garnelen') || text.includes('shrimps')) return 2;
-                    if (text.includes('matjes') || text.includes('hering')) return 1;
-                    if (text.match(/geräuchert/i)) return 0;
-                    return 2;
-                }
-
-                if (this.activeFilters.intensitaet === 'kraeftig') {
-                    if (text.includes('matjes') || text.includes('hering') || text.match(/geräuchert/i)) return 3;
-                    if (text.includes('garnelen') || text.includes('shrimps') || text.match(/räucher/i)) return 3;
-                    if (text.includes('lachs') && !text.match(/geräuchert/i)) return 1;
-                    if (text.includes('forelle') && !text.match(/geräuchert/i)) return 0;
-                    return 1;
-                }
-
-                return 0;
-            }
-
-            scoreBeilagen(dish) {
-                if (this.activeFilters.beilagen.length === 0) return 0;
-
-                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
-                let maxScore = 0;
-
-                this.activeFilters.beilagen.forEach(beilage => {
-                    let score = 0;
-
-                    if (beilage === 'kartoffeln') {
-                        if (desc.includes('bratkartoffel') || desc.includes('salzkartoffel') ||
-                            desc.includes('backkartoffel') || desc.includes('kartoffelsalat')) {
-                            score = 3;
-                        }
-                    } else if (beilage === 'nudeln') {
-                        if (desc.includes('bandnudeln') || desc.includes('nudel')) {
-                            score = 3;
-                        }
-                    } else if (beilage === 'salat') {
-                        if (desc.includes('salat') || desc.includes('gemüse')) {
-                            score = 3;
-                        }
-                    } else if (beilage === 'brot') {
-                        if (desc.includes('baguette') || desc.includes('brot')) {
-                            score = 3;
-                        }
-                    }
-
-                    maxScore = Math.max(maxScore, score);
+                // Alle Gerichte wieder einblenden
+                document.querySelectorAll('[data-dish-id]').forEach(d => {
+                    d.style.display = '';
+                    d.style.opacity = '';
                 });
-
-                return maxScore;
-            }
-
-            scorePortion(dish) {
-                if (!this.activeFilters.portion) return 0;
-
-                const category = dish.getAttribute('data-category');
-                const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
-                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
-                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
-
-                if (this.activeFilters.portion === 'kinder') {
-                    if (category === 'kinder') return 3;
-                    if (category === 'vorspeisen' && price < 6) return 2;
-                    if (category === 'baguettes') return 2;
-                    return 0;
-                }
-
-                if (this.activeFilters.portion === 'normal') {
-                    if (['hauptgerichte', 'zwischengerichte', 'vorspeisen'].includes(category) && category !== 'kinder') return 3;
-                    if (category === 'tagesempfehlung') return 3;
-                    if (desc.includes('für 2')) return 1;
-                    return 2;
-                }
-
-                if (this.activeFilters.portion === 'senior') {
-                    // Bei Senior: Alle Gerichte bekommen 3 Punkte (da Seniorenrabatt -1,50€)
-                    return 3;
-                }
-
-                if (this.activeFilters.portion === 'teilen') {
-                    if (desc.includes('für 2') || name.includes('dinner')) return 3;
-                    if (price > 25) return 2; // Große Gerichte
-                    if (price > 18) return 1;
-                    return 0;
-                }
-
-                return 0;
-            }
-
-            scoreExtras(dish) {
-                if (this.activeFilters.extras.length === 0) return 0;
-
-                let score = 0;
-                const dietary = dish.querySelector('[itemprop="suitableForDiet"]')?.content || '';
-                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
-                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
-                const category = dish.getAttribute('data-category');
-
-                this.activeFilters.extras.forEach(extra => {
-                    if (extra === 'vegan') {
-                        if (dietary.includes('Vegan') || name.includes('vegan')) {
-                            score += 3;
-                        } else if (dietary.includes('Vegetarian') || name.includes('vegetarisch')) {
-                            score += 2;
-                        }
-                    }
-
-                    if (extra === 'warm') {
-                        if (category === 'baguettes' || name.includes('salat') || desc.includes('kalt')) {
-                            score += 0;
-                        } else {
-                            score += 2;
-                        }
-                    }
-
-                    if (extra === 'kalt') {
-                        if (category === 'baguettes' || name.includes('salat') || desc.includes('kalt')) {
-                            score += 3;
-                        } else if (desc.match(/matjes|räucher|geräuchert/i)) {
-                            score += 2;
-                        }
-                    }
-                });
-
-                return Math.min(3, score); // Max 3 Punkte
             }
         }
 
