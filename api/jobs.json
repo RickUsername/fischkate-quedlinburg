@@ -1,0 +1,60 @@
+{
+    "lastUpdated": "2026-01-11",
+    "positions": [
+        {
+            "id": "service-saison-2026",
+            "title": "Servicekraft (m/w/d) - Saison ab März",
+            "type": "fulltime",
+            "description": "Du hast ein Lächeln für unsere Gäste und liebst die lebendige Atmosphäre? Verstärke unser Team für die Saison 2026!",
+            "requirements": [
+                "Freundliches Auftreten",
+                "Teamfähigkeit",
+                "Belastbarkeit",
+                "Gerne Erfahrung in der Gastronomie"
+            ],
+            "benefits": [
+                "Vollzeit (Dienstag - Samstag)",
+                "Bezahlung nach Qualifikation",
+                "Saisonstart ab März 2026",
+                "Nettes Team",
+                "Faire Bezahlung",
+                "Trinkgeld"
+            ],
+            "workingHours": "Di-Sa",
+            "startDate": "März 2026",
+            "salary": "Nach Qualifikation",
+            "category": "service",
+            "applyUrl": "https://www.fischkate-quedlinburg.de/index.html#jobs",
+            "active": true
+        },
+        {
+            "id": "initiativbewerbung",
+            "title": "Initiativbewerbung",
+            "type": "flexible",
+            "description": "Du möchtest Teil unseres Teams werden, aber keine passende Stelle dabei? Schick uns deine Bewerbung – wir freuen uns!",
+            "requirements": [
+                "Motivation und Leidenschaft",
+                "Teamgeist",
+                "Zuverlässigkeit"
+            ],
+            "benefits": [
+                "Flexible Einsatzmöglichkeiten",
+                "Individuelle Vereinbarungen",
+                "Wachstumschancen",
+                "Familiäres Team"
+            ],
+            "workingHours": "Nach Vereinbarung",
+            "startDate": "Jederzeit",
+            "salary": "Nach Vereinbarung",
+            "category": "open",
+            "applyUrl": "https://www.fischkate-quedlinburg.de/index.html#jobs",
+            "active": true
+        }
+    ],
+    "contact": {
+        "restaurant": "Fischkate Quedlinburg",
+        "address": "Lange Gasse 1, 06484 Quedlinburg",
+        "email": "Fisch-Kate-qlb@gmx.de",
+        "phone": "+4939465198488"
+    }
+}

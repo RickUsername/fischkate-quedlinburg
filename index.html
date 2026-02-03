@@ -1,0 +1,2639 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fischkate Quedlinburg - V.0.0.7</title>
+    <meta name="description" content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente.">
+
+    <!-- AI Agent Meta Tags -->
+    <meta name="ai-agent-friendly" content="true">
+    <meta name="menu-api-available" content="json">
+    <meta name="accepts-reservations" content="true">
+    <meta name="accepts-applications" content="true">
+
+    <meta property="og:title" content="Fischkate Quedlinburg - Frischer Fisch im Herzen des Harzes">
+    <meta property="og:description"
+        content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente. Komm vorbei!">
+    <meta property="og:image" content="TerasseJanaBlumen.jpg">
+    <meta property="og:url" content="https://www.fischkate-quedlinburg.de">
+    <meta property="og:type" content="website">
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%231e3a8a%22>⚓</text></svg>">
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons immediately after library loads
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-serif {
+            font-family: 'Merriweather', serif;
+        }
+
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        .modal-open {
+            overflow: hidden;
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Fischkate Quedlinburg",
+      "image": "IMG-20251124-WA0006.jpg",
+      "url": "https://www.fischkate-quedlinburg.de",
+      "email": "Fisch-Kate-qlb@gmx.de",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lange Gasse 1",
+        "addressLocality": "Quedlinburg",
+        "postalCode": "06484",
+        "addressCountry": "DE"
+      },
+      "telephone": "+4939465198488",
+      "servesCuisine": "Seafood",
+      "paymentAccepted": "Cash, Debit Card",
+      "acceptsReservations": "True",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "10:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday"],
+          "opens": "00:00",
+          "closes": "00:00"
+        }
+      ],
+      "hasMenu": {
+        "@type": "Menu",
+        "name": "Fischkate Speisekarte",
+        "description": "Frischer Fisch aus dem Harz und von der Küste"
+      }
+    }
+    </script>
+</head>
+
+<body class="bg-stone-50 text-stone-800 selection:bg-blue-800 selection:text-white relative">
+
+    <!-- ============================================
+         WEIHNACHTS-EASTEREGG (DEAKTIVIERT)
+         Zur nächsten Weihnachtszeit wieder aktivieren:
+         - Kommentare in diesem Bereich entfernen
+         - JavaScript-Code weiter unten aktivieren (Suche nach "WEIHNACHTS-EASTEREGG")
+         ============================================ -->
+    <!-- <div id="santa-hat"
+        class="fixed top-24 right-2 md:right-10 z-[100] cursor-move touch-none select-none w-11 h-11 md:w-[4.5rem] md:h-[4.5rem] filter drop-shadow-lg hover:scale-110 transition-transform duration-200">
+        <div id="hat-inner" class="w-full h-full transition-transform duration-300">
+            <img src="weihnachtsmuetze.png" alt="Weihnachtsmütze"
+                class="w-full h-full object-contain pointer-events-none">
+        </div>
+    </div> -->
+
+    <div class="bg-blue-900 text-blue-50 text-xs py-2 px-4 flex justify-between items-center sm:hidden">
+        <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> Di-Sa 10-21h</span>
+        <a href="tel:039465198488" class="flex items-center gap-1 font-bold underline"><i data-lucide="phone"
+                class="w-3 h-3"></i> Anrufen</a>
+    </div>
+
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-sm border-b border-stone-200 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-900 p-2 rounded-full">
+                        <i data-lucide="anchor" class="text-white w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-blue-900 leading-none">Fischkate</h1>
+                        <p class="text-xs tracking-widest text-stone-500 uppercase">Quedlinburg</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-8">
+                    <a href="#start"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Start</a>
+                    <a href="#speisekarte"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Speisekarte</a>
+                    <a href="#atmosphäre"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Atmosphäre</a>
+                    <a href="#jobs"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Jobs</a>
+                    <a href="#mediathek"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Mediathek</a>
+                    <a href="#kontakt"
+                        class="text-stone-600 hover:text-blue-900 font-medium transition-colors uppercase text-sm tracking-wide">Kontakt</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-stone-600 hover:text-blue-900 p-2">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-t border-stone-100 absolute w-full left-0 shadow-lg">
+            <div class="flex flex-col p-4 space-y-4 text-center text-lg font-serif">
+                <a href="#start" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Start</a>
+                <a href="#speisekarte" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Speisekarte</a>
+                <a href="#atmosphäre" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Atmosphäre</a>
+                <a href="#jobs" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Jobs</a>
+                <a href="#mediathek" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Mediathek</a>
+                <a href="#kontakt" onclick="toggleMobileMenu()"
+                    class="block py-2 text-stone-600 hover:text-blue-900 hover:bg-stone-50 rounded">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="start"
+        class="relative h-[500px] md:h-[600px] flex items-center justify-center bg-stone-900 overflow-hidden group">
+        <div class="absolute inset-0 opacity-60 transition-transform duration-1000 group-hover:scale-105">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="VideoGrill.mp4" type="video/mp4">
+                <img src="FischSchneiden.jpg"
+                    onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80'"
+                    alt="Frische Zubereitung" class="w-full h-full object-cover">
+            </video>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-stone-900/10"></div>
+
+        <a href="#jobs"
+            class="absolute top-24 left-4 md:left-12 z-20 transform -rotate-6 hover:rotate-0 transition-transform duration-300 cursor-pointer block">
+            <div class="bg-red-600 text-white px-4 py-3 md:px-6 md:py-4 shadow-2xl border-2 border-white/20">
+                <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 text-red-100">Wir stellen ein!
+                </p>
+                <h3 class="text-xl md:text-2xl font-serif font-bold leading-none">Komm ins<br />Team</h3>
+                <div class="mt-2 flex items-center gap-1 text-xs font-bold underline decoration-white/50">
+                    Zu den Jobs <i data-lucide="arrow-down-circle" class="w-4 h-4"></i>
+                </div>
+            </div>
+        </a>
+
+        <div class="relative z-10 text-center px-4 max-w-3xl mt-12">
+            <span
+                class="inline-block py-1 px-3 border border-blue-400/30 rounded-full text-blue-300 text-xs md:text-sm font-semibold tracking-wider mb-4 bg-blue-900/30 backdrop-blur-sm shadow-lg">SEIT
+                2012</span>
+            <h2
+                class="text-4xl md:text-7xl font-serif font-bold text-white mb-6 shadow-sm drop-shadow-xl leading-tight">
+                Frischer Fisch im <br /><span class="text-blue-300 italic">Herzen des Harzes</span>
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a href="#speisekarte"
+                    class="bg-blue-700 hover:bg-blue-600 text-white px-8 py-4 rounded-sm font-semibold transition-all uppercase tracking-wide shadow-lg w-full sm:w-auto">Zur
+                    Speisekarte</a>
+                <a href="#kontakt"
+                    class="bg-white hover:bg-stone-100 text-stone-900 px-8 py-4 rounded-sm font-semibold transition-all uppercase tracking-wide shadow-lg w-full sm:w-auto">Tisch
+                    reservieren</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-900 text-white py-10 relative z-20 -mt-4 mx-4 md:mx-auto max-w-5xl rounded-sm shadow-xl">
+        <div class="flex flex-col md:flex-row justify-center gap-8 md:gap-16 text-center">
+            <div class="flex flex-col items-center">
+                <i data-lucide="clock" class="mb-2 text-blue-300 w-6 h-6"></i>
+                <p class="font-serif text-lg font-bold">Di - Sa: 10:00 - 21:00</p>
+                <p class="text-xs text-blue-300 mt-1">Sonntag & Montag Ruhetag</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <i data-lucide="map-pin" class="mb-2 text-blue-300 w-6 h-6"></i>
+                <a href="https://www.google.com/maps/search/?api=1&query=Fischkate+Quedlinburg+Lange+Gasse+1"
+                    target="_blank" class="group">
+                    <p
+                        class="font-serif text-lg font-bold group-hover:underline decoration-blue-300 underline-offset-4">
+                        Lange Gasse 1</p>
+                    <p class="text-xs text-blue-300 mt-1 group-hover:text-white transition-colors">06484 Quedlinburg</p>
+                </a>
+            </div>
+            <div class="flex flex-col items-center">
+                <i data-lucide="chef-hat" class="mb-2 text-blue-300 w-6 h-6"></i>
+                <p class="font-serif text-lg font-bold">Frisch geräuchert</p>
+                <p class="text-xs text-blue-300 mt-1">Auch zum Mitnehmen</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fischguide - Sticky Filter Header -->
+    <section id="fischguide" class="bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl border-b-4 border-blue-700">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-white font-bold text-lg md:text-xl flex items-center gap-2">
+                    🐟 Fischguide <span class="text-blue-300 text-sm md:text-base font-normal">- Finde dein perfektes
+                        Gericht</span>
+                </h3>
+                <button id="reset-filters"
+                    class="text-blue-200 hover:text-white text-sm flex items-center gap-1 transition-colors">
+                    <i data-lucide="x-circle" class="w-4 h-4"></i> Zurücksetzen
+                </button>
+            </div>
+
+            <!-- Filter Grid: 5 Spalten Desktop, 1 Spalte Mobile -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+
+                <!-- Frage 1: Gänge -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <label class="text-white text-sm font-bold mb-2 block">Was suchst du?</label>
+                    <div class="space-y-1">
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="gaenge" value="nur_haupt" class="filter-input">
+                            <span>🍽️ Nur Hauptgericht</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="gaenge" value="vor_und_haupt" class="filter-input">
+                            <span>🍴 Vorspeise + Haupt</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="gaenge" value="nur_vor" class="filter-input">
+                            <span>🥗 Nur Vorspeise</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Frage 2: Intensität (3 Stufen) -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <label class="text-white text-sm font-bold mb-2 block">Intensität?</label>
+                    <div class="space-y-1">
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="intensitaet" value="sehr_mild" class="filter-input">
+                            <span>🐟 Sehr mild</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="intensitaet" value="mittel" class="filter-input">
+                            <span>🐠 Mittel</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-2 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="intensitaet" value="kraeftig" class="filter-input">
+                            <span>💪 Kräftig</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Frage 3: Beilagen -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <label class="text-white text-sm font-bold mb-2 block">Beilagen?</label>
+                    <div class="grid grid-cols-2 gap-1">
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="beilagen" value="kartoffeln" class="filter-input">
+                            <span>🥔 Kartoffeln</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="beilagen" value="nudeln" class="filter-input">
+                            <span>🍝 Nudeln</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="beilagen" value="salat" class="filter-input">
+                            <span>🥗 Salat</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="beilagen" value="brot" class="filter-input">
+                            <span>🍞 Brot</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Frage 4: Portionsgröße -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <label class="text-white text-sm font-bold mb-2 block">Portionsgröße?</label>
+                    <div class="space-y-1">
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="portion" value="kinder" class="filter-input">
+                            <span>👶 Kinder</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="portion" value="normal" class="filter-input">
+                            <span>👤 Normal</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="portion" value="senior" class="filter-input">
+                            <span>👴 Senior</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="radio" name="portion" value="teilen" class="filter-input">
+                            <span>👥 Teilen</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Frage 5: Besonderes -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
+                    <label class="text-white text-sm font-bold mb-2 block">Besonderes?</label>
+                    <div class="space-y-1">
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="extras" value="vegan" class="filter-input">
+                            <span>🌱 Vegan</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="extras" value="warm" class="filter-input">
+                            <span>🔥 Warm</span>
+                        </label>
+                        <label
+                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                            <input type="checkbox" name="extras" value="kalt" class="filter-input">
+                            <span>❄️ Kalt</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ergebnis-Anzeige -->
+            <div id="filter-results" class="mt-3 text-center text-white text-sm">
+                Wähle Filter aus um Empfehlungen zu erhalten
+            </div>
+        </div>
+    </section>
+
+    <!-- Top 5 Empfehlungen -->
+    <section id="top5-recommendations" class="bg-blue-50 py-8 px-4 hidden">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-s
+
+erif font-bold text-stone-800 mb-4 text-center">
+                ✨ Deine Top 5 Empfehlungen
+            </h3>
+            <div id="top5-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Wird dynamisch gefüllt -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="#vollstaendige-speisekarte" class="text-blue-700 hover:underline text-sm">
+                    → Zur vollständigen Speisekarte scrollen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="vollstaendige-speisekarte" class="py-12 md:py-24 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12 md:mb-16">
+            <i data-lucide="utensils-crossed" class="mx-auto text-blue-900 mb-4 w-10 h-10"></i>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-6">Unsere Speisekarte</h2>
+            <p class="text-stone-600 max-w-xl mx-auto text-lg">Frischer Fisch aus dem Harz und von der Küste.
+                Täglich wechselnde Angebote, je nachdem, was der Fang hergibt.</p>
+        </div>
+
+        <!-- VORSPEISEN -->
+        <div class="mb-16">
+            <div class="bg-blue-900 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Vorspeisen</h3>
+                <p class="text-blue-200 text-sm mt-1">Frisch vom Markt und unserem einheimischen Bauern</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-1" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Fischsuppe „A la Bouillabaisse"</h4><span
+                            class="font-mono text-blue-900 font-bold">9,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="9.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Provenzalische Delikatesse (mit
+                        Wermut), dazu Baguette
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="h,m,k,f,b,g,4,e1,i">(h,m,k,f,b,g,4,e1,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-2" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Kleiner Vorspeisensalat</h4><span
+                            class="font-mono text-blue-900 font-bold">4,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="4.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                    <p itemprop="description" class="text-stone-600 text-sm italic">mit hauseigenem Honigdressing</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-3" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Hausgemachtes Baguette im Körbchen</h4>
+                        <span class="font-mono text-blue-900 font-bold">4,00 €</span>
+                    </div>
+                    <meta itemprop="price" content="4.00">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Aioli – p.P.</p>
+                    <p class="text-xs text-stone-400" data-allergens="8,e-1,i,g">(8,e-1,i,g)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-4" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Ein hausgeräuchertes Forellenfilet</h4>
+                        <span class="font-mono text-blue-900 font-bold">9,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="9.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Apfelmeerrettich, dazu
+                        Baguette</p>
+                    <p class="text-xs text-stone-400" data-allergens="e407">(e407)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-5" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4><span
+                            class="font-mono text-blue-900 font-bold">14,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="14.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Aioli, dazu Salat und
+                        Baguette</p>
+                    <p class="text-xs text-stone-400" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-6" data-category="vorspeisen">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei vegane Linsenbratlinge</h4><span
+                            class="font-mono text-blue-900 font-bold">14,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="14.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="suitableForDiet" content="https://schema.org/VeganDiet">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Apfel-Sellerie-Fenchelsalat
+                    </p>
+                    <p class="text-stone-600 text-xs font-semibold mt-1">oder: ein Linsenbratling + ein geräuchertes
+                        Forellenfilet – 15,90 €</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- TAGESEMPFEHLUNG -->
+        <div class="mb-16">
+            <div class="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Tagesempfehlung</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-1" data-category="tagesempfehlung">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Räucherfisch-Trilogie</h4><span
+                            class="font-mono text-red-700 font-bold">16,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="16.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Drei unterschiedliche
+                        Räucherfischfilets, dazu
+                        Baguette und Meerrettich</p>
+                    <p class="text-xs text-stone-400" data-allergens="e407">(e407)</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-2" data-category="tagesempfehlung">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Matjes-Bruschetta</h4><span
+                            class="font-mono text-red-700 font-bold">9,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="9.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1"></p>
+                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-3" data-category="tagesempfehlung">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Zwei gebratene Garnelenspieße</h4><span
+                            class="font-mono text-red-700 font-bold">19,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="19.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit hauseigenem Tomatenpesto
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="h,g,e-1,i">(h,g,e-1,i)</p>
+                </div>
+                <div class="bg-red-50 p-4 rounded-sm shadow-sm border-2 border-red-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="tages-4" data-category="tagesempfehlung">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Dreierlei vom Matjes</h4><span
+                            class="font-mono text-red-700 font-bold">19,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="19.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Sherrymatjes, geräuchertes
+                        Matjesfilet und klassisches
+                        Filet, dazu Bratkartoffeln und Remoulade</p>
+                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZWISCHENGERICHTE -->
+        <div class="mb-16">
+            <div class="bg-green-700 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Zwischengerichte</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-1" data-category="zwischengerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Große Backkartoffel</h4><span
+                            class="font-mono text-blue-900 font-bold">15,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="15.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit hauseigenem Kräuterquark,
+                        dazu wählen Sie:
+                        Räucherlachs oder Matjesfilets oder Geräuchertes Forellenfilet</p>
+                    <p class="text-xs text-stone-400" data-allergens="b,e-1,i">(b,e-1,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-2" data-category="zwischengerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Hauseigener Heringssalat</h4><span
+                            class="font-mono text-blue-900 font-bold">15,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="15.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Salzkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="e-1,i,g">(e-1,i,g)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-3" data-category="zwischengerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilets aus Emden</h4><span
+                            class="font-mono text-blue-900 font-bold">18,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="18.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Speckbohnen, dazu
+                        Bratkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="7,14,k">(7,14,k)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-4" data-category="zwischengerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Matjesfilet „Hausfrauen Art"</h4><span
+                            class="font-mono text-blue-900 font-bold">16,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="16.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit einer Sahnesoße, klassisch
+                        dazu Salzkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="g,8,2">(g,8,2)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-5" data-category="zwischengerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Bratheringsfilets</h4><span
+                            class="font-mono text-blue-900 font-bold">17,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="17.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit frischen Zwiebelringen und
+                        Bratkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="7,14,e">(7,14,e)</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- AUF'S OFFENE MEER -->
+        <div class="mb-16">
+            <div class="bg-stone-800 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Auf's Offene Meer</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-1" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">„Fischbörse" – Fang des Tages</h4><span
+                            class="font-mono text-blue-900 font-bold">19,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="19.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Fischfilet mit heimischem
+                        Gemüse, dazu Bratkartoffeln
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-2" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Harzer Forelle aus Altenbrak</h4><span
+                            class="font-mono text-blue-900 font-bold">23,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="23.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Zwei Filets „Müllerin Art" mit
+                        Salzkartoffeln und
+                        Kräuterbutter ODER mit Kartoffelsalat und Apfelmeerrettich ODER mit Apfel-Zwiebelspalten und
+                        Salzkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="k,g,e,b">(k,g,e,b)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-3" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Glasig gebratenes Lachsfilet</h4><span
+                            class="font-mono text-blue-900 font-bold">26,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="26.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Bandnudeln auf einer
+                        Pilzsoße</p>
+                    <p class="text-xs text-stone-400" data-allergens="k,b,e,i">(k,b,e,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-4" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Schollenfilet „Büsumer Art"</h4><span
+                            class="font-mono text-blue-900 font-bold">25,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="25.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit gebratenen Shrimps,
+                        Speckbohnen und Bratkartoffeln
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="k,h,7,14">(k,h,7,14)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-5" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Oma's handgeriebene Reibekuchen
+                            „Hafenmeister Art"</h4>
+                        <span class="font-mono text-blue-900 font-bold">21,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="21.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Shrimps gebacken,
+                        schottischem Räucherlachs und
+                        Sahnemeerrettich</p>
+                    <p class="text-xs text-stone-400" data-allergens="3,2,h,e-1,k,i,b">(3,2,h,e-1,k,i,b)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="haupt-6" data-category="hauptgerichte">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Quedlinburger „Flotter Dreier"</h4><span
+                            class="font-mono text-blue-900 font-bold">27,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="27.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">verschiedene Fischfilets mit
+                        heimischem Gemüse und
+                        Bratkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- AUF WELLENLÄNGE -->
+        <div class="mb-16">
+            <div class="bg-blue-600 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Auf Wellenlänge</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-sm shadow-sm border-2 border-blue-300" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-1" data-category="premium">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">„Kapitäns Dinner"</h4><span
+                            class="font-mono text-blue-900 font-bold">58,00 €</span>
+                    </div>
+                    <meta itemprop="price" content="58.00">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Rechaud für 2 Personen: 2
+                        Salatschälchen vorweg, 3
+                        gebratene Fischfilets mit Gemüse und 2 hausgemachten Reibekuchen, zum Verdauen 2cl Fischergeist
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-sm shadow-sm border-2 border-blue-300" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-2" data-category="premium">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">„Edelfischplatte"</h4><span
+                            class="font-mono text-blue-900 font-bold">29,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="29.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">Zanderfilet, Lachs und Kabeljau
+                        glasig gebraten mit
+                        saisonalem Gemüse und Bratkartoffeln, dazu Riesengarnele und Grünschalenmuschel</p>
+                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-3" data-category="premium">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Bandnudeln"</h4><span
+                            class="font-mono text-blue-900 font-bold">27,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="27.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">auf der Haut gebraten, in
+                        leichter
+                        Weißwein-Riesengarnele-Sahnesoße, dazu frische Bandnudeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="k,m,h,e,i">(k,m,h,e,i)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="premium-4" data-category="premium">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Zanderfilet „Klassisch"</h4><span
+                            class="font-mono text-blue-900 font-bold">27,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="27.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">knusprig gebraten, dazu
+                        Salzkartoffeln und
+                        Apfelzwiebelspalten</p>
+                    <p class="text-xs text-stone-400" data-allergens="k">(k)</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- FÜR UNSERE FLEISCHESSER -->
+        <div class="mb-16">
+            <div class="bg-orange-700 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Für unsere Fleischesser</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-1" data-category="fleisch">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Quedlinburger „Saure Sülze"</h4><span
+                            class="font-mono text-blue-900 font-bold">16,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="16.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">vom heimischen Fleischer
+                        Oswald, mit Remouladen
+                        soße
+                        und Bratkartoffeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="8,2,b,7,14">(8,2,b,7,14)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-2" data-category="fleisch">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Geräucherte Hähnchenbrust</h4><span
+                            class="font-mono text-blue-900 font-bold">19,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="19.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit einer Weißweinsoße, dazu
+                        Bandnudeln</p>
+                    <p class="text-xs text-stone-400" data-allergens="e,i,h">(e,i,h)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-3" data-category="fleisch">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Frische Bowl (kalt)</h4><span
+                            class="font-mono text-blue-900 font-bold">15,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="15.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">versch. Salate dazu geräucherte
+                        Hähnchenbrust oder
+                        Räucherlachs</p>
+                    <p class="text-xs text-stone-400" data-allergens="e,i,h">(e,i,h)</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- FÜR UNSERE PIRATENKIDS -->
+        <div class="mb-16">
+            <div class="bg-yellow-500 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Für unsere Piratenkids</h3>
+                <p class="text-yellow-100 text-sm mt-1">nur für Kinder!</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-1" data-category="kinder">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Kleines Seelachs filet</h4><span
+                            class="font-mono text-blue-900 font-bold">9,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="9.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic mb-1">mit Salzkartoffeln und Gemüse
+                    </p>
+                    <p class="text-xs text-stone-400" data-allergens="k,7,14">(k,7,14)</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-2" data-category="kinder">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Hausgeriebene Kartoffelpuffer</h4><span
+                            class="font-mono text-blue-900 font-bold">7,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="7.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
+                    <p itemprop="description" class="text-stone-600 text-sm italic">mit Apfelmus</p>
+                </div>
+                <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200" itemscope
+                    itemtype="https://schema.org/MenuItem" data-dish-id="kinder-3" data-category="kinder">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 itemprop="name" class="font-bold text-stone-800">Dessert</h4><span
+                            class="font-mono text-blue-900 font-bold">7,90 €</span>
+                    </div>
+                    <meta itemprop="price" content="7.90">
+                    <meta itemprop="priceCurrency" content="EUR">
+                    <p itemprop="description" class="text-stone-600 text-sm italic">täglich wechselnd – einfach das
+                        nette Personal fragen!</p>
+                </div>
+            </div>
+            <p class="text-xs text-stone-500 italic mt-3">ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG
+            </p>
+        </div>
+
+        <!-- FISCH-BAGUETTES & WRAPS -->
+        <div class="mb-16">
+            <div class="bg-amber-600 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Fisch-Baguettes & Wraps</h3>
+                <p class="text-amber-100 text-sm mt-1">Alle Brötchen & Wraps nur außer Haus · Verpackung: 0,10 €</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-3">
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Backfisch</h4><span
+                            class="font-mono text-red-700 font-bold text-sm">6,00 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Remoulade, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Krebsfleisch (Surimi)</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Aioli, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Bismarckhering</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Matjes aus Emden</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Brathering</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Gurke, Zwiebel, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Seelachsschnitzel</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">4,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Ei, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Eismeershrimps</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Aioli, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Harzer Forellenfilet (geräu.)</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Meerrettich, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Räucherlachs</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Meerrettich, Salat</p>
+                </div>
+                <div class="bg-white p-3 rounded-sm shadow-sm border border-stone-200">
+                    <div class="flex justify-between items-baseline mb-1">
+                        <h4 class="font-bold text-sm text-stone-800">Thunfisch</h4><span
+                            class="font-mono text-blue-900 font-bold text-sm">5,50 €</span>
+                    </div>
+                    <p class="text-stone-600 text-xs">Salat, Ei</p>
+                </div>
+            </div>
+            <div class="mt-6">
+                <h4 class="font-bold text-stone-800 mb-3">Frisch gerollte Wraps – je 5,50 €</h4>
+                <div class="grid md:grid-cols-4 gap-3">
+                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
+                        <p class="text-stone-700 text-sm font-semibold">Krebsfleisch (Surimi), Aioli, Salat</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
+                        <p class="text-stone-700 text-sm font-semibold">Räucherlachs, Ei, Salat</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
+                        <p class="text-stone-700 text-sm font-semibold">Thunfisch, Ei, Weißkrautsalat</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm shadow-sm border border-amber-200">
+                        <p class="text-stone-700 text-sm font-semibold">Eismeershrimps, Salat, Aioli</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GETRÄNKEKARTE -->
+        <div class="mb-16">
+            <div class="bg-gradient-to-r from-purple-700 to-purple-900 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-3xl font-bold">Getränkekarte</h3>
+            </div>
+
+            <!-- FASSBIERE -->
+            <div class="mb-10">
+                <h4 class="font-bold text-xl text-stone-800 mb-4 flex items-center gap-2"><i data-lucide="beer"
+                        class="w-5 h-5 text-amber-600"></i> Fassbiere</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200">
+                        <h5 class="font-bold text-stone-800 mb-2">Störtebeker Pilsener (4,9%)</h5>
+                        <div class="flex justify-between text-sm"><span>0,3l</span><span
+                                class="font-mono font-bold text-blue-900">3,80 €</span></div>
+                        <div class="flex justify-between text-sm"><span>0,5l</span><span
+                                class="font-mono font-bold text-blue-900">5,20 €</span></div>
+                    </div>
+                    <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200">
+                        <h5 class="font-bold text-stone-800 mb-2">Störtebeker Schwarzbier (5,1%)</h5>
+                        <div class="flex justify-between text-sm"><span>0,3l</span><span
+                                class="font-mono font-bold text-blue-900">3,80 €</span></div>
+                        <div class="flex justify-between text-sm"><span>0,5l</span><span
+                                class="font-mono font-bold text-blue-900">5,20 €</span></div>
+                    </div>
+                    <div class="bg-white p-4 rounded-sm shadow-sm border border-stone-200">
+                        <h5 class="font-bold text-stone-800 mb-2">Radler (Pils + Sprite)</h5>
+                        <div class="flex justify-between text-sm"><span>0,3l</span><span
+                                class="font-mono font-bold text-blue-900">3,50 €</span></div>
+                        <div class="flex justify-between text-sm"><span>0,5l</span><span
+                                class="font-mono font-bold text-blue-900">4,90 €</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLASCHENBIERE -->
+            <div class="mb-10">
+                <h4 class="font-bold text-xl text-stone-800 mb-4">Störtebeker Flaschenbiere (0,5l)</h4>
+                <div class="grid md:grid-cols-4 gap-3">
+                    <div class="bg-amber-50 p-3 rounded-sm border border-amber-200">
+                        <div class="flex justify-between mb-1"><span
+                                class="font-semibold text-sm">Atlantik-Ale</span><span
+                                class="font-mono font-bold text-sm">5,00 €</span></div>
+                        <p class="text-xs text-stone-600">Das Bier zum Fisch – stürmisch herb</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm border border-amber-200">
+                        <div class="flex justify-between mb-1"><span
+                                class="font-semibold text-sm">Bernstein-Weizen</span><span
+                                class="font-mono font-bold text-sm">5,90 €</span></div>
+                        <p class="text-xs text-stone-600">Fruchtig-spritzig</p>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm border border-amber-200">
+                        <div class="flex justify-between mb-1"><span class="font-semibold text-sm">„Frei-Bier"
+                                (alk.frei)</span><span class="font-mono font-bold text-sm">5,20 €</span></div>
+                    </div>
+                    <div class="bg-amber-50 p-3 rounded-sm border border-amber-200">
+                        <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Alkolfreies
+                                Hefe-Bernstein</span><span class="font-mono font-bold text-sm">5,90 €</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WEINE -->
+            <div class="mb-10">
+                <h4 class="font-bold text-xl text-stone-800 mb-4 flex items-center gap-2"><i data-lucide="wine"
+                        class="w-5 h-5 text-red-700"></i> Weinkarte</h4>
+
+                <!-- Weißwein -->
+                <div class="mb-6">
+                    <h5 class="font-semibold text-lg text-stone-700 mb-3">Weißwein</h5>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Müller-Thurgau
+                                    (Pfalz)</span></div>
+                            <p class="text-xs text-stone-600 mb-2 italic">feingliedrig, elegant</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">6,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">14,90 €</span></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Riesling
+                                    „Schreiner"</span></div>
+                            <p class="text-xs text-stone-600 mb-2 italic">klare Frucht, Fülle, Opulenz</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">6,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">14,90 €</span></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Haut Marin
+                                    (Frankreich)</span></div>
+                            <p class="text-xs text-stone-600 mb-2 italic">belebend, saftige Pfirsichfrucht</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,90 €</span></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Grüner Veltliner
+                                    (Burgenland)</span></div>
+                            <p class="text-xs text-stone-600 mb-2 italic">frische Apfelnote, feine Würze</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,90 €</span></div>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Vinho Verde DOC
+                                    (Portugal)</span></div>
+                            <p class="text-xs text-stone-600 mb-2 italic">leicht perlend, spritzig, frisch</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,90 €</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feinherb & Rosé -->
+                <div class="mb-6">
+                    <h5 class="font-semibold text-lg text-stone-700 mb-3">Feinherb & Rosé</h5>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-pink-50 p-3 rounded-sm border border-pink-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Müller-Thurgau
+                                    feinherb</span></div>
+                            <p class="text-xs text-stone-600 mb-2">dezente Süße, würzig</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">6,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">14,90 €</span></div>
+                        </div>
+                        <div class="bg-pink-50 p-3 rounded-sm border border-pink-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Vinho Verde
+                                    Rosé</span></div>
+                            <p class="text-xs text-stone-600 mb-2">fruchtig, leicht perlend</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,90 €</span></div>
+                        </div>
+                        <div class="bg-pink-50 p-3 rounded-sm border border-pink-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Spätburgunder
+                                    Rosé</span></div>
+                            <p class="text-xs text-stone-600 mb-2">Aromen von Himbeere</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,90 €</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rotwein -->
+                <div class="mb-6">
+                    <h5 class="font-semibold text-lg text-stone-700 mb-3">Rotwein</h5>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-red-50 p-3 rounded-sm border border-red-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Appassimento
+                                    2018</span></div>
+                            <p class="text-xs text-stone-600 mb-2">intensiv, dichte Aromen</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,00 €</span></div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-sm border border-red-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Primitivo
+                                    2020</span></div>
+                            <p class="text-xs text-stone-600 mb-2">kraftvoll, üppig</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">8,50 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">18,90 €</span></div>
+                        </div>
+                        <div class="bg-red-50 p-3 rounded-sm border border-red-200">
+                            <div class="flex justify-between mb-1"><span class="font-semibold text-sm">Haut Marin
+                                    Rouge</span></div>
+                            <p class="text-xs text-stone-600 mb-2">reife Beeren, füllig</p>
+                            <div class="flex justify-between text-xs"><span>0,2l</span><span
+                                    class="font-mono font-bold">7,90 €</span></div>
+                            <div class="flex justify-between text-xs"><span>0,5l</span><span
+                                    class="font-mono font-bold">17,00 €</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flaschenweine -->
+                <div>
+                    <h5 class="font-semibold text-lg text-stone-700 mb-3">Flaschenweine (0,75l)</h5>
+                    <div class="grid md:grid-cols-3 gap-3">
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between"><span class="font-semibold text-sm">Grauburgunder
+                                    (Baden)</span><span class="font-mono font-bold text-sm">24,90 €</span></div>
+                            <p class="text-xs text-stone-600 italic">saftig, frisch, rund</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between"><span class="font-semibold text-sm">Sauvignon Blanc
+                                    „Rosenkränzel"</span><span class="font-mono font-bold text-sm">28,90 €</span></div>
+                            <p class="text-xs text-stone-600 italic">exotische Frucht</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between"><span class="font-semibold text-sm">Tobias Minges
+                                    Rosé</span><span class="font-mono font-bold text-sm">28,90 €</span></div>
+                            <p class="text-xs text-stone-600 italic">feinherb, mineralisch</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between"><span class="font-semibold text-sm">Vinho Verde
+                                    DOC</span><span class="font-mono font-bold text-sm">23,90 €</span></div>
+                            <p class="text-xs text-stone-600 italic">leicht moussierend</p>
+                        </div>
+                        <div class="bg-white p-3 rounded-sm border border-stone-200">
+                            <div class="flex justify-between"><span class="font-semibold text-sm">Barolo
+                                    2020</span><span class="font-mono font-bold text-sm">40,90 €</span></div>
+                            <p class="text-xs text-stone-600 italic">rote Früchte, langer Abgang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ALKOHOLFREIE GETRÄNKE -->
+            <div class="mb-10">
+                <h4 class="font-bold text-xl text-stone-800 mb-4">Alkoholfreie Getränke</h4>
+                <div class="grid md:grid-cols-4 gap-3">
+                    <div class="bg-blue-50 p-3 rounded-sm border border-blue-200">
+                        <div class="flex justify-between text-sm"><span>Blankenburger Gourmet</span><span
+                                class="font-mono font-bold">2,80 €</span></div>
+                        <p class="text-xs text-stone-600">0,25l</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-sm border border-blue-200">
+                        <div class="flex justify-between text-sm"><span>Mineralwasser</span><span
+                                class="font-mono font-bold">5,50 €</span></div>
+                        <p class="text-xs text-stone-600">0,7l spritzig/still</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-sm border border-blue-200">
+                        <div class="flex justify-between text-sm"><span>Cola/Fanta/Sprite</span><span
+                                class="font-mono font-bold">2,90 €</span></div>
+                        <p class="text-xs text-stone-600">0,2l | 0,4l: 4,90 €</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-sm border border-blue-200">
+                        <div class="flex justify-between text-sm"><span>Tonic/Ginger Ale</span><span
+                                class="font-mono font-bold">3,10 €</span></div>
+                        <p class="text-xs text-stone-600">0,25l Blankenburger</p>
+                    </div>
+                    <div class="bg-blue-50 p-3 rounded-sm border border-blue-200">
+                        <div class="flex justify-between text-sm"><span>Säfte</span><span
+                                class="font-mono font-bold">2,90 €</span></div>
+                        <p class="text-xs text-stone-600">0,2l | 0,4l: 4,90 €</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HEISSGETRÄNKE -->
+            <div class="mb-10">
+                <h4 class="font-bold text-xl text-stone-800 mb-4">Heißgetränke</h4>
+                <div class="grid md:grid-cols-4 gap-3">
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Tasse Kaffee</span><span
+                                class="font-mono">2,90 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Pott Kaffee</span><span
+                                class="font-mono">4,00 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Cappuccino</span><span
+                                class="font-mono">4,70 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Caffè Latte</span><span
+                                class="font-mono">5,50 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Espresso</span><span
+                                class="font-mono">3,00 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Doppelter Espresso</span><span
+                                class="font-mono">4,50 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Heiße Schokolade</span><span
+                                class="font-mono">3,50 €</span></div>
+                    </div>
+                    <div class="bg-orange-50 p-3 rounded-sm border border-orange-200">
+                        <div class="flex justify-between text-sm font-semibold"><span>Teespezialitäten</span><span
+                                class="text-xs italic">siehe Teekarte</span></div>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="text-sm text-stone-600"><strong>Alkoholische Heißgetränke (saisonal, auch to go):</strong>
+                        Jagatee, Heiße Marille, Zwetschge-Zimt – je 4,50 €</p>
+                </div>
+            </div>
+
+            <!-- SPIRITUOSEN -->
+            <div>
+                <h4 class="font-bold text-xl text-stone-800 mb-4">Spirituosen (alle 2cl)</h4>
+                <div class="grid md:grid-cols-4 gap-3">
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Fischergeist
+                                56%</span><span class="font-mono font-bold">3,90 €</span></div>
+                        <p class="text-xs text-red-600 italic">brennend serviert!</p>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Wattenläuper
+                                Küstenkräuter</span><span class="font-mono font-bold">3,80 €</span></div>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Küstennebel
+                                21%</span><span class="font-mono font-bold">3,50 €</span></div>
+                        <p class="text-xs text-stone-600">mild, Anisnote</p>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Prinz Obstbrand
+                                41%</span><span class="font-mono font-bold">5,00 €</span></div>
+                        <p class="text-xs text-stone-600">Himbeere / Birne</p>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Rostocker
+                                Lehment</span><span class="font-mono font-bold">3,90 €</span></div>
+                        <p class="text-xs text-stone-600">Doppelkümmel</p>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Aalborg Akvavit
+                                Dill</span><span class="font-mono font-bold">4,50 €</span></div>
+                    </div>
+                    <div class="bg-stone-100 p-3 rounded-sm border border-stone-300">
+                        <div class="flex justify-between text-sm"><span class="font-semibold">Alpenschnaps
+                                Marille</span><span class="font-mono font-bold">3,90 €</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ALLERGENE UND ZUSATZSTOFFE -->
+        <div id="allergene" class="mb-16">
+            <div class="bg-stone-800 text-white px-6 py-3 mb-6 rounded-sm">
+                <h3 class="font-serif text-2xl font-bold">Allergene & Zusatzstoffe</h3>
+                <p class="text-stone-300 text-sm mt-1">Wichtige Hinweise zu unseren Zutaten</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- ZUSATZSTOFFE -->
+                <div class="bg-yellow-50 p-6 rounded-sm border-2 border-yellow-300">
+                    <h4 class="font-bold text-xl text-stone-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="w-5 h-5 text-yellow-700"></i>
+                        Liste der Zusatzstoffe
+                    </h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">1</span><span>mit
+                                Farbstoff</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">2</span><span>mit
+                                Konservierungsstoffen</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">3</span><span>mit
+                                Antioxidationsmittel</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">4</span><span>mit
+                                Geschmacksverstärker</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">5</span><span>mit
+                                Schwefeldioxid</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">6</span><span>mit
+                                Schwärzungsmittel</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">7</span><span>mit
+                                Phosphat</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">8</span><span>mit
+                                Milcheiweiß</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-yellow-900 min-w-[2rem]">9</span><span>mit
+                                Koffein</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-yellow-900 min-w-[2rem]">10</span><span>Süßungsmittel</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-yellow-900 min-w-[2rem]">11</span><span>Gewachst</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-yellow-900 min-w-[2rem]">12</span><span>Taurin</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-yellow-900 min-w-[2rem]">13</span><span>Gentechnisch
+                                verändert</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-yellow-900 min-w-[2rem]">14</span><span>Pökelsalz</span></div>
+                    </div>
+                </div>
+
+                <!-- ALLERGENE -->
+                <div class="bg-red-50 p-6 rounded-sm border-2 border-red-300">
+                    <h4 class="font-bold text-xl text-stone-800 mb-4 flex items-center gap-2">
+                        <i data-lucide="alert-octagon" class="w-5 h-5 text-red-700"></i>
+                        Liste der Allergene
+                    </h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">a</span><span>Schwefeldioxid und
+                                Sulfite</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-red-900 min-w-[2rem]">b</span><span>Milch /
+                                Laktose</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-red-900 min-w-[2rem]">c</span><span>Nüsse
+                                (Mandeln, Erdnuss, Walnuss)</span></div>
+                        <div class="flex gap-2"><span class="font-bold text-red-900 min-w-[2rem]">d</span><span>Imitat
+                                aus Fischmuskeleiweiß geformt</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">e</span><span>Glutenhaltiges Getreide
+                                (Weizen, Hafer, Roggen, Gerste, Dinkel)</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">f</span><span>Sellerie</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">g</span><span>Senf</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">h</span><span>Krebstiere</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">i</span><span>Eier</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">k</span><span>Fisch</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">m</span><span>Weichtiere</span></div>
+                        <div class="flex gap-2"><span
+                                class="font-bold text-red-900 min-w-[2rem]">o</span><span>Lupinen</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 p-6 bg-blue-50 rounded-sm border border-blue-200">
+                <p class="text-sm text-stone-700">
+                    <i data-lucide="info" class="w-4 h-4 inline mr-2 text-blue-700"></i>
+                    <strong>Hinweis:</strong> Die Kennzeichnungen in Klammern bei unseren Gerichten beziehen sich auf
+                    die oben aufgeführten Allergene und Zusatzstoffe.
+                    Bei Fragen oder Unverträglichkeiten sprechen Sie bitte unser Servicepersonal an – wir beraten Sie
+                    gerne!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="atmosphäre" class="py-12 md:py-24 bg-stone-200">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 space-y-8">
+                <div>
+                    <div
+                        class="inline-block px-3 py-1 bg-white rounded-full text-xs font-bold text-blue-900 mb-4 border border-blue-100">
+                        HISTORISCHES AMBIENTE</div>
+                    <h2 class="text-4xl font-serif font-bold text-stone-800">Klein, aber oho.</h2>
+                </div>
+                <p class="text-lg text-stone-700 leading-relaxed font-serif">
+                    Ein kleines Fachwerkhaus mit großer Seele. Bei uns geht es gemütlich zu – hier sollst du dich
+                    einfach wohlfühlen und das Essen genießen.
+                </p>
+                <div class="flex gap-1 text-yellow-500 bg-white inline-block p-2 rounded-full shadow-sm">
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                </div>
+                <blockquote
+                    class="italic text-stone-600 border-l-4 border-blue-900 pl-6 py-4 bg-white rounded-r-lg shadow-sm">
+                    "Das Essen war so frisch zubereitet. Tolle Kombination aus Salat, Bratkartoffeln und Fisch. Der
+                    Service war herzlich wie bei Freunden."
+                    <footer class="text-sm font-bold mt-2 not-italic text-stone-400">- Auszug Google Bewertung</footer>
+                </blockquote>
+            </div>
+
+            <div class="flex-1 grid grid-cols-2 gap-4 w-full">
+                <div
+                    class="aspect-[3/4] rounded-lg overflow-hidden shadow-xl transform translate-y-8 hover:-translate-y-2 transition-transform duration-500">
+                    <img src="StolzEingang.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80'"
+                        class="w-full h-full object-cover">
+                </div>
+                <div
+                    class="aspect-[3/4] rounded-lg overflow-hidden shadow-xl hover:-translate-y-2 transition-transform duration-500">
+                    <img id="ziel-person" src="JanaAmRotenFass.jpg"
+                        onerror="this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80'"
+                        class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-12 md:py-16 border-t border-stone-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-center mb-6"><i data-lucide="info" class="text-blue-900 w-8 h-8"></i></div>
+            <h2 class="text-3xl font-serif font-bold text-stone-800 mb-10 text-center">Gut zu wissen</h2>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-stone-50 p-6 rounded-lg border border-stone-100 flex flex-col items-center text-center">
+                    <i data-lucide="credit-card" class="text-blue-600 mb-3 w-8 h-8"></i>
+                    <h4 class="font-bold text-stone-800 mb-2">Bezahlung</h4>
+                    <p class="text-stone-600 text-sm">Barzahlung & EC-Karte.<br /><span
+                            class="text-xs text-stone-500">(EC ab 10€ Einkaufswert)</span></p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-lg border border-stone-100 flex flex-col items-center text-center">
+                    <i data-lucide="dog" class="text-blue-600 mb-3 w-8 h-8"></i>
+                    <h4 class="font-bold text-stone-800 mb-2">Hunde</h4>
+                    <p class="text-stone-600 text-sm">Im Außenbereich willkommen!<br /><span
+                            class="text-xs text-stone-500">Im Gebäude leider nicht gestattet.</span></p>
+                </div>
+                <div class="bg-stone-50 p-6 rounded-lg border border-stone-100 flex flex-col items-center text-center">
+                    <i data-lucide="car" class="text-blue-600 mb-3 w-8 h-8"></i>
+                    <h4 class="font-bold text-stone-800 mb-2">Parken</h4>
+                    <p class="text-stone-600 text-sm">Öffentlicher Parkplatz angrenzend.<br /><span
+                            class="text-xs text-stone-500">(Gebührenpflichtig & oft voll)</span></p>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 rounded-lg border border-amber-100 overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="p-8 md:w-1/2 flex flex-col justify-center">
+                        <h4 class="flex items-center gap-2 font-bold text-stone-800 mb-4 text-xl">
+                            <i data-lucide="accessibility" class="text-amber-600 w-6 h-6"></i> Barrierefreiheit
+                        </h4>
+                        <p class="text-stone-700 leading-relaxed mb-4">
+                            Unser historisches Fachwerkhaus ist <strong>leider nicht barrierefrei</strong>.
+                            Es gibt Stufen am Eingang und wir verfügen über kein behindertengerechtes WC.
+                        </p>
+                        <div class="bg-white/60 p-3 rounded text-sm text-stone-600 flex gap-2 items-start">
+                            <i data-lucide="alert-circle" class="shrink-0 text-amber-600 mt-0.5 w-4 h-4"></i>
+                            <p>Wir helfen beim Überwinden der Stufen aber jederzeit gerne.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-stone-200 min-h-[250px] relative">
+                        <img id="ziel-team" src="TeamPause.jpg"
+                            onerror="this.src='https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&q=80'"
+                            class="w-full h-full object-cover absolute inset-0">
+                        onerror="this.src='https://images.unsplash.com/photo-1595846519845-68e298c2edd8?auto=format&fit=crop&q=80'"
+                        class="w-full h-full object-cover absolute inset-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jobs" class="py-12 md:py-24 bg-blue-50 border-y border-blue-100 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-4 mb-12 text-center md:text-left">
+                <div class="bg-red-600 text-white p-3 rounded-lg shadow-lg rotate-3">
+                    <i data-lucide="briefcase" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-stone-800">Wir suchen Verstärkung</h2>
+                    <p class="text-stone-500 font-medium mt-1">Werde Teil der Fischkate-Familie</p>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3 space-y-4" id="job-list">
+                    <div class="job-card bg-white p-6 rounded-lg border-2 border-stone-100 cursor-pointer hover:border-blue-200 transition-all"
+                        data-id="service" data-title="Servicekraft (m/w/d) - Saison ab März" onclick="toggleJob(this)">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-xl text-stone-800">Servicekraft (m/w/d)</h3>
+                                <span
+                                    class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded inline-block mt-1">SAISON
+                                    AB MÄRZ</span>
+                            </div>
+                            <i data-lucide="square" class="checkbox-icon text-stone-300 w-7 h-7"></i>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 border-l-2 border-blue-300 pl-3">Du hast ein Lächeln für
+                            unsere Gäste und liebst die lebendige Atmosphäre? Verstärke unser Team für die Saison 2026!
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 text-sm bg-stone-50 p-3 rounded">
+                            <div class="flex items-center gap-2 text-stone-700 font-bold"><i data-lucide="banknote"
+                                    class="text-green-600 w-4 h-4"></i> n. Qualifikation</div>
+                            <div class="flex items-center gap-2 text-stone-700 font-bold"><i data-lucide="calendar"
+                                    class="text-blue-600 w-4 h-4"></i> Di-Sa, Vollzeit</div>
+                        </div>
+                    </div>
+
+                    <div class="job-card bg-white p-6 rounded-lg border-2 border-stone-100 cursor-pointer hover:border-green-200 transition-all"
+                        data-id="initiativ" data-title="Initiativbewerbung" onclick="toggleJob(this)">
+                        <div class="flex justify-between items-start mb-3">
+                            <div>
+                                <h3 class="font-bold text-xl text-stone-800">Initiativbewerbung</h3>
+                                <span
+                                    class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded inline-block mt-1">JEDERZEIT</span>
+                            </div>
+                            <i data-lucide="square" class="checkbox-icon text-stone-300 w-7 h-7"></i>
+                        </div>
+                        <p class="text-stone-600 text-sm mb-4 border-l-2 border-green-300 pl-3">Du möchtest Teil unseres
+                            Teams werden, aber keine passende Stelle dabei? Schick uns deine Bewerbung – wir freuen uns!
+                        </p>
+                        <div class="text-sm bg-green-50 p-3 rounded text-center">
+                            <div class="text-stone-700 font-bold">💡 Überzeuge uns mit deiner Motivation!</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 mt-8 lg:mt-0">
+                    <div
+                        class="bg-stone-900 text-stone-100 p-8 rounded-lg shadow-2xl lg:sticky lg:top-24 border-t-4 border-red-600">
+                        <h3 class="text-2xl font-bold mb-2 flex items-center gap-2 text-white">
+                            <i data-lucide="send" class="text-red-500 w-6 h-6"></i> Blitzbewerbung
+                        </h3>
+                        <p class="text-stone-400 text-sm mb-8 border-b border-stone-700 pb-4">
+                            Kein Anschreiben. Kein Lebenslauf nötig. Einfach links Jobs auswählen, Daten eingeben und
+                            absenden.
+                        </p>
+
+                        <form id="jobForm" action="https://formspree.io/f/PLACEHOLDER" method="POST"
+                            data-form-type="job-application" data-api-endpoint="/api/jobs.json"
+                            onsubmit="sendApplication(event)" class="space-y-5">
+                            <div id="selected-jobs-display"
+                                class="hidden bg-red-900/30 p-3 rounded text-sm mb-4 border border-red-900/50">
+                                <span class="text-red-400 text-xs uppercase tracking-wide font-bold">Du bewirbst dich
+                                    für:</span>
+                                <ul id="job-list-ul" class="list-disc list-inside mt-1 font-medium text-red-100"></ul>
+                            </div>
+                            <div id="no-job-warning"
+                                class="text-stone-500 text-xs italic mb-4 bg-stone-800 p-2 rounded">
+                                ← Bitte wähle zuerst links einen Job aus.
+                            </div>
+
+                            <input type="hidden" name="ausgewaehlte_jobs" id="hidden-jobs-input"
+                                data-field-purpose="selected-positions">
+
+                            <input required type="text" name="name" id="application-name"
+                                data-field-purpose="applicant-full-name" aria-label="Vollständiger Name"
+                                class="w-full bg-stone-800 border border-stone-700 rounded px-4 py-3 text-white placeholder-stone-600 focus:outline-none focus:border-red-500 focus:bg-stone-800 transition-colors"
+                                placeholder="Dein Name">
+                            <input required type="text" name="kontakt" id="application-contact"
+                                data-field-purpose="applicant-contact" aria-label="Kontaktdaten (Telefon oder Email)"
+                                class="w-full bg-stone-800 border border-stone-700 rounded px-4 py-3 text-white placeholder-stone-600 focus:outline-none focus:border-red-500 focus:bg-stone-800 transition-colors"
+                                placeholder="Telefon oder Email">
+                            <textarea required rows="4" name="nachricht" id="application-message"
+                                data-field-purpose="applicant-introduction" aria-label="Über dich"
+                                class="w-full bg-stone-800 border border-stone-700 rounded px-4 py-3 text-white placeholder-stone-600 focus:outline-none focus:border-red-500 focus:bg-stone-800 transition-colors"
+                                placeholder="Kurz über dich. Erfahrung? Quereinsteiger? Schreib einfach drauf los."></textarea>
+
+                            <button type="submit"
+                                class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded transition-all shadow-lg">
+                                Jetzt bewerben
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <!-- Barrierefreiheit: Eingangsbereich -->
+                <div class="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-600">
+                    <div class="flex items-start gap-4 mb-4">
+                        <i data-lucide="accessibility" class="text-blue-600 w-6 h-6 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="text-xl font-bold text-stone-800 mb-2">Barrierefreier Zugang</h3>
+                            <p class="text-stone-600 text-sm">
+                                Unser Eingangsbereich hat eine Stufe. Wir möchten Menschen mit eingeschränkter
+                                Mobilität
+                                die Möglichkeit geben, selbst einzuschätzen, ob der Zugang machbar ist.
+                                <strong class="text-blue-700">Gerne helfen wir Ihnen beim Einstieg!</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg overflow-hidden shadow-lg">
+                        <img src="Eingang.jpeg" alt="Eingangsbereich mit Stufen - für Barrierefreiheit-Einschätzung"
+                            class="w-full h-auto max-h-[600px] object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="mediathek" class="py-12 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <i data-lucide="image" class="mx-auto text-blue-900 mb-4 w-10 h-10"></i>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-6">Mediathek</h2>
+                <p class="text-stone-600 max-w-xl mx-auto text-lg">Einblicke in unseren Alltag und die Zubereitung.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <img src="BroteFertig.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Frische Brote">
+                <img src="Brotteig2.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Teigverarbeitung">
+                <img src="Kuehltheke2.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Auslage">
+                <img src="Kraeuter1.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Kräuter">
+                <img src="FischSchneiden.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Fischzubereitung">
+                <img src="Fischbroetchen.jpg"
+                    class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 w-full h-40 md:h-64 object-cover"
+                    alt="Leckeres Fischbrötchen">
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="bg-stone-900 text-stone-400 py-12 md:py-24 border-t border-stone-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white text-center mb-12 md:mb-16">Kontakt &
+                Reservierung</h2>
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="space-y-8 flex flex-col justify-between h-full">
+                    <div class="bg-stone-800 p-6 md:p-10 rounded-lg border border-stone-700 shadow-xl">
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-3"><i data-lucide="map-pin"
+                                class="text-blue-400"></i> Adresse & Anfahrt</h3>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Fischkate+Quedlinburg+Lange+Gasse+1"
+                            target="_blank" class="group block hover:opacity-80 transition-opacity">
+                            <p class="text-lg text-stone-300 group-hover:text-white group-hover:underline">Lange Gasse 1
+                            </p>
+                            <p class="mb-4 text-lg text-stone-300 group-hover:text-white">06484 Quedlinburg</p>
+                        </a>
+
+                        <p class="mb-6 text-stone-400 italic"><span id="ziel-titel">Inhaberin</span>: Jana Bachmann</p>
+
+                        <h3 class="text-xl font-bold text-white mb-4 mt-8 flex items-center gap-3"><i
+                                data-lucide="phone" class="text-blue-400"></i> Direkt anrufen</h3>
+                        <a href="tel:039465198488"
+                            class="text-2xl text-white font-mono hover:text-blue-400 transition-colors">03946
+                            5198488</a>
+
+                        <div class="mt-10 pt-8 border-t border-stone-700">
+                            <h4 class="text-sm font-bold text-stone-500 uppercase tracking-widest mb-4">Folge uns auf:
+                            </h4>
+                            <div class="flex gap-4">
+                                <a href="https://www.facebook.com/janabachmannfischkate" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="bg-stone-700 hover:bg-blue-600 p-3 rounded-full text-white transition-colors"><i
+                                        data-lucide="facebook"></i></a>
+                                <a href="https://www.instagram.com/jana.bachmann/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="bg-stone-700 hover:bg-pink-600 p-3 rounded-full text-white transition-colors"><i
+                                        data-lucide="instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-10 rounded-lg shadow-xl relative">
+                    <div
+                        class="absolute top-0 right-0 -mt-3 -mr-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-sm">
+                        Online Anfrage</div>
+                    <h3 class="text-3xl font-serif font-bold text-stone-900 mb-8">Tisch anfragen</h3>
+
+                    <!-- Hinweis zur Reservierungsbestätigung -->
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="info" class="text-blue-600 w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-sm text-stone-800 font-semibold mb-1">Wichtiger Hinweis</p>
+                                <p class="text-sm text-stone-700">Ihre Reservierung wird erst nach unserer Bestätigung
+                                    gültig. Wir melden uns schnellstmöglich bei Ihnen telefonisch oder per E-Mail
+                                    zurück.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="https://formspree.io/f/PLACEHOLDER" method="POST" data-form-type="reservation"
+                        data-api-endpoint="/api/menu.json" class="space-y-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label for="reservation-name"
+                                    class="block text-xs font-bold text-stone-500 uppercase mb-1">Name</label>
+                                <input required type="text" name="name" id="reservation-name"
+                                    data-field-purpose="guest-full-name" aria-label="Vollständiger Name"
+                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
+                            </div>
+                            <div>
+                                <label for="reservation-persons"
+                                    class="block text-xs font-bold text-stone-500 uppercase mb-1">Personen</label>
+                                <input required type="number" name="personen" id="reservation-persons" min="1" max="20"
+                                    placeholder="5" data-field-purpose="party-size" aria-label="Anzahl Personen"
+                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label for="reservation-date"
+                                    class="block text-xs font-bold text-stone-500 uppercase mb-1">Datum</label>
+                                <input required type="date" name="datum" id="reservation-date"
+                                    data-field-purpose="reservation-date" aria-label="Reservierungsdatum"
+                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
+                            </div>
+                            <div>
+                                <label for="reservation-time"
+                                    class="block text-xs font-bold text-stone-500 uppercase mb-1">Uhrzeit</label>
+                                <input required type="time" name="uhrzeit" id="reservation-time" min="10:00" max="21:00"
+                                    data-field-purpose="reservation-time" aria-label="Reservierungsuhrzeit"
+                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
+                            </div>
+                        </div>
+                        <input required type="text" name="kontakt" id="reservation-contact"
+                            placeholder="Telefon / Email" data-field-purpose="guest-contact" aria-label="Kontaktdaten"
+                            class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
+                        <textarea rows="3" name="nachricht" id="reservation-message" placeholder="Nachricht (Optional)"
+                            data-field-purpose="special-requests" aria-label="Besondere Wünsche oder Anmerkungen"
+                            class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3"></textarea>
+                        <button type="submit"
+                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded transition-all flex items-center justify-center gap-2 shadow-lg">
+                            Reservierungsanfrage senden <span class="text-blue-300 text-xs font-normal">(Anfrage)</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-stone-600 py-10 text-center text-xs border-t border-stone-900 pb-24 md:pb-10">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="#" class="hover:text-stone-300" onclick="openImprintModal(); return false;">Impressum</a>
+            <a href="#" class="hover:text-stone-300" onclick="openPrivacyModal(); return false;">Datenschutz</a>
+            <a href="#allergene" class="hover:text-stone-300">Allergene & Zusatzstoffe</a>
+        </div>
+        <div class="mb-4">
+            <p class="font-bold text-stone-500">Inhaberin: Jana Bachmann</p>
+        </div>
+        <p class="mb-2">© 2025 Fischkate Quedlinburg. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <div id="privacy-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+        <div class="relative bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8">
+            <button class="absolute top-4 right-4 text-stone-400 hover:text-stone-800" onclick="closePrivacyModal()">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="text-2xl font-serif font-bold text-stone-900 mb-6">Datenschutzerklärung</h2>
+            <div class="space-y-6 text-sm text-stone-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">1. Verantwortliche Stelle</h3>
+                    <p>Fischkate Quedlinburg<br>
+                        Inhaberin: Jana Bachmann<br>
+                        Lange Gasse 1<br>
+                        06484 Quedlinburg<br>
+                        E-Mail: Fisch-Kate-qlb@gmx.de</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">2. Erfassung und Speicherung personenbezogener
+                        Daten</h3>
+                    <h4 class="font-bold mt-2 text-stone-800">a) Beim Besuch der Website (Technisch notwendige Tools)
+                    </h4>
+                    <p class="mb-2">Beim Aufrufen unserer Website werden durch den auf Ihrem Endgerät zum Einsatz
+                        kommenden Browser automatisch Informationen an den Server unserer Website gesendet
+                        (Server-Logfiles). Um Ihnen unsere Website in diesem Design anzeigen zu können, nutzen wir
+                        technische Dienste von Drittanbietern ("Tools & Plugins"). Dabei wird Ihre IP-Adresse an diese
+                        Anbieter übermittelt, um die Inhalte (Schriftarten, Icons, Styles) zu laden.</p>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>Google Fonts:</strong> Wir nutzen Schriftarten der Google Ireland Limited.</li>
+                        <li><strong>Tailwind CSS (CDN):</strong> Für das Design nut zen wir ein Content Delivery
+                            Network.</li>
+                        <li><strong>Lucide Icons:</strong> Für die grafischen Symbole laden wir Daten von externen
+                            Servern.</li>
+                    </ul>
+
+                    <h4 class="font-bold mt-4 text-stone-800">b) Bei Nutzung der Formulare (Kontakt & Bewerbung)</h4>
+                    <p>Wenn Sie uns über das Bewerbungsformular oder das Reservierungsformular kontaktieren, werden die
+                        von Ihnen eingegebenen Daten (Name, Kontaktdaten, Nachricht) per E-Mail direkt an uns
+                        übermittelt. Diese Daten werden ausschließlich zur Bearbeitung Ihres Anliegens
+                        (Tischreservierung oder Bewerbungsprozess) gespeichert und verarbeitet.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">3. Weitergabe von Daten</h3>
+                    <p>Eine Übermittlung Ihrer persönlichen Daten an Dritte findet nicht statt, außer es ist technisch
+                        notwendig (siehe Punkt 2a) oder gesetzlich vorgeschrieben.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">4. Ihre Rechte</h3>
+                    <p>Sie haben das Recht, jederzeit Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten
+                        zu erhalten. Ebenso haben Sie das Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
+                        Wenden Sie sich dazu bitte an die oben genannte Adresse.</p>
+                </section>
+            </div>
+            <div class="mt-8 pt-4 border-t border-stone-200 flex justify-end">
+                <button onclick="closePrivacyModal()"
+                    class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded transition-colors">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="imprint-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeImprintModal()"></div>
+        <div class="relative bg-white rounded-lg shadow-2xl w-full max-w-2xl max-h-[85vh] overflow-y-auto z-10 p-8">
+            <button class="absolute top-4 right-4 text-stone-400 hover:text-stone-800" onclick="closeImprintModal()">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <h2 class="text-2xl font-serif font-bold text-stone-900 mb-6">Impressum</h2>
+            <div class="space-y-6 text-sm text-stone-700 leading-relaxed">
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">Angaben gemäß § 5 TMG</h3>
+                    <p>Fischkate Quedlinburg<br>
+                        Inhaberin: Jana Bachmann<br>
+                        Lange Gasse 1<br>
+                        06484 Quedlinburg</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">Kontakt</h3>
+                    <p>Telefon: +49 3946 5198488<br>
+                        E-Mail: Fisch-Kate-qlb@gmx.de</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">Aufsichtsbehörde</h3>
+                    <p>Ordnungsamt der Welterbestadt Quedlinburg<br>
+                        Markt 1<br>
+                        06484 Quedlinburg</p>
+                </section>
+            </div>
+            <div class="mt-8 pt-4 border-t border-stone-200 flex justify-end">
+                <button onclick="closeImprintModal()"
+                    class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded transition-colors">Schließen</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-banner"
+        class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 shadow-2xl p-4 z-50 hidden flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-stone-600 text-center sm:text-left">
+            <p><strong>Wir nutzen Cookies & externe Dienste</strong> (wie Google Fonts), um die Website hübsch zu
+                machen. Das ist technisch notwendig.</p>
+        </div>
+        <button onclick="acceptCookies()"
+            class="bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm hover:bg-blue-800 transition-colors whitespace-nowrap">
+            Alles klar
+        </button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // ============================================
+        // WEIHNACHTS-EASTEREGG JAVASCRIPT (DEAKTIVIERT)
+        // Zur nächsten Weihnachtszeit wieder aktivieren
+        // ============================================
+        /*
+        // --- WEIHNACHTSMÜTZE LOGIK (Update: Direct Drag & Mirror) ---
+        const hat = document.getElementById('santa-hat');
+        const hatInner = document.getElementById('hat-inner'); // Fürs Spiegeln
+
+        let isDragging = false;
+        let isMirrored = false;
+        let startX, startY;
+
+        // 1. Wackeln (Nur das innere Bild wackelt)
+        function triggerShake() {
+            if (!isDragging) {
+                hat.classList.add('animate-wiggle');
+                setTimeout(() => {
+                    hat.classList.remove('animate-wiggle');
+                }, 500);
+            }
+            const nextShake = Math.random() * 5000 + 3000;
+            setTimeout(triggerShake, nextShake);
+        }
+        setTimeout(triggerShake, 3000);
+
+        // 2. Spiegeln bei Doppelklick
+        hat.addEventListener('dblclick', function () {
+            isMirrored = !isMirrored;
+            if (isMirrored) {
+                hatInner.style.transform = "scaleX(-1)";
+            } else {
+                hatInner.style.transform = "scaleX(1)";
+            }
+        });
+
+        // 3. Drag & Drop (Direkt, ohne Verzögerung)
+        function startDrag(e) {
+            isDragging = true;
+            hat.style.transition = 'none'; // Wichtig: Animation aus beim Ziehen
+            hat.classList.remove('animate-wiggle');
+
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+            const rect = hat.getBoundingClientRect();
+
+            startX = clientX - rect.left;
+            startY = clientY - rect.top;
+
+            e.preventDefault();
+        }
+
+        function moveDrag(e) {
+            if (!isDragging) return;
+
+            const clientX = e.clientX || e.touches[0].clientX;
+            const clientY = e.clientY || e.touches[0].clientY;
+
+            hat.style.left = (clientX - startX) + 'px';
+            hat.style.top = (clientY - startY) + 'px';
+            hat.style.right = 'auto';
+        }
+
+        // Hilfsfunktion: Berühren sich zwei Elemente?
+        function isOverlapping(el1, el2) {
+            const rect1 = el1.getBoundingClientRect();
+            const rect2 = el2.getBoundingClientRect();
+            return !(rect1.right < rect2.left || rect1.left > rect2.right || rect1.bottom < rect2.top || rect1.top > rect2.bottom);
+        }
+
+        function endDrag(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            hat.style.transition = 'transform 0.2s'; // Hover-Effekt wieder an
+
+            // --- NEU: Treffer-Logik ---
+            const targetImage = document.getElementById('ziel-person');
+            const targetTitle = document.getElementById('ziel-titel');
+
+            if (targetImage && targetTitle) {
+                // Prüfen, ob die Mütze das Bild berührt
+                if (isOverlapping(hat, targetImage)) {
+                    // Titel ändern & rot färben
+                    targetTitle.innerText = "Oberwichtel & Chefin";
+                    targetTitle.classList.add("text-red-500", "font-bold", "not-italic");
+
+                    // Mütze kurz wackeln lassen als Bestätigung
+                    hat.classList.add('animate-wiggle');
+                    setTimeout(() => hat.classList.remove('animate-wiggle'), 1000);
+                }
+            }
+        }
+
+        hat.addEventListener('mousedown', startDrag);
+        hat.addEventListener('touchstart', startDrag, { passive: false });
+        window.addEventListener('mousemove', moveDrag);
+        window.addEventListener('touchmove', moveDrag, { passive: false });
+        window.addEventListener('mouseup', endDrag);
+        window.addEventListener('touchend', endDrag);
+
+        // CSS für Wackeln
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+            @keyframes wiggle {
+                0%, 100% { transform: rotate(-8deg); }
+                50% { transform: rotate(8deg); }
+            }
+            .animate-wiggle {
+                animation: wiggle 0.4s ease-in-out infinite;
+            }
+        `;
+        document.head.appendChild(styleSheet);
+
+        // --- SCHNEE FUNKTION ---
+        function startSnow() {
+            // 1. CSS für schrägen Schnee injizieren (falls noch nicht da)
+            if (!document.getElementById('snow-style')) {
+                const style = document.createElement('style');
+                style.id = 'snow-style';
+                style.textContent = `
+                    .snowflake {
+                        position: fixed;
+                        top: -20px;
+                        color: #fff;
+                        font-size: 24px;
+                        user-select: none;
+                        z-index: 9999;
+                        pointer-events: none;
+                        text-shadow: 0 0 5px #000;
+                        animation-name: fall-angled;
+                        animation-timing-function: linear;
+                    }
+                    @keyframes fall-angled {
+                        to { transform: translate(20vw, 110vh) rotate(360deg); }
+                    }
+        `;
+                document.head.appendChild(style);
+            }
+
+            // 2. Schneeflocken erzeugen
+            // Wir prüfen vorher, ob es schon schneit, damit man es nicht doppelt startet
+            if (document.querySelector('.snowflake')) return;
+
+            const snowInterval = setInterval(() => {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.innerText = '❄';
+
+                // Startposition: Wir starten etwas weiter links (bis -20vw),
+                // damit der Wind sie ins Bild trägt.
+                snowflake.style.left = (Math.random() * 120 - 20) + 'vw';
+
+                snowflake.style.animationDuration = Math.random() * 3 + 3 + 's'; // Etwas langsamer (3-6s) sieht bei schrägem Fall besser aus
+                snowflake.style.opacity = Math.random();
+                snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+
+                document.body.appendChild(snowflake);
+
+                // Aufräumen der Flocke
+                setTimeout(() => { snowflake.remove(); }, 6000);
+            }, 150); // Etwas weniger Flocken pro Sekunde (alle 150ms)
+
+            // Optional: Schnee nach 45 Sekunden stoppen
+            setTimeout(() => { clearInterval(snowInterval); }, 45000);
+
+            // HIER WURDE DER ALERT ENTFERNT
+        }
+
+        // --- AKTUALISIERTE END-DRAG FUNKTION ---
+        function endDrag(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            hat.style.transition = 'transform 0.2s';
+
+            // Ziele definieren
+            const targetJana = document.getElementById('ziel-person');  // Jana am Fass
+            const targetTitel = document.getElementById('ziel-titel');  // Text "Inhaberin"
+            const targetTeam = document.getElementById('ziel-team');   // Team-Foto (Pause)
+
+            // 1. Check: Mütze auf Jana? (Titel ändern)
+            if (targetJana && targetTitel) {
+                if (isOverlapping(hat, targetJana)) {
+                    targetTitel.innerText = "🎅 Oberwichtel & Chefin";
+                    targetTitel.classList.add("text-red-500", "font-bold", "not-italic");
+                    hat.classList.add('animate-wiggle');
+                    setTimeout(() => hat.classList.remove('animate-wiggle'), 1000);
+                    return;
+                }
+            }
+
+            // 2. Check: Mütze auf Team? (Schnee!)
+            if (targetTeam) {
+                if (isOverlapping(hat, targetTeam)) {
+                    startSnow();
+                    hat.classList.add('animate-wiggle');
+                    setTimeout(() => hat.classList.remove('animate-wiggle'), 1000);
+                }
+            }
+        }
+
+        // --- ENDE MÜTZE LOGIK ---
+        */
+        // ============================================
+        // ENDE WEIHNACHTS-EASTEREGG
+        // ============================================
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        let selectedJobs = [];
+        function toggleJob(element) {
+            const jobId = element.getAttribute('data-id');
+            const checkbox = element.querySelector('.checkbox-icon');
+
+            if (selectedJobs.includes(jobId)) {
+                selectedJobs = selectedJobs.filter(id => id !== jobId);
+                element.classList.remove('border-red-500', 'bg-red-50/30');
+                element.classList.add('border-stone-100');
+                checkbox.setAttribute('data-lucide', 'square');
+                checkbox.classList.remove('text-red-600');
+                checkbox.classList.add('text-stone-300');
+            } else {
+                selectedJobs.push(jobId);
+                element.classList.remove('border-stone-100');
+                element.classList.add('border-red-500', 'bg-red-50/30');
+                checkbox.setAttribute('data-lucide', 'check-square');
+                checkbox.classList.remove('text-stone-300');
+                checkbox.classList.add('text-red-600');
+            }
+            lucide.createIcons();
+            updateFormDisplay();
+        }
+
+        function updateFormDisplay() {
+            const display = document.getElementById('selected-jobs-display');
+            const list = document.getElementById('job-list-ul');
+            const warning = document.getElementById('no-job-warning');
+
+            if (selectedJobs.length > 0) {
+                display.classList.remove('hidden');
+                warning.classList.add('hidden');
+                list.innerHTML = '';
+                const titles = selectedJobs.map(id => document.querySelector(`[data - id= "${id}"]`).getAttribute('data-title'));
+                titles.forEach(title => {
+                    const li = document.createElement('li');
+                    li.textContent = title;
+                    list.appendChild(li);
+                });
+            } else {
+                display.classList.add('hidden');
+                warning.classList.remove('hidden');
+            }
+        }
+
+        function sendApplication(e) {
+            const hiddenInput = document.getElementById('hidden-jobs-input');
+            const titles = selectedJobs.map(id => document.querySelector(`[data - id= "${id}"]`).getAttribute('data-title'));
+
+            if (selectedJobs.length === 0) {
+                e.preventDefault();
+                alert("Bitte wähle zuerst links mindestens einen Job aus.");
+                return;
+            }
+            hiddenInput.value = titles.join(", ");
+            e.preventDefault();
+            alert("Simulation: Daten wären jetzt an Formspree gegangen inkl. Jobs: " + hiddenInput.value);
+        }
+
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        }
+        function openImprintModal() {
+            const modal = document.getElementById('imprint-modal');
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+        function closeImprintModal() {
+            const modal = document.getElementById('imprint-modal');
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === "Escape") {
+                closePrivacyModal();
+                closeImprintModal();
+            }
+        });
+
+        function initCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            if (!localStorage.getItem('cookiesAccepted')) {
+                banner.classList.remove('hidden');
+                banner.classList.add('flex');
+            }
+        }
+        function acceptCookies() {
+            const banner = document.getElementById('cookie-banner');
+            localStorage.setItem('cookiesAccepted', 'true');
+            banner.classList.add('hidden');
+            banner.classList.remove('flex');
+        }
+        window.addEventListener('load', initCookieBanner);
+
+        // ===== FISCHGUIDE FILTER SYSTEM =====
+        class FischguideFilter {
+            constructor() {
+                this.activeFilters = {
+                    gaenge: null,
+                    intensitaet: null,
+                    beilagen: [],
+                    portion: null,
+                    extras: []
+                };
+                this.init();
+            }
+
+            init() {
+                console.log('🐟 Fischguide initialisiert');
+
+                // Event Listeners für alle Filter-Inputs
+                document.querySelectorAll('.filter-input').forEach(input => {
+                    input.addEventListener('change', () => {
+                        console.log('Filter geändert:', input.name, input.value, input.checked);
+                        this.applyFilters();
+                    });
+                });
+
+                // Reset Button
+                document.getElementById('reset-filters')?.addEventListener('click', () => {
+                    console.log('🔄 Filter zurückgesetzt');
+                    this.resetFilters();
+                });
+            }
+
+            applyFilters() {
+                // Sammle aktive Filter
+                this.activeFilters.gaenge = document.querySelector('input[name="gaenge"]:checked')?.value || null;
+                this.activeFilters.intensitaet = document.querySelector('input[name="intensitaet"]:checked')?.value || null;
+                this.activeFilters.portion = document.querySelector('input[name="portion"]:checked')?.value || null;
+
+                this.activeFilters.beilagen = Array.from(
+                    document.querySelectorAll('input[name="beilagen"]:checked')
+                ).map(cb => cb.value);
+
+                this.activeFilters.extras = Array.from(
+                    document.querySelectorAll('input[name="extras"]:checked')
+                ).map(cb => cb.value);
+
+                console.log('Aktive Filter:', this.activeFilters);
+
+                // Prüfe ob Filter gesetzt sind
+                const hasFilters = this.activeFilters.gaenge ||
+                    this.activeFilters.intensitaet ||
+                    this.activeFilters.portion ||
+                    this.activeFilters.beilagen.length > 0 ||
+                    this.activeFilters.extras.length > 0;
+
+                if (hasFilters) {
+                    // Generiere Top 5
+                    this.generateTop5();
+                } else {
+                    // Verstecke Top 5 wenn keine Filter
+                    document.getElementById('top5-recommendations').classList.add('hidden');
+                    this.updateResultDisplay();
+                }
+            }
+
+            generateTop5() {
+                console.log('🔍 === GENERATE TOP 5 GESTARTET ===');
+
+                // Hole alle Gerichte
+                const allDishes = document.querySelectorAll('[data-dish-id]');
+                console.log(`📊 Gefundene Gerichte insgesamt: ${allDishes.length} `);
+
+                const scoredDishes = [];
+
+                allDishes.forEach((dish, index) => {
+                    const dishName = dish.querySelector('[itemprop="name"]')?.textContent || 'Unbekannt';
+                    const category = dish.getAttribute('data-category');
+
+                    console.log(`\n-- - Gericht ${index + 1}: ${dishName} (${category})--- `);
+
+                    const score = this.scoreDish(dish);
+
+                    console.log(`   ✅ GESAMT - SCORE: ${score}/15 Punkte`);
+
+                    // Detaillierte Ausgabe für Debugging
+                    if (score > 0) {
+                        console.log(`      📊 Details: Gänge=${this.scoreGaenge(dish)} | Intensität=${this.scoreIntensitaet(dish)} | Beilagen=${this.scoreBeilagen(dish)} | Portion=${this.scorePortion(dish)} | Extras=${this.scoreExtras(dish)}`);
+                    }
+
+                    if (score > 0) {
+                        scoredDishes.push({
+                            element: dish,
+                            score: score,
+                            name: dishName,
+                            price: dish.querySelector('[itemprop="price"]')?.content || 0,
+                            description: dish.querySelector('[itemprop="description"]')?.textContent || ''
+                        });
+                    }
+                });
+
+                console.log(`\n🎯 Gerichte mit Score > 0: ${scoredDishes.length}`);
+
+                // Sortiere nach Score (höchste zuerst)
+                scoredDishes.sort((a, b) => b.score - a.score);
+
+                // Nimm Top 5
+                const top5 = scoredDishes.slice(0, 5);
+
+                console.log('\n🏆 === TOP 5 ERGEBNIS ===');
+                top5.forEach((d, i) => console.log(`${i + 1}. ${d.name}: ${d.score} Punkte`));
+
+                // Zeige Top 5 in UI
+                this.displayTop5(top5);
+
+                // Update Result Display
+                const resultDiv = document.getElementById('filter-results');
+                resultDiv.textContent = `✨ ${top5.length} Top-Empfehlungen gefunden (von ${scoredDishes.length} passenden Gerichten)`;
+                resultDiv.classList.add('text-yellow-300');
+            }
+
+            displayTop5(top5) {
+                const container = document.getElementById('top5-container');
+                const section = document.getElementById('top5-recommendations');
+
+                if (top5.length === 0) {
+                    section.classList.add('hidden');
+                    return;
+                }
+
+                // Leere Container
+                container.innerHTML = '';
+
+                // Füge Top 5 Gerichte hinzu
+                top5.forEach((dish, index) => {
+                    const medal = index === 0 ? '🥇' : index === 1 ? '🥈' : index === 2 ? '🥉' : '⭐';
+                    const scoreBar = Math.round((dish.score / 15) * 100);
+
+                    const card = document.createElement('div');
+                    card.className = 'bg-white p-4 rounded-lg shadow-md border-2 border-blue-200 hover:shadow-lg transition-shadow';
+                    card.innerHTML = `
+                    <div class="flex items-start justify-between mb-2">
+                            <span class="text-2xl">${medal}</span>
+                            <span class="text-xs text-blue-700 font-bold">${dish.score}/15 Punkte</span>
+                        </div>
+                        <h4 class="font-bold text-stone-800 text-lg mb-1">${dish.name}</h4>
+                        <p class="text-stone-600 text-sm mb-2 line-clamp-2">${dish.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-900 font-bold">${dish.price} €</span>
+                            <div class="w-24 bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: ${scoreBar}%"></div>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+
+                // Zeige Section
+                section.classList.remove('hidden');
+            }
+
+
+            updateResultDisplay() {
+                const hasFilters = this.activeFilters.gaenge ||
+                    this.activeFilters.intensitaet ||
+                    this.activeFilters.portion ||
+                    this.activeFilters.beilagen.length > 0 ||
+                    this.activeFilters.extras.length > 0;
+
+                const resultDiv = document.getElementById('filter-results');
+
+                if (hasFilters) {
+                    resultDiv.textContent = '✨ Filter aktiv - Berechnung läuft...';
+                    resultDiv.classList.add('text-yellow-300');
+                } else {
+                    resultDiv.textContent = 'Wähle Filter aus um Empfehlungen zu erhalten';
+                    resultDiv.classList.remove('text-yellow-300');
+                }
+            }
+
+            resetFilters() {
+                // Alle Inputs zurücksetzen
+                document.querySelectorAll('.filter-input').forEach(input => {
+                    input.checked = false;
+                });
+
+                this.activeFilters = {
+                    gaenge: null,
+                    intensitaet: null,
+                    beilagen: [],
+                    portion: null,
+                    extras: []
+                };
+
+                this.updateResultDisplay();
+
+                // Verstecke Top 5
+                document.getElementById('top5-recommendations').classList.add('hidden');
+            }
+
+            // ===== SCORING FUNKTIONEN =====
+
+            scoreDish(dish) {
+                let score = 0;
+
+                // Frage 1: Gänge (0-3 Punkte)
+                const gaengeScore = this.scoreGaenge(dish);
+                score += gaengeScore;
+                console.log(`   1️⃣ Gänge: ${gaengeScore}/3`);
+
+                // Frage 2: Intensität (0-3 Punkte)
+                const intensitaetScore = this.scoreIntensitaet(dish);
+                score += intensitaetScore;
+                console.log(`   2️⃣ Intensität: ${intensitaetScore}/3`);
+
+                // Frage 3: Beilagen (0-3 Punkte)
+                const beilagenScore = this.scoreBeilagen(dish);
+                score += beilagenScore;
+                console.log(`   3️⃣ Beilagen: ${beilagenScore}/3`);
+
+                // Frage 4: Portionsgröße (0-3 Punkte)
+                const portionScore = this.scorePortion(dish);
+                score += portionScore;
+                console.log(`   4️⃣ Portion: ${portionScore}/3`);
+
+                // Frage 5: Besonderes (0-3 Punkte)
+                const extrasScore = this.scoreExtras(dish);
+                score += extrasScore;
+                console.log(`   5️⃣ Extras: ${extrasScore}/3`);
+
+                return score; // Max 15 Punkte
+            }
+
+            scoreGaenge(dish) {
+                if (!this.activeFilters.gaenge) return 0;
+
+                const category = dish.getAttribute('data-category');
+                const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
+
+                if (this.activeFilters.gaenge === 'nur_haupt') {
+                    // Nur Hauptgerichte sollten hohe Punkte bekommen
+                    if (['hauptgerichte', 'premium', 'tagesempfehlung'].includes(category)) return 3;
+                    if (category === 'zwischengerichte') return 2;
+                    // WICHTIG: Vorspeisen passen NICHT zu "nur Hauptgericht" -> 0 Punkte!
+                    return 0;
+                }
+
+                if (this.activeFilters.gaenge === 'nur_vor') {
+                    if (category === 'vorspeisen' && price < 10) return 3;
+                    if (category === 'vorspeisen' && price >= 10) return 2;
+                    if (category === 'zwischengerichte') return 1;
+                    return 0;
+                }
+
+                if (this.activeFilters.gaenge === 'vor_und_haupt') {
+                    if (['vorspeisen', 'hauptgerichte', 'premium'].includes(category)) return 3;
+                    if (category === 'zwischengerichte') return 2;
+                    return 0;
+                }
+
+                return 0;
+            }
+
+            scoreIntensitaet(dish) {
+                if (!this.activeFilters.intensitaet) return 0;
+
+                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
+                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
+                const text = name + ' ' + desc;
+
+                if (this.activeFilters.intensitaet === 'sehr_mild') {
+                    if (text.includes('forelle') || text.includes('seelachs')) return 3;
+                    if (text.includes('glasig')) return 3;
+                    if (text.includes('lachs') || text.includes('zander')) return 2;
+                    if (text.includes('matjes') || text.match(/geräuchert/i) || text.includes('hering')) return 0;
+                    return 1;
+                }
+
+                if (this.activeFilters.intensitaet === 'mittel') {
+                    if (text.includes('lachs') || text.includes('zander') || text.includes('scholle')) return 3;
+                    if (text.includes('kabeljau') || text.includes('thunfisch')) return 3;
+                    if (text.includes('forelle') && !text.match(/geräuchert/i)) return 2;
+                    if (text.includes('garnelen') || text.includes('shrimps')) return 2;
+                    if (text.includes('matjes') || text.includes('hering')) return 1;
+                    if (text.match(/geräuchert/i)) return 0;
+                    return 2;
+                }
+
+                if (this.activeFilters.intensitaet === 'kraeftig') {
+                    if (text.includes('matjes') || text.includes('hering') || text.match(/geräuchert/i)) return 3;
+                    if (text.includes('garnelen') || text.includes('shrimps') || text.match(/räucher/i)) return 3;
+                    if (text.includes('lachs') && !text.match(/geräuchert/i)) return 1;
+                    if (text.includes('forelle') && !text.match(/geräuchert/i)) return 0;
+                    return 1;
+                }
+
+                return 0;
+            }
+
+            scoreBeilagen(dish) {
+                if (this.activeFilters.beilagen.length === 0) return 0;
+
+                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
+                let maxScore = 0;
+
+                this.activeFilters.beilagen.forEach(beilage => {
+                    let score = 0;
+
+                    if (beilage === 'kartoffeln') {
+                        if (desc.includes('bratkartoffel') || desc.includes('salzkartoffel') ||
+                            desc.includes('backkartoffel') || desc.includes('kartoffelsalat')) {
+                            score = 3;
+                        }
+                    } else if (beilage === 'nudeln') {
+                        if (desc.includes('bandnudeln') || desc.includes('nudel')) {
+                            score = 3;
+                        }
+                    } else if (beilage === 'salat') {
+                        if (desc.includes('salat') || desc.includes('gemüse')) {
+                            score = 3;
+                        }
+                    } else if (beilage === 'brot') {
+                        if (desc.includes('baguette') || desc.includes('brot')) {
+                            score = 3;
+                        }
+                    }
+
+                    maxScore = Math.max(maxScore, score);
+                });
+
+                return maxScore;
+            }
+
+            scorePortion(dish) {
+                if (!this.activeFilters.portion) return 0;
+
+                const category = dish.getAttribute('data-category');
+                const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
+                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
+                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
+
+                if (this.activeFilters.portion === 'kinder') {
+                    if (category === 'kinder') return 3;
+                    if (category === 'vorspeisen' && price < 6) return 2;
+                    if (category === 'baguettes') return 2;
+                    return 0;
+                }
+
+                if (this.activeFilters.portion === 'normal') {
+                    if (['hauptgerichte', 'zwischengerichte', 'vorspeisen'].includes(category) && category !== 'kinder') return 3;
+                    if (category === 'tagesempfehlung') return 3;
+                    if (desc.includes('für 2')) return 1;
+                    return 2;
+                }
+
+                if (this.activeFilters.portion === 'senior') {
+                    // Bei Senior: Alle Gerichte bekommen 3 Punkte (da Seniorenrabatt -1,50€)
+                    return 3;
+                }
+
+                if (this.activeFilters.portion === 'teilen') {
+                    if (desc.includes('für 2') || name.includes('dinner')) return 3;
+                    if (price > 25) return 2; // Große Gerichte
+                    if (price > 18) return 1;
+                    return 0;
+                }
+
+                return 0;
+            }
+
+            scoreExtras(dish) {
+                if (this.activeFilters.extras.length === 0) return 0;
+
+                let score = 0;
+                const dietary = dish.querySelector('[itemprop="suitableForDiet"]')?.content || '';
+                const name = dish.querySelector('[itemprop="name"]')?.textContent.toLowerCase() || '';
+                const desc = dish.querySelector('[itemprop="description"]')?.textContent.toLowerCase() || '';
+                const category = dish.getAttribute('data-category');
+
+                this.activeFilters.extras.forEach(extra => {
+                    if (extra === 'vegan') {
+                        if (dietary.includes('Vegan') || name.includes('vegan')) {
+                            score += 3;
+                        } else if (dietary.includes('Vegetarian') || name.includes('vegetarisch')) {
+                            score += 2;
+                        }
+                    }
+
+                    if (extra === 'warm') {
+                        if (category === 'baguettes' || name.includes('salat') || desc.includes('kalt')) {
+                            score += 0;
+                        } else {
+                            score += 2;
+                        }
+                    }
+
+                    if (extra === 'kalt') {
+                        if (category === 'baguettes' || name.includes('salat') || desc.includes('kalt')) {
+                            score += 3;
+                        } else if (desc.match(/matjes|räucher|geräuchert/i)) {
+                            score += 2;
+                        }
+                    }
+                });
+
+                return Math.min(3, score); // Max 3 Punkte
+            }
+        }
+
+        // Initialisiere Fischguide beim Laden
+        document.addEventListener('DOMContentLoaded', () => {
+            new FischguideFilter();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+# Robots.txt für Fischkate Quedlinburg
+# Letzte Aktualisierung: 2026-01-11
+
+# Standard-Suchmaschinen
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# ChatGPT User Agents
+User-agent: ChatGPT-User
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# Anthropic Claude
+User-agent: Claude-Web
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+User-agent: anthropic-ai
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# Bing AI
+User-agent: Bingbot
+Allow: /
+Allow: /api/menu.json
+Allow: /api/jobs.json
+Allow: /api/allergens.json
+
+# Sitemap (optional - kann später hinzugefügt werden)
+# Sitemap: https://www.fischkate-quedlinburg.de/sitemap.xml

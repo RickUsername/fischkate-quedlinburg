@@ -1,0 +1,44 @@
+{
+    "version": "1.0.0",
+    "lastUpdated": "2026-01-11",
+    "allergens": {
+        "a": "Glutenhaltiges Getreide (Weizen, Roggen, Gerste, Hafer, Dinkel, Kamut oder Hybridstämme davon)",
+        "b": "Krebstiere und daraus gewonnene Erzeugnisse",
+        "c": "Eier und daraus gewonnene Erzeugnisse",
+        "d": "Fische und daraus gewonnene Erzeugnisse",
+        "e": "Erdnüsse und daraus gewonnene Erzeugnisse",
+        "f": "Sojabohnen und daraus gewonnene Erzeugnisse",
+        "g": "Milch und daraus gewonnene Erzeugnisse (einschließlich Laktose)",
+        "h": "Schalenfrüchte (Mandeln, Haselnüsse, Walnüsse, Kaschunüsse, Pecannüsse, Paranüsse, Pistazien, Macadamianüsse)",
+        "i": "Sellerie und daraus gewonnene Erzeugnisse",
+        "j": "Senf und daraus gewonnene Erzeugnisse",
+        "k": "Sesamsamen und daraus gewonnene Erzeugnisse",
+        "l": "Schwefeldioxid und Sulphite",
+        "m": "Lupinen und daraus gewonnene Erzeugnisse",
+        "n": "Weichtiere und daraus gewonnene Erzeugnisse",
+        "e-1": "Eier",
+        "e407": "E407 Carrageen"
+    },
+    "additives": {
+        "1": "mit Farbstoff",
+        "2": "mit Konservierungsstoff",
+        "3": "mit Antioxidationsmittel",
+        "4": "mit Geschmacksverstärker",
+        "5": "geschwefelt",
+        "6": "geschwärzt",
+        "7": "gewachst",
+        "8": "mit Phosphat",
+        "9": "mit Süßungsmittel",
+        "10": "enthält eine Phenylalaninquelle",
+        "11": "kann bei übermäßigem Verzehr abführend wirken",
+        "12": "koffeinhaltig",
+        "13": "chininhaltig",
+        "14": "enthält Schwefel"
+    },
+    "dietaryOptions": {
+        "vegetarian": "Vegetarisch - ohne Fleisch und Fisch",
+        "vegan": "Vegan - ohne tierische Produkte",
+        "glutenFree": "Glutenfrei",
+        "lactoseFree": "Laktosefrei"
+    }
+}

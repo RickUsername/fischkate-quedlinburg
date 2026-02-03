@@ -1,0 +1,537 @@
+{
+  "restaurant": {
+    "name": "Fischkate Quedlinburg",
+    "lastUpdated": "2026-01-11",
+    "version": "1.0.0"
+  },
+  "menu": {
+    "categories": [
+      {
+        "id": "vorspeisen",
+        "name": "Vorspeisen",
+        "description": "Frisch vom Markt und unserem einheimischen Bauern",
+        "items": [
+          {
+            "id": "vorspeise-1",
+            "name": "Fischsuppe „A la Bouillabaisse"",
+            "description": "Provenzalische Delikatesse (mit Wermut), dazu Baguette",
+            "price": 9.90,
+            "currency": "EUR",
+            "allergens": ["h", "m", "k", "f", "b", "g", "4", "e1", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "vorspeise-2",
+            "name": "Kleiner Vorspeisensalat",
+            "description": "mit hauseigenem Honigdressing",
+            "price": 4.90,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": ["vegetarian"],
+            "available": true
+          },
+          {
+            "id": "vorspeise-3",
+            "name": "Hausgemachtes Baguette im Körbchen",
+            "description": "mit Aioli – p.P.",
+            "price": 4.00,
+            "currency": "EUR",
+            "allergens": ["8", "e-1", "i", "g"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "vorspeise-4",
+            "name": "Ein hausgeräuchertes Forellenfilet",
+            "description": "mit Apfelmeerrettich, dazu Baguette",
+            "price": 9.90,
+            "currency": "EUR",
+            "allergens": ["e407"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "vorspeise-5",
+            "name": "Zwei gebratene Garnelenspieße",
+            "description": "mit Aioli, dazu Salat und Baguette",
+            "price": 14.90,
+            "currency": "EUR",
+            "allergens": ["h", "g", "e-1", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "vorspeise-6",
+            "name": "Zwei vegane Linsenbratlinge",
+            "description": "mit Apfel-Sellerie-Fenchelsalat",
+            "price": 14.90,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": ["vegan"],
+            "available": true,
+            "note": "oder: ein Linsenbratling + ein geräuchertes Forellenfilet – 15,90 €"
+          }
+        ]
+      },
+      {
+        "id": "tagesempfehlung",
+        "name": "Tagesempfehlung",
+        "items": [
+          {
+            "id": "tages-1",
+            "name": "Räucherfisch-Trilogie",
+            "description": "Drei unterschiedliche Räucherfischfilets, dazu Baguette und Meerrettich",
+            "price": 16.90,
+            "currency": "EUR",
+            "allergens": ["e407"],
+            "dietary": [],
+            "available": true,
+            "featured": true
+          },
+          {
+            "id": "tages-2",
+            "name": "Matjes-Bruschetta",
+            "description": "",
+            "price": 9.90,
+            "currency": "EUR",
+            "allergens": ["b", "e-1", "i"],
+            "dietary": [],
+            "available": true,
+            "featured": true
+          },
+          {
+            "id": "tages-3",
+            "name": "Zwei gebratene Garnelenspieße",
+            "description": "mit hauseigenem Tomatenpesto",
+            "price": 19.90,
+            "currency": "EUR",
+            "allergens": ["h", "g", "e-1", "i"],
+            "dietary": [],
+            "available": true,
+            "featured": true
+          },
+          {
+            "id": "tages-4",
+            "name": "Dreierlei vom Matjes",
+            "description": "Sherrymatjes, geräuchertes Matjesfilet und klassisches Filet, dazu Bratkartoffeln und Remoulade",
+            "price": 19.90,
+            "currency": "EUR",
+            "allergens": ["b", "e-1", "i"],
+            "dietary": [],
+            "available": true,
+            "featured": true
+          }
+        ]
+      },
+      {
+        "id": "zwischengerichte",
+        "name": "Zwischengerichte",
+        "items": [
+          {
+            "id": "zwischen-1",
+            "name": "Große Backkartoffel",
+            "description": "mit hauseigenem Kräuterquark, dazu wählen Sie: Räucherlachs oder Matjesfilets oder Geräuchertes Forellenfilet",
+            "price": 15.90,
+            "currency": "EUR",
+            "allergens": ["b", "e-1", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "zwischen-2",
+            "name": "Hauseigener Heringssalat",
+            "description": "mit Salzkartoffeln",
+            "price": 15.90,
+            "currency": "EUR",
+            "allergens": ["e-1", "i", "g"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "zwischen-3",
+            "name": "Matjesfilets aus Emden",
+            "description": "mit Speckbohnen, dazu Bratkartoffeln",
+            "price": 18.90,
+            "currency": "EUR",
+            "allergens": ["7", "14", "k"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "zwischen-4",
+            "name": "Matjesfilet „Hausfrauen Art"",
+            "description": "mit einer Sahnesoße, klassisch dazu Salzkartoffeln",
+            "price": 16.90,
+            "currency": "EUR",
+            "allergens": ["g", "8", "2"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "zwischen-5",
+            "name": "Bratheringsfilets",
+            "description": "mit frischen Zwiebelringen und Bratkartoffeln",
+            "price": 17.90,
+            "currency": "EUR",
+            "allergens": ["7", "14", "e"],
+            "dietary": [],
+            "available": true
+          }
+        ]
+      },
+      {
+        "id": "hauptgerichte",
+        "name": "Auf's Offene Meer",
+        "description": "Hauptgerichte",
+        "items": [
+          {
+            "id": "haupt-1",
+            "name": "„Fischbörse" – Fang des Tages",
+            "description": "Fischfilet mit heimischem Gemüse, dazu Bratkartoffeln",
+            "price": 19.90,
+            "currency": "EUR",
+            "allergens": ["k", "7", "14"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "haupt-2",
+            "name": "Harzer Forelle aus Altenbrak",
+            "description": "Zwei Filets „Müllerin Art" mit Salzkartoffeln und Kräuterbutter ODER mit Kartoffelsalat und Apfelmeerrettich ODER mit Apfel-Zwiebelspalten und Salzkartoffeln",
+            "price": 23.90,
+            "currency": "EUR",
+            "allergens": ["k", "g", "e", "b"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "haupt-3",
+            "name": "Glasig gebratenes Lachsfilet",
+            "description": "mit Bandnudeln auf einer Pilzsoße",
+            "price": 26.90,
+            "currency": "EUR",
+            "allergens": ["k", "b", "e", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "haupt-4",
+            "name": "Schollenfilet „Büsumer Art"",
+            "description": "mit gebratenen Shrimps, Speckbohnen und Bratkartoffeln",
+            "price": 25.90,
+            "currency": "EUR",
+            "allergens": ["k", "h", "7", "14"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "haupt-5",
+            "name": "Oma's handgeriebene Reibekuchen „Hafenmeister Art"",
+            "description": "mit Shrimps gebacken, schottischem Räucherlachs und Sahnemeerrettich",
+            "price": 21.90,
+            "currency": "EUR",
+            "allergens": ["3", "2", "h", "e-1", "k", "i", "b"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "haupt-6",
+            "name": "Quedlinburger „Flotter Dreier"",
+            "description": "verschiedene Fischfilets mit heimischem Gemüse und Bratkartoffeln",
+            "price": 27.90,
+            "currency": "EUR",
+            "allergens": ["k", "7", "14"],
+            "dietary": [],
+            "available": true
+          }
+        ]
+      },
+      {
+        "id": "premium",
+        "name": "Auf Wellenlänge",
+        "description": "Premium Gerichte",
+        "items": [
+          {
+            "id": "premium-1",
+            "name": "„Kapitäns Dinner"",
+            "description": "Rechaud für 2 Personen: 2 Salatschälchen vorweg, 3 gebratene Fischfilets mit Gemüse und 2 hausgemachten Reibekuchen, zum Verdauen 2cl Fischergeist",
+            "price": 58.00,
+            "currency": "EUR",
+            "allergens": ["k", "m", "h", "e", "i"],
+            "dietary": [],
+            "available": true,
+            "portions": 2
+          },
+          {
+            "id": "premium-2",
+            "name": "„Edelfischplatte"",
+            "description": "Zanderfilet, Lachs und Kabeljau glasig gebraten mit saisonalem Gemüse und Bratkartoffeln, dazu Riesengarnele und Grünschalenmuschel",
+            "price": 29.90,
+            "currency": "EUR",
+            "allergens": ["k", "m", "h", "e", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "premium-3",
+            "name": "Zanderfilet „Bandnudeln"",
+            "description": "auf der Haut gebraten, in leichter Weißwein-Riesengarnele-Sahnesoße, dazu frische Bandnudeln",
+            "price": 27.90,
+            "currency": "EUR",
+            "allergens": ["k", "m", "h", "e", "i"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "premium-4",
+            "name": "Zanderfilet „Klassisch"",
+            "description": "knusprig gebraten, dazu Salzkartoffeln und Apfelzwiebelspalten",
+            "price": 27.90,
+            "currency": "EUR",
+            "allergens": ["k"],
+            "dietary": [],
+            "available": true
+          }
+        ]
+      },
+      {
+        "id": "fleisch",
+        "name": "Für unsere Fleischesser",
+        "items": [
+          {
+            "id": "fleisch-1",
+            "name": "Quedlinburger „Saure Sülze"",
+            "description": "vom heimischen Fleischer Oswald, mit Remouladensoße und Bratkartoffeln",
+            "price": 16.90,
+            "currency": "EUR",
+            "allergens": ["8", "2", "b", "7", "14"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "fleisch-2",
+            "name": "Geräucherte Hähnchenbrust",
+            "description": "mit einer Weißweinsoße, dazu Bandnudeln",
+            "price": 19.90,
+            "currency": "EUR",
+            "allergens": ["e", "i", "h"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "fleisch-3",
+            "name": "Frische Bowl (kalt)",
+            "description": "versch. Salate dazu geräucherte Hähnchenbrust oder Räucherlachs",
+            "price": 15.90,
+            "currency": "EUR",
+            "allergens": ["e", "i", "h"],
+            "dietary": [],
+            "available": true
+          }
+        ]
+      },
+      {
+        "id": "kinder",
+        "name": "Für unsere Piratenkids",
+        "description": "nur für Kinder!",
+        "items": [
+          {
+            "id": "kind-1",
+            "name": "Kleines Seelachsfilet",
+            "description": "mit Salzkartoffeln und Gemüse",
+            "price": 9.90,
+            "currency": "EUR",
+            "allergens": ["k", "7", "14"],
+            "dietary": [],
+            "available": true
+          },
+          {
+            "id": "kind-2",
+            "name": "Hausgeriebene Kartoffelpuffer",
+            "description": "mit Apfelmus",
+            "price": 7.90,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": ["vegetarian"],
+            "available": true
+          },
+          {
+            "id": "kind-3",
+            "name": "Dessert",
+            "description": "täglich wechselnd – einfach das nette Personal fragen!",
+            "price": 7.90,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true
+          }
+        ]
+      },
+      {
+        "id": "baguettes",
+        "name": "Fisch-Baguettes & Wraps",
+        "description": "Alle Brötchen & Wraps nur außer Haus · Verpackung: 0,10 €",
+        "items": [
+          {
+            "id": "bag-1",
+            "name": "Backfisch",
+            "description": "Remoulade, Salat",
+            "price": 6.00,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-2",
+            "name": "Krebsfleisch (Surimi)",
+            "description": "Aioli, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-3",
+            "name": "Bismarckhering",
+            "description": "Gurke, Zwiebel, Salat",
+            "price": 4.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-4",
+            "name": "Matjes aus Emden",
+            "description": "Gurke, Zwiebel, Salat",
+            "price": 4.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-5",
+            "name": "Brathering",
+            "description": "Gurke, Zwiebel, Salat",
+            "price": 4.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-6",
+            "name": "Seelachsschnitzel",
+            "description": "Ei, Salat",
+            "price": 4.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-7",
+            "name": "Eismeershrimps",
+            "description": "Aioli, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-8",
+            "name": "Harzer Forellenfilet (geräuchert)",
+            "description": "Meerrettich, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-9",
+            "name": "Räucherlachs",
+            "description": "Meerrettich, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "bag-10",
+            "name": "Thunfisch",
+            "description": "Salat, Ei",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "wrap-1",
+            "name": "Wrap: Krebsfleisch (Surimi)",
+            "description": "Aioli, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "wrap-2",
+            "name": "Wrap: Räucherlachs",
+            "description": "Ei, Salat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "wrap-3",
+            "name": "Wrap: Thunfisch",
+            "description": "Ei, Weißkrautsalat",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          },
+          {
+            "id": "wrap-4",
+            "name": "Wrap: Eismeershrimps",
+            "description": "Salat, Aioli",
+            "price": 5.50,
+            "currency": "EUR",
+            "allergens": [],
+            "dietary": [],
+            "available": true,
+            "takeawayOnly": true
+          }
+        ]
+      }
+    ]
+  },
+  "notes": {
+    "beilagen": "ALLE BEILAGENÄNDERUNGEN 1,50€ · SENIORENPORTION 1,50€ ABZUG"
+  }
+}
