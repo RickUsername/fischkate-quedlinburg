@@ -248,8 +248,8 @@
         </div>
     </section>
 
-    <!-- Fischguide - Sticky Filter Header -->
-    <section id="fischguide" class="bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl border-b-4 border-blue-700">
+    <!-- Fischguide auskommentiert – per display:none ausgeblendet -->
+    <section id="fischguide" style="display:none" class="bg-gradient-to-r from-blue-900 to-blue-800 shadow-xl border-b-4 border-blue-700">
         <div class="max-w-7xl mx-auto px-4 py-4">
             <!-- Header -->
             <div class="flex items-center justify-between mb-4">
@@ -263,8 +263,8 @@
                 </button>
             </div>
 
-            <!-- Filter Grid: 5 Spalten Desktop, 1 Spalte Mobile -->
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+            <!-- Filter Grid: 3 Spalten Desktop, 1 Spalte Mobile -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
 
                 <!-- Frage 1: Gänge -->
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
@@ -337,54 +337,49 @@
                     </div>
                 </div>
 
-                <!-- Frage 4: Portionsgröße -->
+                <!-- Frage 4: Portionsgröße (auskommentiert – Filter war nichtssagend, Senior gab pauschal 3 Punkte)
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
                     <label class="text-white text-sm font-bold mb-2 block">Portionsgröße?</label>
                     <div class="space-y-1">
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="radio" name="portion" value="kinder" class="filter-input">
                             <span>👶 Kinder</span>
                         </label>
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="radio" name="portion" value="normal" class="filter-input">
                             <span>👤 Normal</span>
                         </label>
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="radio" name="portion" value="senior" class="filter-input">
                             <span>👴 Senior</span>
                         </label>
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="radio" name="portion" value="teilen" class="filter-input">
                             <span>👥 Teilen</span>
                         </label>
                     </div>
                 </div>
+                -->
 
-                <!-- Frage 5: Besonderes -->
+                <!-- Frage 5: Besonderes (auskommentiert – Warm/Kalt-Erkennung war fragil, Vegan zu wenig Gerichte)
                 <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3">
                     <label class="text-white text-sm font-bold mb-2 block">Besonderes?</label>
                     <div class="space-y-1">
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="checkbox" name="extras" value="vegan" class="filter-input">
                             <span>🌱 Vegan</span>
                         </label>
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="checkbox" name="extras" value="warm" class="filter-input">
                             <span>🔥 Warm</span>
                         </label>
-                        <label
-                            class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
+                        <label class="flex items-center gap-1 text-white text-xs cursor-pointer hover:bg-white/10 p-1 rounded transition-colors">
                             <input type="checkbox" name="extras" value="kalt" class="filter-input">
                             <span>❄️ Kalt</span>
                         </label>
                     </div>
                 </div>
+                -->
             </div>
 
             <!-- Ergebnis-Anzeige -->
@@ -394,8 +389,7 @@
         </div>
     </section>
 
-    <!-- Top 5 Empfehlungen -->
-    <section id="top5-recommendations" class="bg-blue-50 py-8 px-4 hidden">
+    <section id="top5-recommendations" style="display:none" class="bg-blue-50 py-8 px-4 hidden">
         <div class="max-w-6xl mx-auto">
             <h3 class="text-2xl font-s
 
@@ -403,7 +397,6 @@ erif font-bold text-stone-800 mb-4 text-center">
                 ✨ Deine Top 5 Empfehlungen
             </h3>
             <div id="top5-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Wird dynamisch gefüllt -->
             </div>
             <div class="text-center mt-4">
                 <a href="#speisekarte" class="text-blue-700 hover:underline text-sm">
@@ -437,7 +430,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-1" data-category="vorspeisen">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Fischsuppe „A la Bouillabaisse"</h4>
@@ -530,7 +523,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="tages-1" data-category="tagesempfehlung">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Räucherfisch-Trilogie</h4>
@@ -600,7 +593,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="zwischen-1" data-category="zwischengerichte">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Große Backkartoffel</h4>
@@ -683,7 +676,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="haupt-1" data-category="hauptgerichte">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">„Fischbörse" – Fang des Tages</h4>
@@ -775,7 +768,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="premium-1" data-category="premium">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">„Kapitäns Dinner"</h4>
@@ -845,7 +838,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="fleisch-1" data-category="fleisch">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Quedlinburger „Saure Sülze"</h4>
@@ -905,7 +898,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                     <div class="space-y-5">
                         <!-- Featured dish -->
-                        <div class="border-l-3 border-blue-800 pl-4 py-2 bg-stone-50/50 rounded-r" itemscope
+                        <div class="py-2" itemscope
                             itemtype="https://schema.org/MenuItem" data-dish-id="kinder-1" data-category="kinder">
                             <div class="flex justify-between items-baseline gap-4">
                                 <h4 itemprop="name" class="font-bold text-stone-800 text-lg">Kleines Seelachs filet</h4>
@@ -928,20 +921,32 @@ erif font-bold text-stone-800 mb-4 text-center">
                             <meta itemprop="suitableForDiet" content="https://schema.org/VegetarianDiet">
                             <p itemprop="description" class="text-stone-600 text-sm italic mt-1">mit Apfelmus</p>
                         </div>
-                        <div class="py-2" itemscope
-                            itemtype="https://schema.org/MenuItem" data-dish-id="kinder-3" data-category="kinder">
-                            <div class="flex justify-between items-baseline gap-4">
-                                <h4 itemprop="name" class="font-bold text-stone-800">Dessert</h4>
-                                <span class="font-mono text-blue-900 font-bold whitespace-nowrap">7,90 €</span>
-                            </div>
-                            <meta itemprop="price" content="7.90">
-                            <meta itemprop="priceCurrency" content="EUR">
-                            <p itemprop="description" class="text-stone-600 text-sm italic mt-1">täglich wechselnd – einfach das nette Personal fragen!</p>
-                        </div>
                     </div>
                     <div class="flex items-start gap-2 mt-6 text-xs text-stone-400 italic">
                         <i data-lucide="info" class="w-3.5 h-3.5 flex-shrink-0 mt-0.5"></i>
                         <span>Alle Beilagenänderungen 1,50 € · Seniorenportion 1,50 € Abzug</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESSERT -->
+        <div class="mb-20 md:mb-28">
+            <div>
+                <div class="border-t-2 border-blue-900 pt-4 mb-6">
+                    <h3 class="font-serif text-2xl md:text-3xl font-bold text-stone-800">Dessert</h3>
+                    <p class="text-stone-500 text-sm mt-1">Der süße Abschluss</p>
+                </div>
+                <div class="space-y-5">
+                    <div class="py-2" itemscope
+                        itemtype="https://schema.org/MenuItem" data-dish-id="dessert-1" data-category="dessert">
+                        <div class="flex justify-between items-baseline gap-4">
+                            <h4 itemprop="name" class="font-bold text-stone-800">Dessert</h4>
+                            <span class="font-mono text-blue-900 font-bold whitespace-nowrap">7,90 €</span>
+                        </div>
+                        <meta itemprop="price" content="7.90">
+                        <meta itemprop="priceCurrency" content="EUR">
+                        <p itemprop="description" class="text-stone-600 text-sm italic mt-1">täglich wechselnd – einfach das nette Personal fragen!</p>
                     </div>
                 </div>
             </div>
@@ -1322,7 +1327,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                             <span class="font-mono text-blue-900 font-bold whitespace-nowrap">23,90 €</span>
                         </div>
                         <!-- Barolo: Featured Item -->
-                        <div class="md:col-span-2 border-l-3 border-blue-800 pl-4 py-3 bg-stone-50/50 rounded-r mt-2">
+                        <div class="md:col-span-2 py-3 mt-2">
                             <div class="flex justify-between items-baseline gap-4">
                                 <div>
                                     <span class="font-serif font-bold text-stone-800 text-lg">Barolo 2020</span>
@@ -1439,7 +1444,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     <p class="text-stone-500 text-sm mt-1">alle 2cl</p>
                 </div>
                 <!-- Featured: Fischergeist -->
-                <div class="border-l-3 border-blue-800 pl-4 py-3 bg-stone-50/50 rounded-r mb-4">
+                <div class="py-3 mb-4">
                     <div class="flex justify-between items-baseline gap-4">
                         <div>
                             <span class="font-serif font-bold text-stone-800 text-lg">Fischergeist 56%</span>
@@ -2399,15 +2404,15 @@ erif font-bold text-stone-800 mb-4 text-center">
 
         document.addEventListener('DOMContentLoaded', initLightbox);
 
-        // ===== FISCHGUIDE FILTER SYSTEM (v2 - Harter Ausschluss) =====
-        class FischguideFilter {
+        // ===== FISCHGUIDE FILTER SYSTEM (auskommentiert) =====
+        /* class FischguideFilter {
             constructor() {
                 this.activeFilters = {
                     gaenge: null,
                     intensitaet: null,
-                    beilagen: [],
-                    portion: null,
-                    extras: []
+                    beilagen: []
+                    // portion: null,  // auskommentiert – Filter entfernt
+                    // extras: []      // auskommentiert – Filter entfernt
                 };
                 this.init();
             }
@@ -2422,12 +2427,12 @@ erif font-bold text-stone-800 mb-4 text-center">
             applyFilters() {
                 this.activeFilters.gaenge = document.querySelector('input[name="gaenge"]:checked')?.value || null;
                 this.activeFilters.intensitaet = document.querySelector('input[name="intensitaet"]:checked')?.value || null;
-                this.activeFilters.portion = document.querySelector('input[name="portion"]:checked')?.value || null;
+                // this.activeFilters.portion = document.querySelector('input[name="portion"]:checked')?.value || null;  // auskommentiert
                 this.activeFilters.beilagen = Array.from(document.querySelectorAll('input[name="beilagen"]:checked')).map(cb => cb.value);
-                this.activeFilters.extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(cb => cb.value);
+                // this.activeFilters.extras = Array.from(document.querySelectorAll('input[name="extras"]:checked')).map(cb => cb.value);  // auskommentiert
 
                 const hasFilters = this.activeFilters.gaenge || this.activeFilters.intensitaet ||
-                    this.activeFilters.portion || this.activeFilters.beilagen.length > 0 || this.activeFilters.extras.length > 0;
+                    this.activeFilters.beilagen.length > 0;
 
                 if (hasFilters) {
                     this.filterAndDisplay();
@@ -2468,6 +2473,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     }
                 }
 
+                /* auskommentiert – Filter entfernt
                 // 2. VEGAN - Harter Ausschluss
                 if (this.activeFilters.extras.includes('vegan')) {
                     const isVegan = dietary.includes('Vegan') || name.includes('vegan');
@@ -2476,13 +2482,11 @@ erif font-bold text-stone-800 mb-4 text-center">
 
                 // 3. WARM/KALT - Harter Ausschluss
                 if (this.activeFilters.extras.includes('warm') && !this.activeFilters.extras.includes('kalt')) {
-                    // Nur warme Gerichte: Kalte Gerichte (Salate, Baguettes, Matjes roh, Räucherfisch kalt) ausschließen
                     const isCold = category === 'baguettes' || name.includes('salat') ||
                         (text.match(/matjes|räucher|geräuchert/i) && !text.match(/gebraten|gegrillt|warm/i));
                     if (isCold) return true;
                 }
                 if (this.activeFilters.extras.includes('kalt') && !this.activeFilters.extras.includes('warm')) {
-                    // Nur kalte Gerichte: Warme Gerichte ausschließen
                     const isCold = category === 'baguettes' || name.includes('salat') ||
                         text.match(/matjes|räucher|geräuchert/i) || text.includes('bruschetta');
                     if (!isCold) return true;
@@ -2492,9 +2496,10 @@ erif font-bold text-stone-800 mb-4 text-center">
                 if (this.activeFilters.portion === 'kinder') {
                     if (category !== 'kinder' && category !== 'baguettes') {
                         const price = parseFloat(dish.querySelector('[itemprop="price"]')?.content || 0);
-                        if (price > 10) return true; // Teure Gerichte nicht für Kinder
+                        if (price > 10) return true;
                     }
                 }
+                */
 
                 return false; // Nicht ausgeschlossen
             }
@@ -2505,8 +2510,8 @@ erif font-bold text-stone-800 mb-4 text-center">
                 let score = 0;
                 score += this.scoreIntensitaet(dish);
                 score += this.scoreBeilagen(dish);
-                score += this.scorePortion(dish);
-                // Gänge und Extras (vegan/warm/kalt) sind harte Filter, kein Score nötig
+                // score += this.scorePortion(dish);  // auskommentiert – Filter entfernt
+                // Gänge sind harter Filter, kein Score nötig
                 // Bonus: Passendes Gericht in seiner Kategorie
                 score += this.scoreCategoryBonus(dish);
                 return score;
@@ -2552,19 +2557,19 @@ erif font-bold text-stone-800 mb-4 text-center">
             scoreBeilagen(dish) {
                 if (this.activeFilters.beilagen.length === 0) return 0;
                 const desc = (dish.querySelector('[itemprop="description"]')?.textContent || '').toLowerCase();
-                let maxScore = 0;
+                let totalScore = 0;
 
+                // Kumulativ: jede passende Beilage gibt Punkte (max 3 pro Beilage)
                 this.activeFilters.beilagen.forEach(beilage => {
-                    let score = 0;
-                    if (beilage === 'kartoffeln' && (desc.includes('bratkartoffel') || desc.includes('salzkartoffel') || desc.includes('backkartoffel') || desc.includes('kartoffelsalat') || desc.includes('rosmarinkartoffel'))) score = 3;
-                    if (beilage === 'nudeln' && (desc.includes('bandnudeln') || desc.includes('nudel'))) score = 3;
-                    if (beilage === 'salat' && (desc.includes('salat') || desc.includes('gemüse'))) score = 3;
-                    if (beilage === 'brot' && (desc.includes('baguette') || desc.includes('brot'))) score = 3;
-                    maxScore = Math.max(maxScore, score);
+                    if (beilage === 'kartoffeln' && (desc.includes('bratkartoffel') || desc.includes('salzkartoffel') || desc.includes('backkartoffel') || desc.includes('kartoffelsalat') || desc.includes('rosmarinkartoffel') || desc.includes('kartoffel'))) totalScore += 3;
+                    if (beilage === 'nudeln' && (desc.includes('bandnudeln') || desc.includes('nudel'))) totalScore += 3;
+                    if (beilage === 'salat' && (desc.includes('salat') || desc.includes('gemüse'))) totalScore += 3;
+                    if (beilage === 'brot' && (desc.includes('baguette') || desc.includes('brot'))) totalScore += 3;
                 });
-                return maxScore;
+                return totalScore;
             }
 
+            /* auskommentiert – Filter entfernt
             scorePortion(dish) {
                 if (!this.activeFilters.portion) return 0;
                 const category = dish.getAttribute('data-category');
@@ -2591,6 +2596,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                 }
                 return 0;
             }
+            */
 
             // ===== FILTER + ANZEIGE =====
 
@@ -2624,6 +2630,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                 this.displayTop5(top5);
 
                 const resultDiv = document.getElementById('filter-results');
+                resultDiv.classList.remove('text-yellow-300');
                 if (passedDishes.length === 0) {
                     resultDiv.textContent = '😕 Keine passenden Gerichte gefunden. Versuche andere Filter.';
                     resultDiv.classList.add('text-yellow-300');
@@ -2668,6 +2675,10 @@ erif font-bold text-stone-800 mb-4 text-center">
                 });
 
                 section.classList.remove('hidden');
+                // Auf Mobile zum Ergebnis scrollen
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
             }
 
             updateResultDisplay() {
@@ -2678,7 +2689,7 @@ erif font-bold text-stone-800 mb-4 text-center">
 
             resetFilters() {
                 document.querySelectorAll('.filter-input').forEach(input => { input.checked = false; });
-                this.activeFilters = { gaenge: null, intensitaet: null, beilagen: [], portion: null, extras: [] };
+                this.activeFilters = { gaenge: null, intensitaet: null, beilagen: [] };
                 this.updateResultDisplay();
                 document.getElementById('top5-recommendations').classList.add('hidden');
                 // Alle Gerichte wieder einblenden
@@ -2693,6 +2704,7 @@ erif font-bold text-stone-800 mb-4 text-center">
         document.addEventListener('DOMContentLoaded', () => {
             new FischguideFilter();
         });
+        */
     </script>
 </body>
 
