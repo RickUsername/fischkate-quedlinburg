@@ -3022,9 +3022,24 @@ erif font-bold text-stone-800 mb-4 text-center">
             // Allergene aus dem data-allergens Attribut des Gerichts lesen
             const allergenContainer = document.getElementById('dish-modal-allergens');
             const dishEl = document.querySelector('[data-dish-id="' + dishId + '"]');
-            const allergenEl = dishEl ? dishEl.querySelector('[data-allergens]') : null;
-            // Falls kein data-allergens auf dem Element selbst, pr\u00fcfe auch Eltern
-            const allergenAttr = allergenEl ? allergenEl.getAttribute('data-allergens') : null;
+            let allergenAttr = null;
+            if (dishEl) {
+                // 1. Innerhalb des Elements suchen
+                const innerEl = dishEl.querySelector('[data-allergens]');
+                if (innerEl) {
+                    allergenAttr = innerEl.getAttribute('data-allergens');
+                }
+                // 2. Falls nicht gefunden: im Eltern-Container suchen (z.B. Wraps)
+                if (!allergenAttr && dishEl.parentElement) {
+                    const parentContainer = dishEl.closest('div.mt-8, div.space-y-3, div.space-y-5, div.mb-12');
+                    if (parentContainer) {
+                        const parentAllergenEl = parentContainer.querySelector('[data-allergens]');
+                        if (parentAllergenEl) {
+                            allergenAttr = parentAllergenEl.getAttribute('data-allergens');
+                        }
+                    }
+                }
+            }
 
             if (allergenAttr) {
                 const codes = allergenAttr.split(',').map(c => c.trim()).filter(c => c);
