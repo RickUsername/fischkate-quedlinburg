@@ -48,13 +48,11 @@ VideoBrotSchneiden.mp4 von 138 MB auf 5,2 MB komprimiert (CRF 18, 1080p, ffmpeg)
 
 ## 🟡 MITTEL - Sollte vor oder kurz nach Launch gemacht werden
 
-### 4. Echtes Favicon erstellen
+### 4. Echtes Favicon erstellen ✅
 
-**Status:** ⚠️ **OFFEN**
+**Status:** ✅ **ERLEDIGT** (05.02.2026)
 
-**Problem:** Zeile ~23: Favicon ist ein Inline-SVG mit Anker-Emoji. Funktioniert, sieht aber unprofessionell aus in Browser-Tabs und Lesezeichen.
-
-**Loesung:** Richtiges `.ico` oder `.png` Favicon erstellen (z.B. aus dem Logo).
+Favicon aus Ankersymbol.png (Inkscape) erstellt. Dunkelblau (#1e3a8a) mit transparentem Hintergrund. Dateien: favicon.ico, favicon-16.png, favicon-32.png, apple-touch-icon.png. HTML-Tags in index.html bereits eingetragen.
 
 ### 5. Datenschutzerklaerung: Formspree erwaehnen
 
@@ -142,6 +140,7 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Cookie-Banner mit "Nur notwendige" / "Alles akzeptieren" Buttons (DSGVO-konform)
 - ✅ Google-Bewertung: Dummy durch echtes Zitat von Matthias E. ersetzt
 - ✅ Video komprimiert: 138 MB -> 5,2 MB (CRF 18, 1080p, ffmpeg)
+- ✅ Favicon erstellt: Anker-Symbol in Dunkelblau mit transparentem Hintergrund (favicon.ico, favicon-16/32.png, apple-touch-icon.png)
 
 ---
 
