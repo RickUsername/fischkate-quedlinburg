@@ -38,13 +38,11 @@
 
 **Loesung:** Tailwind als Build-Step kompilieren oder eine feste, minifizierte CSS-Datei generieren.
 
-### 3. Video viel zu gross (144 MB)
+### 3. Video komprimiert ✅
 
-**Status:** ⚠️ **OFFEN**
+**Status:** ✅ **ERLEDIGT** (05.02.2026)
 
-**Problem:** `VideoBrotSchneiden.mp4` ist 144 MB. Das belastet die Ladezeit extrem.
-
-**Loesung:** Video auf 10-20 MB komprimieren (z.B. mit HandBrake, niedrigere Aufloesung/Bitrate).
+VideoBrotSchneiden.mp4 von 138 MB auf 5,2 MB komprimiert (CRF 18, 1080p, ffmpeg). Original-Backup liegt in Fischkate\VideoBrotSchneiden_BACKUP.mp4.
 
 ---
 
@@ -142,6 +140,8 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Copyright-Jahr auf 2026 aktualisiert
 - ✅ Google Fonts lokal gehostet (fonts/ Ordner, keine Google-Verbindung mehr)
 - ✅ Cookie-Banner mit "Nur notwendige" / "Alles akzeptieren" Buttons (DSGVO-konform)
+- ✅ Google-Bewertung: Dummy durch echtes Zitat von Matthias E. ersetzt
+- ✅ Video komprimiert: 138 MB -> 5,2 MB (CRF 18, 1080p, ffmpeg)
 
 ---
 
