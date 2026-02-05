@@ -1,299 +1,249 @@
 # Fischkate Website - Offene Punkte & TODOs
 
-> **Letztes Update:** 11.01.2026 (Version V.0.0.7)
+> **Letztes Update:** 05.02.2026
+> **Aktuelle Version:** V.0.1.0
 
 ---
 
-## 🔴 KRITISCH - Muss behoben werden
+## 🚨 KRITISCH - Ohne diese Fixes kann die Seite nicht live gehen
 
 ### 1. Formspree Formulare (2x PLACEHOLDER)
 
 **Status:** ⚠️ **OFFEN**
 
-**Zeilen:** ~1300, ~1425
-
-**Problem:** Beide Kontaktformulare nutzen Formspree.io mit PLACEHOLDER als Endpunkt
+**Problem:** Beide Formulare nutzen `action="https://formspree.io/f/PLACEHOLDER"` - Daten gehen ins Nichts.
 
 **Betrifft:**
-- Blitzbewerbung (Jobs-Sektion): `action="https://formspree.io/f/PLACEHOLDER"`
-- Tischreservierung (Kontakt-Sektion): `action="https://formspree.io/f/PLACEHOLDER"`
+- Bewerbungsformular (Zeile ~1742)
+- Reservierungsformular (Zeile ~1890)
 
-**Lösung erforderlich:**
+**Zusatzproblem Bewerbung:** Die `sendApplication()`-Funktion ruft `e.preventDefault()` auf und zeigt nur einen `alert("Simulation: ...")`. Selbst mit korrektem Endpunkt wuerden keine Daten gesendet. Der Alert und das preventDefault muessen entfernt/angepasst werden.
+
+**Loesung:**
 1. Formspree-Account erstellen auf https://formspree.io
-2. Zwei Formulare erstellen:
-   - "Fischkate Bewerbungen"
-   - "Fischkate Tischreservierungen"
-3. Die generierten Form-IDs (z.B. `xyzabc123`) in `index.html` eintragen
-4. Formulare testen
+2. Zwei Formulare anlegen ("Bewerbungen" + "Tischreservierungen")
+3. Die generierten Form-IDs in `index.html` eintragen
+4. Simulation-Alert im JavaScript entfernen
+5. Formulare testen
 
-**Priorität:** 🔥 **VOR LAUNCH KRITISCH**
+---
+
+## 🔴 HOCH - Muss vor Go-Live erledigt werden
+
+### 2. Unsplash-Fallback-Bilder entfernen
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** An 3 Stellen werden bei fehlenden Bildern externe Unsplash-Stock-Fotos geladen. DSGVO-problematisch (Datenverbindung zu externem Server ohne Einwilligung) und unprofessionell.
+
+**Betroffene Stellen:**
+- Zeile ~189: Hero-Video-Fallback
+- Zeile ~1610: StolzEingang.jpg Fallback
+- Zeile ~1616: JanaAmRotenFass.jpg Fallback
+
+**Loesung:** `onerror="this.src='https://images.unsplash.com/...'"` entfernen. Alle lokalen Bilder existieren und funktionieren.
+
+### 3. Fehlendes Bild in Schema.org
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~68: `"image": "IMG-20251124-WA0006.jpg"` - Diese Datei existiert NICHT im Verzeichnis. Google bekommt ein kaputtes Bild fuer Rich Snippets.
+
+**Loesung:** Pfad auf ein vorhandenes Bild aendern (z.B. `TerasseJanaBlumen.jpg`) oder die Datei hinzufuegen.
+
+### 4. Tailwind CSS - Entwicklungsversion ersetzen
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~27: `<script src="https://cdn.tailwindcss.com"></script>` ist die **Dev-CDN-Version**. Laut Tailwind-Docs nicht fuer Produktion geeignet - langsam, laedt unnoetig viel JS, kann sich jederzeit aendern.
+
+**Loesung:** Tailwind als Build-Step kompilieren oder eine feste, minifizierte CSS-Datei generieren.
+
+### 5. Lucide Icons - Version nicht fixiert
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~28: `<script src="https://unpkg.com/lucide@latest"></script>` - `@latest` kann sich jederzeit aendern. Icons koennten ploetzlich anders aussehen oder fehlen.
+
+**Loesung:** Feste Version pinnen, z.B. `lucide@0.263.1`.
+
+### 6. Video viel zu gross (144 MB)
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** `VideoBrotSchneiden.mp4` ist 144 MB. Das belastet die Ladezeit extrem.
+
+**Loesung:** Video auf 10-20 MB komprimieren (z.B. mit HandBrake, niedrigere Aufloesung/Bitrate).
+
+---
+
+## 🟡 MITTEL - Sollte vor oder kurz nach Launch gemacht werden
+
+### 7. Versionsnummer aus Title-Tag entfernen
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~7: `<title>Fischkate Quedlinburg - V.0.1.0</title>` - erscheint so in Google-Suchergebnissen.
+
+**Loesung:** Aendern zu z.B. `Fischkate Quedlinburg - Frischer Fisch im Herzen des Harzes`
+
+### 8. og:image braucht absolute URL
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~19: `<meta property="og:image" content="TerasseJanaBlumen.jpg">` - Social-Media-Vorschaubilder funktionieren nur mit vollstaendiger URL.
+
+**Loesung:** Aendern zu `https://www.fischkate-quedlinburg.de/TerasseJanaBlumen.jpg`
+
+### 9. Echtes Favicon erstellen
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~23: Favicon ist ein Inline-SVG mit Anker-Emoji. Funktioniert, sieht aber unprofessionell aus in Browser-Tabs und Lesezeichen.
+
+**Loesung:** Richtiges `.ico` oder `.png` Favicon erstellen (z.B. aus dem Logo).
+
+### 10. Copyright-Jahr aktualisieren
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~1949: `Copyright 2025` - muss auf 2026 aktualisiert werden.
+
+### 11. Cookie-Banner - Ablehnen-Option fehlt
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Der Banner bietet nur "Alles klar". DSGVO verlangt eine echte Wahlmoeglichkeit, besonders wegen Google Fonts (externe Datenverbindung).
+
+**Loesung:** "Ablehnen"-Button hinzufuegen. Bei Ablehnung: Google Fonts nicht laden (lokal gehostete Fonts als Fallback).
+
+### 12. Google Fonts lokal hosten (DSGVO)
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Zeile ~40: Fonts werden von Google-Servern geladen. Es gab bereits Abmahnwellen wegen Google Fonts und DSGVO.
+
+**Loesung:** Fonts herunterladen und lokal einbinden. Dann entfaellt auch das DSGVO-Problem im Cookie-Banner.
+
+### 13. Datenschutzerklaerung: Formspree erwaehnen
+
+**Status:** ⚠️ **OFFEN**
+
+**Problem:** Wenn Formulardaten ueber Formspree (US-Dienst) laufen, muss das in der Datenschutzerklaerung erwaehnt werden inkl. Rechtsgrundlage.
+
+---
+
+## 🟢 NIEDRIG / OPTIONAL - Nice to have
+
+### 14. Canonical-Tag fuer SEO
+
+**Status:** 🟢 **OPTIONAL**
+
+Kein `<link rel="canonical">` vorhanden. Fuer bessere SEO empfohlen.
+
+### 15. AI-Agent Meta-Tags
+
+**Status:** 🟢 **OPTIONAL**
+
+Zeilen 10-14: Nicht-standardisierte Meta-Tags (`ai-agent-friendly`, etc.). Schaden nicht, bringen aber auch nichts. Koennen bleiben oder entfernt werden.
+
+### 16. Google Bewertungen Integration
+
+**Status:** 🟢 **OPTIONAL**
+
+Google Review Widget einbinden, mehr Bewertungen anzeigen, Link zu Google Business Profil.
+
+### 17. PDF-Speisekarte Integration
+
+**Status:** 🟢 **OPTIONAL**
+
+Download-Link zur PDF-Speisekarte hinzufuegen. Datei vorhanden: `SPEISENKARTE.10.01.2026.pdf`
+
+### 18. Analytics & Tracking
+
+**Status:** 🟢 **OPTIONAL**
+
+Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami) einbinden.
 
 ---
 
 ## ✅ ERLEDIGT
 
-### 2. Email-Adresse ✅ 
-**Status:** ✅ **ERLEDIGT**
+### Speisekarte & Allergene
+- ✅ Vollstaendige Speisekarte mit allen Kategorien
+- ✅ Vollstaendige Getraenkekarte
+- ✅ Allergene & Zusatzstoffe Listen komplett
+- ✅ E407 (Carrageen) bei Forellenfilet und Raeucherfisch-Trilogie ergaenzt (05.02.2026)
+- ✅ E407 in Zusatzstofftabelle und allergenLabels aufgenommen (05.02.2026)
+- ✅ "Kleines Seelachs filet" Tippfehler korrigiert (05.02.2026)
+- ✅ Linsenbratlinge: Falsche Allergen-Anzeige im Modal behoben (05.02.2026)
+- ✅ Allergen-Korrekturen laut Original-Speisekarte (Januar 2026)
 
-Email-Adresse `Fisch-Kate-qlb@gmx.de` wurde in Datenschutz und Impressum eingetragen.
+### Rechtliches & Kontakt
+- ✅ Email-Adresse (Fisch-Kate-qlb@gmx.de) in Datenschutz und Impressum
+- ✅ Impressum vollstaendig (USt-IdNr. nicht erforderlich - geprueft)
+- ✅ Datenschutzerklaerung grundsaetzlich vorhanden
+- ✅ Social Media Links (Facebook + Instagram) eingetragen
+- ✅ Oeffnungszeiten korrekt (Di-Sa 10-21h)
 
-### 3. Umsatzsteuer-ID ✅ 
-**Status:** ✅ **ERLEDIGT**
-
-Sektion wurde entfernt - Restaurant hat keine Umsatzsteuer-ID (rechtlich nicht erforderlich).
-
-### 4. Social Media Links ✅ 
-**Status:** ✅ **ERLEDIGT**
-
-Links wurden eingetragen:
-- Facebook: https://www.facebook.com/janabachmannfischkate
-- Instagram: https://www.instagram.com/jana.bachmann/
-
-### 5. Öffnungszeiten ✅ 
-**Status:** ✅ **ERLEDIGT**
-
-- Di-Sa: 10:00 - 21:00 Uhr
-- Sonntag & Montag: Ruhetag
-
-### 6. Cookie Banner Persistenz ✅ 
-**Status:** ✅ **ERLEDIGT**
-
-Cookie-Banner mit LocalStorage-Persistenz ist implementiert:
-- Banner wird beim ersten Besuch angezeigt
-- "Alles klar" Button speichert Zustimmung
-- Persistenz über Seitenbesuche funktioniert
-
-### 7. Navigation zu Allergenen ✅ 
-**Status:** ✅ **ERLEDIGT**
-
-Link im Footer führt korrekt zur Allergene & Zusatzstoffe Sektion.
-
-### 8. Weihnachts-Easteregg Deaktivierung ✅ 
-**Status:** ✅ **ERLEDIGT** (V.0.0.6)
-
-Weihnachtsmütze, Schnee-Animation und "Oberwichtel"-Textwechsel wurden auskommentiert für Reaktivierung zur nächsten Weihnachtszeit.
-
-### 9. Reservierungsbestätigungs-Hinweis ✅ 
-**Status:** ✅ **ERLEDIGT** (V.0.0.6)
-
-Informativer Hinweis wurde zum Reservierungsformular hinzugefügt: "Ihre Reservierung wird erst nach unserer Bestätigung gültig."
-
----
-
-## 🟡 WICHTIG - Sollte ergänzt werden
-
-### 10. KI-Agenten-Optimierung 🤖
-
-**Status:** 🟡 **GEPLANT**
-
-**Ziel:** Website für KI-Agenten lesbar und interaktiv machen
-
-**Use Cases:**
-- KI-Agenten können automatisch Tische reservieren
-- KI-Agenten können Bewerbungen einreichen
-- KI-Agenten können die Speisekarte auslesen und analysieren
-- Persönliche KI-Assistenten können Gäste bei der Bestellung beraten
-
-**Zu implementieren:**
-- [ ] **Structured Data erweitern**
-  - Schema.org Menu markup für Speisekarte
-  - JSON-LD für alle Gerichte mit Preisen, Allergenen, Zutaten
-  - OpeningHours schema bereits vorhanden ✅
-  
-- [ ] **API-ähnliche Zugänglichkeit**
-  - Semantic HTML mit klaren `data-*` Attributen
-  - ARIA-Labels für bessere Maschinenlesbarkeit
-  - Formulare mit eindeutigen IDs und Labels
-  
-- [ ] **robots.txt & AI-freundliche Meta-Tags**
-  - AI-Agent friendly meta tags
-  - Klare Seitenstruktur mit heading hierarchy
-  
-- [ ] **Optionale JSON API**
-  - Endpoint für Speisekarte als JSON
-  - Endpoint für verfügbare Zeiten (Reservierung)
-  - Job-Angebote als strukturierte Daten
-
-**Technische Umsetzung:**
-```html
-<!-- Beispiel: Speisekarte für KI lesbar -->
-<article itemscope itemtype="https://schema.org/MenuItem" data-dish-id="vorspeise-1">
-  <h4 itemprop="name">Fischsuppe „A la Bouillabaisse"</h4>
-  <meta itemprop="price" content="9.90">
-  <meta itemprop="priceCurrency" content="EUR">
-  <p itemprop="description">Provenzalische Delikatesse (mit Wermut), dazu Baguette</p>
-  <meta itemprop="allergens" content="h,m,k,f,b,g,4,e1,i">
-</article>
-```
-
-**Vorteile:**
-- Bessere Auffindbarkeit in KI-Suchmaschinen
-- Kunden können ihren persönlichen KI-Assistenten nutzen
-- Automatisierte Reservierungen und Bewerbungen
-- SEO-Optimierung als Nebeneffekt
-
-**Priorität:** 🟡 Wichtig für Zukunftssicherheit
-
----
-
-### 11. Google Bewertungen Integration
-
-**Status:** 🟡 **OPTIONAL VERBESSERUNG**
-
-**Aktuell:**
-```html
-<blockquote>
-    "Das Essen war so frisch zubereitet..."
-    <footer>- Auszug Google Bewertung</footer>
-</blockquote>
-```
-
-**Mögliche Verbesserungen:**
-- [ ] Google Review Widget einbinden
-- [ ] Mehr Bewertungen anzeigen (Carousel)
-- [ ] Link zu Google Business Profil hinzufügen
-- [ ] Bewertungs-Sterne animiert darstellen
-- [ ] Google Review API nutzen für aktuelle Bewertungen
-
-**Priorität:** 🟡 Nach Launch
-
----
-
-## 🟢 OPTIONAL - Nice to have
-
-### 12. PDF-Speisekarte Integration
-
-**Status:** 🟢 **IDEE**
-
-**Vorschlag:**
-- [ ] Download-Link zur PDF-Speisekarte hinzufügen
-- [ ] System zum automatischen Parsen der PDF vorbereiten
-- [ ] Oder: Online-Speisekarte als Lead, PDF als Backup
-
-**Datei vorhanden:** `SPEISENKARTE.10.01.2026.pdf`
-
-**Priorität:** 🟢 Nice to have
-
-### 13. Bilder - Fallback URLs überprüfen
-
-**Status:** 🟢 **ÜBERPRÜFEN**
-
-**Problem:** Mehrere Bilder haben Unsplash-Fallback-URLs per `onerror`
-
-**Zu prüfen:**
-- [ ] Sind alle lokalen Bilder vorhanden?
-- [ ] Funktionieren alle Bildpfade?
-- [ ] Fallbacks testen (Bild temporär umbenennen)
-
-**Betroffene Bereiche:**
-- Video-Fallback im Hero-Banner
-- Team-Bilder
-- Galerie-Bilder
-
-**Priorität:** 🟢 Nach Launch
-
-### 14. Analytics & Tracking
-
-**Status:** 🟢 **NOCH NICHT IMPLEMENTIERT**
-
-**Vorschlag:**
-- [ ] Google Analytics einbinden (DSGVO-konform)
-- [ ] Cookie-Banner um Analytics erweitern
-- [ ] Tracking von Reservierungsanfragen
-- [ ] Conversion-Tracking für Bewerbungen
-
-**Priorität:** 🟢 Optional, nach Launch
-
----
-
-## ✅ BEREITS VOLLSTÄNDIG IMPLEMENTIERT
-
-Die folgenden Features sind komplett fertig:
-
-- ✅ Vollständige Speisekarte mit allen Kategorien (Vorspeisen, Hauptgerichte, Fischbaguettes, etc.)
-- ✅ Vollständige Getränkekarte (Biere, Weine, Rosé, etc.)
-- ✅ Allergene & Zusatzstoffe Listen
-- ✅ Datenschutzerklärung (vollständig, rechtlich korrekt)
-- ✅ Impressum (vollständig, rechtlich korrekt)
-- ✅ Job-Anzeigen (4 Stellen: Service, Koch, Thekenkraft, Spülkraft)
-- ✅ Blitzbewerbung-System
-- ✅ Reservierungsformular mit Bestätigungshinweis
+### Technik & Design
 - ✅ Responsive Design (Mobile, Tablet, Desktop)
 - ✅ Mobile Navigation
-- ✅ Mediathek mit Bildern
+- ✅ Mediathek mit Lightbox
 - ✅ Videos eingebunden
-- ✅ SEO-optimiert (Meta-Tags, Structured Data)
+- ✅ SEO-Grundlagen (Meta-Tags, Structured Data)
+- ✅ Cookie-Banner mit LocalStorage-Persistenz
+- ✅ Navigation zu Allergenen im Footer
+- ✅ Weihnachts-Easteregg deaktiviert (fuer naechste Saison vorbereitet)
+- ✅ Reservierungshinweis ("wird erst nach Bestaetigung gueltig")
+- ✅ Allergene werden im Dish-Info-Modal korrekt angezeigt
+- ✅ Google Maps nur verlinkt, nicht eingebettet (DSGVO-konform)
+- ✅ Kein Tracking/Analytics eingebunden (DSGVO-freundlich)
 
 ---
 
-## 📋 Prioritäten-Übersicht
+## 📋 Empfohlene Reihenfolge fuer die Umsetzung
 
-### 🔥 Vor Website-Launch (KRITISCH)
-1. **Formspree Setup** - MUST HAVE
-   - Account erstellen
-   - 2 Formulare anlegen
-   - IDs eintragen und testen
+### Phase 1: Kritische Fixes (VOR Launch)
+1. Formspree einrichten (#1)
+2. Unsplash-Fallbacks entfernen (#2)
+3. Schema.org-Bild fixen (#3)
+4. Video komprimieren (#6)
 
-### 🟡 Nach Launch (Bei Gelegenheit)
-2. **KI-Agenten-Optimierung** - Zukunftssicherheit
-3. **Google Bewertungen** verbessern
-4. **Bilder-Fallbacks** überprüfen
-5. **PDF-Speisekarte** System überlegen
+### Phase 2: Technische Haertung (VOR Launch)
+5. Tailwind fuer Produktion kompilieren (#4)
+6. Lucide Version fixieren (#5)
+7. Google Fonts lokal hosten (#12)
+8. Cookie-Banner mit Ablehnen-Option (#11)
+9. Datenschutz um Formspree ergaenzen (#13)
 
-### 🟢 Langfristig (Optional)
-6. **Analytics** einrichten
-7. **SEO** weiter optimieren
-8. **Performance** messen und verbessern
+### Phase 3: Feinschliff (VOR oder kurz NACH Launch)
+10. Title-Tag anpassen (#7)
+11. og:image absolute URL (#8)
+12. Favicon erstellen (#9)
+13. Copyright-Jahr (#10)
+14. Canonical-Tag (#14)
 
----
-
-## 🔧 Nächste Schritte
-
-### Schritt 1: Formspree Setup ⚡ JETZT
-1. Auf https://formspree.io registrieren
-2. Zwei Formulare anlegen:
-   - Formular 1: "Fischkate Bewerbungen"
-   - Formular 2: "Fischkate Tischreservierungen"
-3. Form-IDs kopieren (Format: `xyzabc123`)
-4. In `index.html` nach `formspree.io/f/PLACEHOLDER` suchen
-5. PLACEHOLDER durch echte IDs ersetzen
-6. Website lokal öffnen und beide Formulare testen
-
-### Schritt 2: Final-Test 🧪
-- [ ] Alle Links testen (Navigation, Social Media, externe Links)
-- [ ] Beide Formulare testen (Bewerbung & Reservierung)
-- [ ] Mobile Ansicht auf echtem Gerät prüfen
-- [ ] Ladezeiten messen
-- [ ] Browser-Kompatibilität testen
-
-### Schritt 3: Launch 🚀
-- [ ] Auf Webserver hochladen
-- [ ] Domain konfigurieren
-- [ ] SSL-Zertifikat prüfen
-- [ ] Google Search Console einrichten
-- [ ] Backups einrichten
+### Phase 4: Launch
+- Auf Webserver hochladen
+- Domain konfigurieren
+- SSL-Zertifikat pruefen
+- Alle Formulare live testen
+- Google Search Console einrichten
 
 ---
 
-## 📊 Versions-Status
+## 📊 Versions-Historie
 
-| Version | Datum | Status | Änderungen |
-|---------|-------|--------|------------|
-| V.0.0.7 | 11.01.2026 | ✅ Aktuell | Fischguide JavaScript-Fehler behoben |
-| V.0.0.6 | 11.01.2026 | ✅ | Reservierungshinweis + Weihnachts-Easteregg deaktiviert |
-| V.0.0.5 | 10.01.2026 | ✅ | Social Media, Email, Öffnungszeiten finalisiert |
-| V.0.0.4 | - | ✅ | Rechtliche Texte wiederhergestellt |
-| V.0.0.3 | - | ✅ | Basis-Website |
-
----
-
-## 📞 Support & Kontakt
-
-Bei Fragen zur Website:
-- **Inhaberin:** Jana Bachmann
-- **Email:** Fisch-Kate-qlb@gmx.de
-- **Telefon:** 03946 5198488
+| Version | Datum | Aenderungen |
+|---------|-------|-------------|
+| V.0.1.0 | 05.02.2026 | E407 ergaenzt, Seelachsfilet-Typo, Linsenbratlinge-Allergene gefixt |
+| V.0.0.7 | 11.01.2026 | Allergen-Korrekturen laut Original-Speisekarte |
+| V.0.0.6 | 11.01.2026 | Reservierungshinweis + Weihnachts-Easteregg deaktiviert |
+| V.0.0.5 | 10.01.2026 | Social Media, Email, Oeffnungszeiten finalisiert |
+| V.0.0.4 | - | Rechtliche Texte wiederhergestellt |
+| V.0.0.3 | - | Basis-Website |
 
 ---
 
-**Zuletzt aktualisiert:** 11.01.2026, 19:58 Uhr
+**Zuletzt aktualisiert:** 05.02.2026
