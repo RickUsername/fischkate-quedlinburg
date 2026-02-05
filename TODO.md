@@ -30,28 +30,7 @@
 
 ## 🔴 HOCH - Muss vor Go-Live erledigt werden
 
-### 2. Unsplash-Fallback-Bilder entfernen
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** An 3 Stellen werden bei fehlenden Bildern externe Unsplash-Stock-Fotos geladen. DSGVO-problematisch (Datenverbindung zu externem Server ohne Einwilligung) und unprofessionell.
-
-**Betroffene Stellen:**
-- Zeile ~189: Hero-Video-Fallback
-- Zeile ~1610: StolzEingang.jpg Fallback
-- Zeile ~1616: JanaAmRotenFass.jpg Fallback
-
-**Loesung:** `onerror="this.src='https://images.unsplash.com/...'"` entfernen. Alle lokalen Bilder existieren und funktionieren.
-
-### 3. Fehlendes Bild in Schema.org
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~68: `"image": "IMG-20251124-WA0006.jpg"` - Diese Datei existiert NICHT im Verzeichnis. Google bekommt ein kaputtes Bild fuer Rich Snippets.
-
-**Loesung:** Pfad auf ein vorhandenes Bild aendern (z.B. `TerasseJanaBlumen.jpg`) oder die Datei hinzufuegen.
-
-### 4. Tailwind CSS - Entwicklungsversion ersetzen
+### 2. Tailwind CSS - Entwicklungsversion ersetzen
 
 **Status:** ⚠️ **OFFEN**
 
@@ -59,15 +38,7 @@
 
 **Loesung:** Tailwind als Build-Step kompilieren oder eine feste, minifizierte CSS-Datei generieren.
 
-### 5. Lucide Icons - Version nicht fixiert
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~28: `<script src="https://unpkg.com/lucide@latest"></script>` - `@latest` kann sich jederzeit aendern. Icons koennten ploetzlich anders aussehen oder fehlen.
-
-**Loesung:** Feste Version pinnen, z.B. `lucide@0.263.1`.
-
-### 6. Video viel zu gross (144 MB)
+### 3. Video viel zu gross (144 MB)
 
 **Status:** ⚠️ **OFFEN**
 
@@ -79,23 +50,7 @@
 
 ## 🟡 MITTEL - Sollte vor oder kurz nach Launch gemacht werden
 
-### 7. Versionsnummer aus Title-Tag entfernen
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~7: `<title>Fischkate Quedlinburg - V.0.1.0</title>` - erscheint so in Google-Suchergebnissen.
-
-**Loesung:** Aendern zu z.B. `Fischkate Quedlinburg - Frischer Fisch im Herzen des Harzes`
-
-### 8. og:image braucht absolute URL
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~19: `<meta property="og:image" content="TerasseJanaBlumen.jpg">` - Social-Media-Vorschaubilder funktionieren nur mit vollstaendiger URL.
-
-**Loesung:** Aendern zu `https://www.fischkate-quedlinburg.de/TerasseJanaBlumen.jpg`
-
-### 9. Echtes Favicon erstellen
+### 4. Echtes Favicon erstellen
 
 **Status:** ⚠️ **OFFEN**
 
@@ -103,29 +58,7 @@
 
 **Loesung:** Richtiges `.ico` oder `.png` Favicon erstellen (z.B. aus dem Logo).
 
-### 10. Copyright-Jahr aktualisieren
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~1949: `Copyright 2025` - muss auf 2026 aktualisiert werden.
-
-### 11. Cookie-Banner - Ablehnen-Option fehlt
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Der Banner bietet nur "Alles klar". DSGVO verlangt eine echte Wahlmoeglichkeit, besonders wegen Google Fonts (externe Datenverbindung).
-
-**Loesung:** "Ablehnen"-Button hinzufuegen. Bei Ablehnung: Google Fonts nicht laden (lokal gehostete Fonts als Fallback).
-
-### 12. Google Fonts lokal hosten (DSGVO)
-
-**Status:** ⚠️ **OFFEN**
-
-**Problem:** Zeile ~40: Fonts werden von Google-Servern geladen. Es gab bereits Abmahnwellen wegen Google Fonts und DSGVO.
-
-**Loesung:** Fonts herunterladen und lokal einbinden. Dann entfaellt auch das DSGVO-Problem im Cookie-Banner.
-
-### 13. Datenschutzerklaerung: Formspree erwaehnen
+### 5. Datenschutzerklaerung: Formspree erwaehnen
 
 **Status:** ⚠️ **OFFEN**
 
@@ -200,31 +133,30 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Google Maps nur verlinkt, nicht eingebettet (DSGVO-konform)
 - ✅ Kein Tracking/Analytics eingebunden (DSGVO-freundlich)
 
+### Go-Live Fixes (05.02.2026)
+- ✅ Unsplash-Fallback-Bilder entfernt (3 Stellen) - keine externen Bildverbindungen mehr
+- ✅ Schema.org-Bild gefixt (IMG-20251124-WA0006.jpg -> TerasseJanaBlumen.jpg)
+- ✅ Lucide Icons auf feste Version 0.563.0 gepinnt
+- ✅ Versionsnummer aus Title-Tag entfernt
+- ✅ og:image auf absolute URL gesetzt
+- ✅ Copyright-Jahr auf 2026 aktualisiert
+- ✅ Google Fonts lokal gehostet (fonts/ Ordner, keine Google-Verbindung mehr)
+- ✅ Cookie-Banner mit "Nur notwendige" / "Alles akzeptieren" Buttons (DSGVO-konform)
+
 ---
 
 ## 📋 Empfohlene Reihenfolge fuer die Umsetzung
 
 ### Phase 1: Kritische Fixes (VOR Launch)
 1. Formspree einrichten (#1)
-2. Unsplash-Fallbacks entfernen (#2)
-3. Schema.org-Bild fixen (#3)
-4. Video komprimieren (#6)
+2. Tailwind fuer Produktion kompilieren (#2)
+3. Video komprimieren (#3)
 
-### Phase 2: Technische Haertung (VOR Launch)
-5. Tailwind fuer Produktion kompilieren (#4)
-6. Lucide Version fixieren (#5)
-7. Google Fonts lokal hosten (#12)
-8. Cookie-Banner mit Ablehnen-Option (#11)
-9. Datenschutz um Formspree ergaenzen (#13)
+### Phase 2: Feinschliff (VOR oder kurz NACH Launch)
+4. Favicon erstellen (#4)
+5. Datenschutz um Formspree ergaenzen (#5)
 
-### Phase 3: Feinschliff (VOR oder kurz NACH Launch)
-10. Title-Tag anpassen (#7)
-11. og:image absolute URL (#8)
-12. Favicon erstellen (#9)
-13. Copyright-Jahr (#10)
-14. Canonical-Tag (#14)
-
-### Phase 4: Launch
+### Phase 3: Launch
 - Auf Webserver hochladen
 - Domain konfigurieren
 - SSL-Zertifikat pruefen
@@ -237,6 +169,7 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 
 | Version | Datum | Aenderungen |
 |---------|-------|-------------|
+| V.0.1.1 | 05.02.2026 | Go-Live Fixes: Fonts lokal, Unsplash weg, Cookie-Banner, SEO-Fixes |
 | V.0.1.0 | 05.02.2026 | E407 ergaenzt, Seelachsfilet-Typo, Linsenbratlinge-Allergene gefixt |
 | V.0.0.7 | 11.01.2026 | Allergen-Korrekturen laut Original-Speisekarte |
 | V.0.0.6 | 11.01.2026 | Reservierungshinweis + Weihnachts-Easteregg deaktiviert |

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fischkate Quedlinburg - V.0.1.0</title>
+    <title>Fischkate Quedlinburg – Frischer Fisch im Herzen des Harzes</title>
     <meta name="description" content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente.">
 
     <!-- AI Agent Meta Tags -->
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Fischkate Quedlinburg - Frischer Fisch im Herzen des Harzes">
     <meta property="og:description"
         content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente. Komm vorbei!">
-    <meta property="og:image" content="TerasseJanaBlumen.jpg">
+    <meta property="og:image" content="https://www.fischkate-quedlinburg.de/TerasseJanaBlumen.jpg">
     <meta property="og:url" content="https://www.fischkate-quedlinburg.de">
     <meta property="og:type" content="website">
 
@@ -25,7 +25,7 @@
 
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.563.0"></script>
     <script>
         // Initialize Lucide Icons immediately after library loads
         document.addEventListener('DOMContentLoaded', function () {
@@ -37,7 +37,15 @@
 
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Open+Sans:wght@400;600;700&display=swap');
+        /* Lokale Fonts (DSGVO-konform, keine Verbindung zu Google) */
+        @font-face { font-family: 'Merriweather'; font-weight: 300; font-style: normal; font-display: swap; src: url('fonts/merriweather-300.woff2') format('woff2'); }
+        @font-face { font-family: 'Merriweather'; font-weight: 300; font-style: italic; font-display: swap; src: url('fonts/merriweather-300i.woff2') format('woff2'); }
+        @font-face { font-family: 'Merriweather'; font-weight: 400; font-style: normal; font-display: swap; src: url('fonts/merriweather-400.woff2') format('woff2'); }
+        @font-face { font-family: 'Merriweather'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/merriweather-700.woff2') format('woff2'); }
+        @font-face { font-family: 'Merriweather'; font-weight: 900; font-style: normal; font-display: swap; src: url('fonts/merriweather-900.woff2') format('woff2'); }
+        @font-face { font-family: 'Open Sans'; font-weight: 400; font-style: normal; font-display: swap; src: url('fonts/opensans-400.woff2') format('woff2'); }
+        @font-face { font-family: 'Open Sans'; font-weight: 600; font-style: normal; font-display: swap; src: url('fonts/opensans-600.woff2') format('woff2'); }
+        @font-face { font-family: 'Open Sans'; font-weight: 700; font-style: normal; font-display: swap; src: url('fonts/opensans-700.woff2') format('woff2'); }
 
         body {
             font-family: 'Open Sans', sans-serif;
@@ -65,7 +73,7 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Fischkate Quedlinburg",
-      "image": "IMG-20251124-WA0006.jpg",
+      "image": "TerasseJanaBlumen.jpg",
       "url": "https://www.fischkate-quedlinburg.de",
       "email": "Fisch-Kate-qlb@gmx.de",
       "priceRange": "$$",
@@ -186,7 +194,6 @@
             <video autoplay muted loop playsinline class="w-full h-full object-cover">
                 <source src="VideoGrill.mp4" type="video/mp4">
                 <img src="FischSchneiden.jpg"
-                    onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80'"
                     alt="Frische Zubereitung" class="w-full h-full object-cover">
             </video>
         </div>
@@ -1607,13 +1614,13 @@ erif font-bold text-stone-800 mb-4 text-center">
                 <div
                     class="aspect-[3/4] rounded-lg overflow-hidden shadow-xl transform translate-y-8 hover:-translate-y-2 transition-transform duration-500">
                     <img src="StolzEingang.jpg"
-                        onerror="this.src='https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80'"
+                        alt="Stolzer Eingang der Fischkate"
                         class="w-full h-full object-cover">
                 </div>
                 <div
                     class="aspect-[3/4] rounded-lg overflow-hidden shadow-xl hover:-translate-y-2 transition-transform duration-500">
                     <img id="ziel-person" src="JanaAmRotenFass.jpg"
-                        onerror="this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80'"
+                        alt="Jana am roten Fass"
                         class="w-full h-full object-cover">
                 </div>
             </div>
@@ -1946,7 +1953,7 @@ erif font-bold text-stone-800 mb-4 text-center">
         <div class="mb-4">
             <p class="font-bold text-stone-500">Inhaberin: Jana Bachmann</p>
         </div>
-        <p class="mb-2">© 2025 Fischkate Quedlinburg. Alle Rechte vorbehalten.</p>
+        <p class="mb-2">© 2026 Fischkate Quedlinburg. Alle Rechte vorbehalten.</p>
     </footer>
 
     <div id="privacy-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -2050,13 +2057,18 @@ erif font-bold text-stone-800 mb-4 text-center">
     <div id="cookie-banner"
         class="fixed bottom-0 left-0 w-full bg-white border-t border-stone-200 shadow-2xl p-4 z-50 hidden flex-col sm:flex-row items-center justify-between gap-4">
         <div class="text-sm text-stone-600 text-center sm:text-left">
-            <p><strong>Wir nutzen Cookies & externe Dienste</strong> (wie Google Fonts), um die Website hübsch zu
-                machen. Das ist technisch notwendig.</p>
+            <p><strong>Hinweis:</strong> Diese Website verwendet nur technisch notwendige Cookies, um Ihre Einstellungen zu speichern. Weitere Informationen finden Sie in unserer <a href="#" onclick="openPrivacyModal(); return false;" class="underline text-blue-900">Datenschutzerklärung</a>.</p>
         </div>
-        <button onclick="acceptCookies()"
-            class="bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm hover:bg-blue-800 transition-colors whitespace-nowrap">
-            Alles klar
-        </button>
+        <div class="flex gap-2">
+            <button onclick="declineCookies()"
+                class="border border-stone-300 text-stone-600 px-4 py-2 rounded font-bold text-sm hover:bg-stone-100 transition-colors whitespace-nowrap">
+                Nur notwendige
+            </button>
+            <button onclick="acceptCookies()"
+                class="bg-blue-900 text-white px-6 py-2 rounded font-bold text-sm hover:bg-blue-800 transition-colors whitespace-nowrap">
+                Alles akzeptieren
+            </button>
+        </div>
     </div>
 
     <script>
@@ -2362,14 +2374,20 @@ erif font-bold text-stone-800 mb-4 text-center">
 
         function initCookieBanner() {
             const banner = document.getElementById('cookie-banner');
-            if (!localStorage.getItem('cookiesAccepted')) {
+            if (!localStorage.getItem('cookieChoice')) {
                 banner.classList.remove('hidden');
                 banner.classList.add('flex');
             }
         }
         function acceptCookies() {
             const banner = document.getElementById('cookie-banner');
-            localStorage.setItem('cookiesAccepted', 'true');
+            localStorage.setItem('cookieChoice', 'all');
+            banner.classList.add('hidden');
+            banner.classList.remove('flex');
+        }
+        function declineCookies() {
+            const banner = document.getElementById('cookie-banner');
+            localStorage.setItem('cookieChoice', 'essential');
             banner.classList.add('hidden');
             banner.classList.remove('flex');
         }
