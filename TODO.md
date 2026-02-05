@@ -30,13 +30,11 @@
 
 ## 🔴 HOCH - Muss vor Go-Live erledigt werden
 
-### 2. Tailwind CSS - Entwicklungsversion ersetzen
+### 2. Tailwind CSS - Entwicklungsversion ersetzen ✅
 
-**Status:** ⚠️ **OFFEN**
+**Status:** ✅ **ERLEDIGT** (05.02.2026)
 
-**Problem:** Zeile ~27: `<script src="https://cdn.tailwindcss.com"></script>` ist die **Dev-CDN-Version**. Laut Tailwind-Docs nicht fuer Produktion geeignet - langsam, laedt unnoetig viel JS, kann sich jederzeit aendern.
-
-**Loesung:** Tailwind als Build-Step kompilieren oder eine feste, minifizierte CSS-Datei generieren.
+Tailwind v4.1.18 lokal kompiliert. CDN-Script durch minifizierte tailwind.css (45 KB) ersetzt. Nur genutzte Klassen enthalten. Zum Neu-Kompilieren: `npx @tailwindcss/cli --input input.css --output tailwind.css --minify`
 
 ### 3. Video komprimiert ✅
 
@@ -141,6 +139,7 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Google-Bewertung: Dummy durch echtes Zitat von Matthias E. ersetzt
 - ✅ Video komprimiert: 138 MB -> 5,2 MB (CRF 18, 1080p, ffmpeg)
 - ✅ Favicon erstellt: Anker-Symbol in Dunkelblau mit transparentem Hintergrund (favicon.ico, favicon-16/32.png, apple-touch-icon.png)
+- ✅ Tailwind CSS: CDN-Dev-Script durch lokal kompilierte tailwind.css (45 KB, minifiziert) ersetzt
 
 ---
 

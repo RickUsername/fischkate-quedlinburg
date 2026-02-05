@@ -1,0 +1,25 @@
+{
+  "name": "fischkate-v.0.0.7",
+  "version": "1.0.0",
+  "description": "- **Änderungen**: Reservierungsbestätigungs-Hinweis hinzugefügt, Weihnachts-Easteregg deaktiviert\r - **Status**: Produktionsbereit (nach Formspree-Setup)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RickUsername/fischkate-quedlinburg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RickUsername/fischkate-quedlinburg/issues"
+  },
+  "homepage": "https://github.com/RickUsername/fischkate-quedlinburg#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}
