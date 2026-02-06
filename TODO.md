@@ -1,30 +1,17 @@
 # Fischkate Website - Offene Punkte & TODOs
 
-> **Letztes Update:** 05.02.2026
+> **Letztes Update:** 06.02.2026
 > **Aktuelle Version:** V.0.1.0
 
 ---
 
 ## 🚨 KRITISCH - Ohne diese Fixes kann die Seite nicht live gehen
 
-### 1. Formspree Formulare (2x PLACEHOLDER)
+### 1. Formspree Formulare ✅
 
-**Status:** ⚠️ **OFFEN**
+**Status:** ✅ **ERLEDIGT** (06.02.2026)
 
-**Problem:** Beide Formulare nutzen `action="https://formspree.io/f/PLACEHOLDER"` - Daten gehen ins Nichts.
-
-**Betrifft:**
-- Bewerbungsformular (Zeile ~1742)
-- Reservierungsformular (Zeile ~1890)
-
-**Zusatzproblem Bewerbung:** Die `sendApplication()`-Funktion ruft `e.preventDefault()` auf und zeigt nur einen `alert("Simulation: ...")`. Selbst mit korrektem Endpunkt wuerden keine Daten gesendet. Der Alert und das preventDefault muessen entfernt/angepasst werden.
-
-**Loesung:**
-1. Formspree-Account erstellen auf https://formspree.io
-2. Zwei Formulare anlegen ("Bewerbungen" + "Tischreservierungen")
-3. Die generierten Form-IDs in `index.html` eintragen
-4. Simulation-Alert im JavaScript entfernen
-5. Formulare testen
+Formspree-Endpoints eingetragen: Bewerbungen (xeeljdkw), Reservierungen (xlgwrvna). Simulations-Alert entfernt, echtes Absenden aktiviert.
 
 ---
 
@@ -52,11 +39,11 @@ VideoBrotSchneiden.mp4 von 138 MB auf 5,2 MB komprimiert (CRF 18, 1080p, ffmpeg)
 
 Favicon aus Ankersymbol.png (Inkscape) erstellt. Dunkelblau (#1e3a8a) mit transparentem Hintergrund. Dateien: favicon.ico, favicon-16.png, favicon-32.png, apple-touch-icon.png. HTML-Tags in index.html bereits eingetragen.
 
-### 5. Datenschutzerklaerung: Formspree erwaehnen
+### 5. Datenschutzerklaerung: Formspree erwaehnen ✅
 
-**Status:** ⚠️ **OFFEN**
+**Status:** ✅ **ERLEDIGT** (06.02.2026)
 
-**Problem:** Wenn Formulardaten ueber Formspree (US-Dienst) laufen, muss das in der Datenschutzerklaerung erwaehnt werden inkl. Rechtsgrundlage.
+Formspree als Auftragsverarbeiter in Datenschutzerklaerung ergaenzt (Punkt 2b + 3). Google Fonts und Tailwind CDN Eintraege entfernt (werden jetzt lokal gehostet).
 
 ---
 
@@ -140,6 +127,8 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Video komprimiert: 138 MB -> 5,2 MB (CRF 18, 1080p, ffmpeg)
 - ✅ Favicon erstellt: Anker-Symbol in Dunkelblau mit transparentem Hintergrund (favicon.ico, favicon-16/32.png, apple-touch-icon.png)
 - ✅ Tailwind CSS: CDN-Dev-Script durch lokal kompilierte tailwind.css (45 KB, minifiziert) ersetzt
+- ✅ Formspree eingerichtet: Bewerbungen (xeeljdkw) + Reservierungen (xlgwrvna), Simulation entfernt
+- ✅ Datenschutzerklaerung aktualisiert: Formspree ergaenzt, Google Fonts + Tailwind CDN Eintraege entfernt
 
 ---
 
