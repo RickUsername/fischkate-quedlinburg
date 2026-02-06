@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de" class="scroll-smooth overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
@@ -232,7 +232,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-stone-900/10"></div>
 
         <a href="#jobs"
-            class="absolute top-24 left-4 md:left-12 z-20 transform -rotate-6 hover:rotate-0 transition-transform duration-300 cursor-pointer block">
+            class="absolute top-10 left-2 md:top-24 md:left-12 z-20 transform -rotate-6 hover:rotate-0 transition-transform duration-300 cursor-pointer block scale-[0.6] md:scale-100 origin-top-left">
             <div class="bg-red-600 text-white px-4 py-3 md:px-6 md:py-4 shadow-2xl border-2 border-white/20">
                 <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest mb-1 text-red-100">Wir stellen ein!
                 </p>
@@ -1627,7 +1627,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     Ein kleines Fachwerkhaus mit großer Seele. Bei uns geht es gemütlich zu – hier sollst du dich
                     einfach wohlfühlen und das Essen genießen.
                 </p>
-                <div class="flex gap-1 text-yellow-500 bg-white inline-block p-2 rounded-full shadow-sm">
+                <div class="inline-flex gap-1 text-yellow-500 bg-white p-2 rounded-full shadow-sm">
                     <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                     <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -3203,22 +3203,85 @@ erif font-bold text-stone-800 mb-4 text-center">
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            const isMobile = window.innerWidth <= 768 || ('ontouchstart' in window);
+            let dishHintShown = false;
+            const clickableDishes = [];
+
             document.querySelectorAll('[data-dish-id]').forEach(el => {
                 const dishId = el.getAttribute('data-dish-id');
                 if (dishInfo[dishId]) {
                     el.style.cursor = 'pointer';
-                    el.addEventListener('mouseenter', () => {
-                        el.style.backgroundColor = 'rgba(59, 130, 246, 0.04)';
-                    });
-                    el.addEventListener('mouseleave', () => {
-                        el.style.backgroundColor = '';
-                    });
+                    clickableDishes.push(el);
+
+                    if (!isMobile) {
+                        el.addEventListener('mouseenter', () => {
+                            el.style.backgroundColor = 'rgba(59, 130, 246, 0.04)';
+                        });
+                        el.addEventListener('mouseleave', () => {
+                            el.style.backgroundColor = '';
+                        });
+                    }
+
                     el.addEventListener('click', (e) => {
                         e.preventDefault();
                         openDishInfo(dishId);
                     });
                 }
             });
+
+            // Mobile: dezenter Treppen-Effekt – nur linker Strich + Hintergrundfarbe
+            if (isMobile && clickableDishes.length > 0) {
+                let ticking = false;
+
+                clickableDishes.forEach(el => {
+                    el.style.transition = 'border-left 0.4s ease, background-color 0.4s ease';
+                    el.style.borderLeft = '2px solid transparent';
+                    el.style.paddingLeft = '4px';
+                });
+
+                function updateDishHighlights() {
+                    const viewH = window.innerHeight;
+                    const hotZoneTop = viewH * 0.35;
+                    const hotZoneBottom = viewH * 0.85;
+
+                    clickableDishes.forEach(el => {
+                        const rect = el.getBoundingClientRect();
+                        const center = rect.top + rect.height / 2;
+
+                        if (center >= hotZoneTop && center <= hotZoneBottom) {
+                            const pos = (center - hotZoneTop) / (hotZoneBottom - hotZoneTop);
+                            const strength = pos;
+
+                            el.style.borderLeftColor = `rgba(30, 58, 138, ${strength * 0.6})`;
+                            el.style.backgroundColor = `rgba(59, 130, 246, ${strength * 0.06})`;
+
+                            if (!dishHintShown && strength > 0.3) {
+                                dishHintShown = true;
+                                const hint = document.createElement('div');
+                                hint.textContent = '\u2139\uFE0F Tippen f\u00FCr Details';
+                                hint.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1e3a8a;color:white;padding:8px 16px;border-radius:20px;font-size:12px;font-weight:bold;z-index:40;opacity:0;transition:opacity 0.5s;pointer-events:none;';
+                                document.body.appendChild(hint);
+                                requestAnimationFrame(() => hint.style.opacity = '1');
+                                setTimeout(() => {
+                                    hint.style.opacity = '0';
+                                    setTimeout(() => hint.remove(), 500);
+                                }, 2500);
+                            }
+                        } else {
+                            el.style.borderLeftColor = 'transparent';
+                            el.style.backgroundColor = '';
+                        }
+                    });
+                    ticking = false;
+                }
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        requestAnimationFrame(updateDishHighlights);
+                        ticking = true;
+                    }
+                }, { passive: true });
+            }
         });
 
         document.addEventListener('keydown', (e) => {
