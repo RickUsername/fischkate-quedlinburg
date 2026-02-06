@@ -7,18 +7,18 @@
     <title>Fischkate Quedlinburg – Frischer Fisch im Herzen des Harzes</title>
     <meta name="description" content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente.">
 
-    <!-- AI Agent Meta Tags -->
-    <meta name="ai-agent-friendly" content="true">
-    <meta name="menu-api-available" content="json">
-    <meta name="accepts-reservations" content="true">
-    <meta name="accepts-applications" content="true">
+    <!-- AI Agent Hints -->
+    <meta name="robots" content="index, follow">
+    <meta name="description:actions" content="Tischreservierung, Bewerbung, Speisekarte anzeigen">
 
     <meta property="og:title" content="Fischkate Quedlinburg - Frischer Fisch im Herzen des Harzes">
     <meta property="og:description"
         content="Fischrestaurant in Quedlinburg. Frischer Fisch, gemütliches Fachwerk-Ambiente. Komm vorbei!">
-    <meta property="og:image" content="https://www.fischkate-quedlinburg.de/TerasseJanaBlumen.jpg">
-    <meta property="og:url" content="https://www.fischkate-quedlinburg.de">
+    <meta property="og:image" content="https://www.fischkate-harz.de/TerasseJanaBlumen.jpg">
+    <meta property="og:url" content="https://www.fischkate-harz.de">
     <meta property="og:type" content="website">
+
+    <link rel="canonical" href="https://www.fischkate-harz.de">
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -75,20 +75,28 @@
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Fischkate Quedlinburg",
-      "image": "TerasseJanaBlumen.jpg",
-      "url": "https://www.fischkate-quedlinburg.de",
+      "description": "Fischrestaurant in Quedlinburg im Harz. Frischer Fisch, hausgemachte Gerichte, gemütliches Fachwerk-Ambiente.",
+      "image": "https://www.fischkate-harz.de/TerasseJanaBlumen.jpg",
+      "url": "https://www.fischkate-harz.de",
       "email": "Fisch-Kate-qlb@gmx.de",
-      "priceRange": "$$",
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Lange Gasse 1",
         "addressLocality": "Quedlinburg",
+        "addressRegion": "Sachsen-Anhalt",
         "postalCode": "06484",
         "addressCountry": "DE"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.7893,
+        "longitude": 11.1469
+      },
       "telephone": "+4939465198488",
-      "servesCuisine": "Seafood",
-      "paymentAccepted": "Cash, Debit Card",
+      "servesCuisine": ["Fisch", "Seafood", "Deutsche Küche"],
+      "paymentAccepted": ["Cash", "Debit Card"],
       "acceptsReservations": "True",
       "openingHoursSpecification": [
         {
@@ -100,15 +108,37 @@
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Sunday", "Monday"],
-          "opens": "00:00",
-          "closes": "00:00"
+          "description": "Ruhetag"
         }
       ],
       "hasMenu": {
         "@type": "Menu",
         "name": "Fischkate Speisekarte",
-        "description": "Frischer Fisch aus dem Harz und von der Küste"
-      }
+        "description": "Frischer Fisch aus dem Harz und von der Küste",
+        "url": "https://www.fischkate-harz.de/#speisekarte"
+      },
+      "potentialAction": [
+        {
+          "@type": "ReserveAction",
+          "name": "Tisch reservieren",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.fischkate-harz.de/#reservierung",
+            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+          },
+          "description": "Tischreservierung per Formular. Felder: Name, Personen, Datum, Uhrzeit, Kontakt, Nachricht. Datenschutz-Checkbox erforderlich."
+        },
+        {
+          "@type": "ApplyAction",
+          "name": "Job-Bewerbung senden",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.fischkate-harz.de/#jobs",
+            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+          },
+          "description": "Bewerbung per Formular. Zuerst Job auswaehlen, dann Name, Kontakt, Nachricht ausfuellen. Datenschutz-Checkbox erforderlich."
+        }
+      ]
     }
     </script>
 </head>
@@ -1777,6 +1807,15 @@ erif font-bold text-stone-800 mb-4 text-center">
                                 class="w-full bg-stone-800 border border-stone-700 rounded px-4 py-3 text-white placeholder-stone-600 focus:outline-none focus:border-red-500 focus:bg-stone-800 transition-colors"
                                 placeholder="Kurz über dich. Erfahrung? Quereinsteiger? Schreib einfach drauf los."></textarea>
 
+                            <label class="flex items-start gap-3 text-xs text-stone-400 cursor-pointer">
+                                <input type="checkbox" required name="_datenschutz"
+                                    class="mt-0.5 accent-red-500 w-4 h-4 shrink-0">
+                                <span>Ich habe die <a href="#" onclick="openPrivacyModal(); return false;"
+                                        class="underline text-red-400 hover:text-red-300">Datenschutzerklärung</a>
+                                    gelesen und stimme der Verarbeitung meiner Daten zu. Mir ist bewusst, dass meine
+                                    Daten an Formspree (USA) übermittelt werden.</span>
+                            </label>
+
                             <button type="submit"
                                 class="w-full bg-red-600 hover:bg-red-500 text-white font-bold py-4 rounded transition-all shadow-lg">
                                 Jetzt bewerben
@@ -1876,7 +1915,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                     </div>
                 </div>
 
-                <div class="bg-white p-6 md:p-10 rounded-lg shadow-xl relative">
+                <div id="reservierung" class="bg-white p-6 md:p-10 rounded-lg shadow-xl relative">
                     <div
                         class="absolute top-0 right-0 -mt-3 -mr-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-sm">
                         Online Anfrage</div>
@@ -1924,10 +1963,16 @@ erif font-bold text-stone-800 mb-4 text-center">
                             <div>
                                 <label for="reservation-time"
                                     class="block text-xs font-bold text-stone-500 uppercase mb-1">Uhrzeit</label>
-                                <input required type="time" name="uhrzeit" id="reservation-time" min="10:00" max="21:00"
+                                <input required type="time" name="uhrzeit" id="reservation-time"
                                     data-field-purpose="reservation-time" aria-label="Reservierungsuhrzeit"
+                                    onchange="checkReservationTime(this)"
                                     class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
                             </div>
+                        </div>
+                        <div id="time-warning" class="hidden bg-amber-50 border border-amber-300 rounded p-3 text-xs text-amber-800">
+                            <strong>Hinweis:</strong> Die gewählte Uhrzeit liegt außerhalb unserer regulären
+                            Öffnungszeiten (Di–Sa 10–21 Uhr). Sie können die Anfrage trotzdem absenden –
+                            wir melden uns bei Ihnen.
                         </div>
                         <input required type="text" name="kontakt" id="reservation-contact"
                             placeholder="Telefon / Email" data-field-purpose="guest-contact" aria-label="Kontaktdaten"
@@ -1935,6 +1980,15 @@ erif font-bold text-stone-800 mb-4 text-center">
                         <textarea rows="3" name="nachricht" id="reservation-message" placeholder="Nachricht (Optional)"
                             data-field-purpose="special-requests" aria-label="Besondere Wünsche oder Anmerkungen"
                             class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3"></textarea>
+                        <label class="flex items-start gap-3 text-xs text-stone-500 cursor-pointer">
+                            <input type="checkbox" required name="_datenschutz"
+                                class="mt-0.5 accent-blue-900 w-4 h-4 shrink-0">
+                            <span>Ich habe die <a href="#" onclick="openPrivacyModal(); return false;"
+                                    class="underline text-blue-900 hover:text-blue-700">Datenschutzerklärung</a>
+                                gelesen und stimme der Verarbeitung meiner Daten zu. Mir ist bewusst, dass meine
+                                Daten an Formspree (USA) übermittelt werden.</span>
+                        </label>
+
                         <button type="submit"
                             class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded transition-all flex items-center justify-center gap-2 shadow-lg">
                             Reservierungsanfrage senden <span class="text-blue-300 text-xs font-normal">(Anfrage)</span>
@@ -1949,6 +2003,7 @@ erif font-bold text-stone-800 mb-4 text-center">
         <div class="flex justify-center gap-6 mb-6">
             <a href="#" class="hover:text-stone-300" onclick="openImprintModal(); return false;">Impressum</a>
             <a href="#" class="hover:text-stone-300" onclick="openPrivacyModal(); return false;">Datenschutz</a>
+            <a href="#" class="hover:text-stone-300" onclick="resetCookieChoice(); return false;">Cookie-Einstellungen</a>
             <a href="#allergene" class="hover:text-stone-300">Allergene & Zusatzstoffe</a>
         </div>
         <div class="mb-4">
@@ -1971,49 +2026,99 @@ erif font-bold text-stone-800 mb-4 text-center">
                         Inhaberin: Jana Bachmann<br>
                         Lange Gasse 1<br>
                         06484 Quedlinburg<br>
+                        Telefon: +49 3946 5198488<br>
                         E-Mail: Fisch-Kate-qlb@gmx.de</p>
                 </section>
 
                 <section>
-                    <h3 class="font-bold text-stone-900 text-lg mb-2">2. Erfassung und Speicherung personenbezogener
-                        Daten</h3>
-                    <h4 class="font-bold mt-2 text-stone-800">a) Beim Besuch der Website (Technisch notwendige Tools)
-                    </h4>
-                    <p class="mb-2">Beim Aufrufen unserer Website werden durch den auf Ihrem Endgerät zum Einsatz
-                        kommenden Browser automatisch Informationen an den Server unserer Website gesendet
-                        (Server-Logfiles).</p>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">2. Hosting und Server-Logfiles</h3>
+                    <p>Beim Aufrufen unserer Website werden durch Ihren Browser automatisch Informationen an den Server
+                        gesendet und in Server-Logfiles gespeichert. Dies umfasst: IP-Adresse, Browsertyp und
+                        -version, Betriebssystem, Referrer-URL, Uhrzeit der Anfrage. Diese Daten sind technisch
+                        notwendig, um die Website auszuliefern, und werden nicht mit anderen Datenquellen
+                        zusammengeführt.</p>
+                    <p class="mt-1">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+                        stabilen Bereitstellung der Website).</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">3. Externe Dienste</h3>
+                    <p class="mb-2">Schriftarten und CSS-Dateien werden lokal von unserem Server geladen. Es besteht
+                        keine Verbindung zu Google Fonts oder anderen Font-Diensten.</p>
                     <ul class="list-disc pl-5 space-y-1">
-                        <li><strong>Schriftarten &amp; Styles:</strong> Alle Schriftarten und CSS-Dateien werden lokal
-                            von unserem Server geladen. Es findet keine Verbindung zu Google oder anderen externen
-                            Diensten statt.</li>
-                        <li><strong>Lucide Icons:</strong> Für die grafischen Symbole laden wir Daten von externen
-                            Servern (unpkg.com).</li>
+                        <li><strong>Lucide Icons (unpkg.com):</strong> Für grafische Symbole laden wir Daten von
+                            unpkg.com (Cloudflare, USA). Dabei wird Ihre IP-Adresse an diesen Dienst übermittelt.
+                            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
+                            Darstellung der Website).</li>
                     </ul>
+                </section>
 
-                    <h4 class="font-bold mt-4 text-stone-800">b) Bei Nutzung der Formulare (Kontakt & Bewerbung)</h4>
-                    <p>Wenn Sie uns über das Bewerbungsformular oder das Reservierungsformular kontaktieren, werden die
-                        von Ihnen eingegebenen Daten (Name, Kontaktdaten, Nachricht) über den Dienst
-                        <strong>Formspree, Inc.</strong> (USA) an uns weitergeleitet. Formspree verarbeitet Ihre Daten
-                        ausschließlich zur Übermittlung Ihrer Anfrage an uns. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
-                        DSGVO (vorvertragliche Maßnahmen). Weitere Informationen finden Sie in der
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">4. Formulare (Reservierung &amp; Bewerbung)</h3>
+                    <p>Für die Verarbeitung unserer Kontaktformulare (Tischreservierung, Bewerbung) nutzen wir den
+                        Dienst <strong>Formspree</strong> (Formspree, Inc., San Antonio, Texas, USA).</p>
+                    <p class="mt-2">Wenn Sie ein Formular absenden, werden die eingegebenen Daten (z. B. Name,
+                        E-Mail, Telefonnummer, Nachricht) an Server von Formspree in den USA übertragen und von
+                        dort per E-Mail an uns weitergeleitet.</p>
+                    <p class="mt-2"><strong>Wichtig:</strong> Formspree ist gemäß eigener Datenschutzrichtlinie ein
+                        <strong>eigenständiger Datenverantwortlicher</strong> im Sinne der DSGVO (kein
+                        Auftragsverarbeiter). Das bedeutet, Formspree trägt eigene Verantwortung für die
+                        Verarbeitung Ihrer Daten.</p>
+                    <p class="mt-2"><strong>Datenübermittlung in die USA:</strong> Die USA gelten als Drittland ohne
+                        angemessenes Datenschutzniveau im Sinne der DSGVO. Es besteht das Risiko, dass
+                        US-Behörden auf Ihre Daten zugreifen können. Mit dem Absenden des Formulars willigen Sie
+                        in diese Übermittlung ein.</p>
+                    <p class="mt-2">Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung bei
+                        Reservierungen) bzw. Art. 6 Abs. 1 lit. a DSGVO (Einwilligung bei Bewerbungen).</p>
+                    <p class="mt-2">Datenschutzrichtlinie von Formspree:
                         <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener"
-                            class="underline text-blue-900">Datenschutzerklärung von Formspree</a>.
-                        Die Daten werden ausschließlich zur Bearbeitung Ihres Anliegens
-                        (Tischreservierung oder Bewerbungsprozess) gespeichert und verarbeitet.</p>
+                            class="underline text-blue-900">formspree.io/legal/privacy-policy</a><br>
+                        Kontakt für Datenanfragen bei Formspree: team@formspree.io</p>
                 </section>
 
                 <section>
-                    <h3 class="font-bold text-stone-900 text-lg mb-2">3. Weitergabe von Daten</h3>
-                    <p>Eine Übermittlung Ihrer persönlichen Daten an Dritte findet nicht statt, außer zur
-                        Formularverarbeitung durch Formspree (siehe Punkt 2b), bei technischer Notwendigkeit
-                        (siehe Punkt 2a) oder wenn es gesetzlich vorgeschrieben ist.</p>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">5. Cookies und LocalStorage</h3>
+                    <p>Diese Website verwendet <strong>keine Tracking-Cookies</strong> und kein Analytics. Wir
+                        speichern lediglich Ihre Cookie-Banner-Einstellung im LocalStorage Ihres Browsers
+                        (Schlüssel: <em>cookieChoice</em>). Dieser Eintrag ist technisch notwendig, damit das
+                        Banner nicht bei jedem Besuch erneut erscheint.</p>
+                    <p class="mt-1">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+                        Sie können Ihre Einstellung jederzeit über den Link „Cookie-Einstellungen" im Footer
+                        ändern.</p>
                 </section>
 
                 <section>
-                    <h3 class="font-bold text-stone-900 text-lg mb-2">4. Ihre Rechte</h3>
-                    <p>Sie haben das Recht, jederzeit Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten
-                        zu erhalten. Ebenso haben Sie das Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.
-                        Wenden Sie sich dazu bitte an die oben genannte Adresse.</p>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">6. Weitergabe von Daten</h3>
+                    <p>Eine Übermittlung Ihrer persönlichen Daten an Dritte findet nur statt, soweit in dieser
+                        Erklärung beschrieben (Formspree für Formulardaten, unpkg.com für Icons) oder wenn es
+                        gesetzlich vorgeschrieben ist.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">7. Ihre Rechte</h3>
+                    <p>Sie haben gegenüber uns folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+                    <ul class="list-disc pl-5 space-y-1 mt-2">
+                        <li><strong>Auskunft</strong> über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+                        <li><strong>Berichtigung</strong> unrichtiger Daten (Art. 16 DSGVO)</li>
+                        <li><strong>Löschung</strong> Ihrer Daten (Art. 17 DSGVO)</li>
+                        <li><strong>Einschränkung</strong> der Verarbeitung (Art. 18 DSGVO)</li>
+                        <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+                        <li><strong>Widerspruch</strong> gegen die Verarbeitung (Art. 21 DSGVO)</li>
+                        <li><strong>Widerruf</strong> einer erteilten Einwilligung mit Wirkung für die Zukunft
+                            (Art. 7 Abs. 3 DSGVO)</li>
+                    </ul>
+                    <p class="mt-2">Wenden Sie sich dazu bitte an die oben genannte Adresse.</p>
+                </section>
+
+                <section>
+                    <h3 class="font-bold text-stone-900 text-lg mb-2">8. Beschwerderecht bei der Aufsichtsbehörde</h3>
+                    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns
+                        zuständige Aufsichtsbehörde ist:</p>
+                    <p class="mt-2">Landesbeauftragter für den Datenschutz Sachsen-Anhalt<br>
+                        Leiterstraße 9<br>
+                        39104 Magdeburg<br>
+                        <a href="https://datenschutz.sachsen-anhalt.de" target="_blank" rel="noopener"
+                            class="underline text-blue-900">datenschutz.sachsen-anhalt.de</a></p>
                 </section>
             </div>
             <div class="mt-8 pt-4 border-t border-stone-200 flex justify-end">
@@ -2393,6 +2498,21 @@ erif font-bold text-stone-800 mb-4 text-center">
             localStorage.setItem('cookieChoice', 'essential');
             banner.classList.add('hidden');
             banner.classList.remove('flex');
+        }
+        function checkReservationTime(input) {
+            const warning = document.getElementById('time-warning');
+            const time = input.value;
+            if (time && (time < '10:00' || time > '21:00')) {
+                warning.classList.remove('hidden');
+            } else {
+                warning.classList.add('hidden');
+            }
+        }
+
+        function resetCookieChoice() {
+            localStorage.removeItem('cookieChoice');
+            initCookieBanner();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         }
         window.addEventListener('load', initCookieBanner);
 

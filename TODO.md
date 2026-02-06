@@ -49,17 +49,17 @@ Formspree als Auftragsverarbeiter in Datenschutzerklaerung ergaenzt (Punkt 2b + 
 
 ## 🟢 NIEDRIG / OPTIONAL - Nice to have
 
-### 14. Canonical-Tag fuer SEO
+### 14. Canonical-Tag fuer SEO ✅
 
-**Status:** 🟢 **OPTIONAL**
+**Status:** ✅ **ERLEDIGT** (06.02.2026)
 
-Kein `<link rel="canonical">` vorhanden. Fuer bessere SEO empfohlen.
+Canonical-Tag auf fischkate-harz.de gesetzt. Alle URLs aktualisiert.
 
-### 15. AI-Agent Meta-Tags
+### 15. AI-Agent / Schema.org Optimierung ✅
 
-**Status:** 🟢 **OPTIONAL**
+**Status:** ✅ **ERLEDIGT** (06.02.2026)
 
-Zeilen 10-14: Nicht-standardisierte Meta-Tags (`ai-agent-friendly`, etc.). Schaden nicht, bringen aber auch nichts. Koennen bleiben oder entfernt werden.
+Schema.org erweitert: Geo-Koordinaten, servesCuisine, potentialAction (ReserveAction + ApplyAction), Menu-URL, description. Alte Meta-Tags durch robots + description:actions ersetzt. Anker #reservierung hinzugefuegt.
 
 ### 16. Google Bewertungen Integration
 
@@ -129,6 +129,12 @@ Google Analytics oder datenschutzfreundliche Alternative (z.B. Plausible, Umami)
 - ✅ Tailwind CSS: CDN-Dev-Script durch lokal kompilierte tailwind.css (45 KB, minifiziert) ersetzt
 - ✅ Formspree eingerichtet: Bewerbungen (xeeljdkw) + Reservierungen (xlgwrvna), Simulation entfernt
 - ✅ Datenschutzerklaerung aktualisiert: Formspree ergaenzt, Google Fonts + Tailwind CDN Eintraege entfernt
+- ✅ Datenschutzerklaerung komplett erweitert (8 Abschnitte, DSGVO-konform, Betroffenenrechte, Aufsichtsbehoerde)
+- ✅ Datenschutz-Checkbox bei beiden Formularen (Pflichtfeld mit USA-Hinweis)
+- ✅ Cookie-Einstellungen Link im Footer (zum erneuten Anzeigen des Banners)
+- ✅ Uhrzeitfeld Reservierung: Keine Blockade mehr, nur noch Warnung bei Zeiten ausserhalb 10-21 Uhr
+- ✅ Canonical-Tag auf fischkate-harz.de, alle URLs aktualisiert
+- ✅ Schema.org erweitert: Geo, Actions, Menu-URL, servesCuisine, Anker #reservierung
 
 ---
 
