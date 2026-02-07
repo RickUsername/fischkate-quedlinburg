@@ -1,5 +1,5 @@
 # Große Videodateien (GitHub-Limit: 100 MB)
-VideoBrotSchneiden.mp4
+# VideoBrotSchneiden.mp4 - komprimiert auf 5,2 MB, kann jetzt hochgeladen werden
 
 # Node.js (nur fuer Tailwind-Build noetig)
 node_modules/
