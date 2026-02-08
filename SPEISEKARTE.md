@@ -98,6 +98,14 @@ mit Bratkartoffeln und Remoulade
 
 
 
+Winterkabeljau „Skrei" das Gold der Lofoten (k,b)
+
+dazu Birnen-Fenchelgemüse, Kartoffel-Beetestampf
+
+29,90 €
+
+
+
 ZWISCHENGERICHTE
 
 
