@@ -121,6 +121,17 @@
             "dietary": [],
             "available": true,
             "featured": true
+          },
+          {
+            "id": "tages-5",
+            "name": "Winterkabeljau „Skrei" das Gold der Lofoten",
+            "description": "dazu Birnen-Fenchelgemüse, Kartoffel-Beetestampf",
+            "price": 29.90,
+            "currency": "EUR",
+            "allergens": ["k", "b"],
+            "dietary": [],
+            "available": true,
+            "featured": true
           }
         ]
       },
