@@ -1999,6 +1999,44 @@ erif font-bold text-stone-800 mb-4 text-center">
                         </p>
                         <p class="text-sm text-stone-700" data-i18n="reserve-hours-text">Di – Sa: 10:00 – 21:00 Uhr<br>Sonntag &amp; Montag: Ruhetag</p>
                     </div>
+
+                    <!--
+                    Altes Reservierungsformular + Öffnungszeiten-Modal (deaktiviert am 2026-04-19):
+                    Gaeste hatten die Anfrage als feste Buchung missverstanden. Stattdessen wird nun
+                    nur noch Telefon/E-Mail + benoetigte Angaben angezeigt. Code bleibt zur Referenz
+                    auskommentiert, kann bei Bedarf reaktiviert werden.
+
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="info" class="text-blue-600 w-5 h-5 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-sm text-stone-800 font-semibold mb-1">Wichtiger Hinweis</p>
+                                <p class="text-sm text-stone-700">Ihre Anfrage wird erst nach unserer Bestaetigung gueltig.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form action="https://formspree.io/f/xkovnbne" method="POST" data-form-type="reservation" class="space-y-5">
+                      <input required type="text" name="name" placeholder="Name">
+                      <input required type="number" name="personen" min="1" max="20" placeholder="Personen">
+                      <input required type="date" name="datum">
+                      <input required type="time" name="uhrzeit" onchange="checkReservationTime(this)">
+                      <input required type="text" name="kontakt" placeholder="Telefon / Email">
+                      <textarea rows="3" name="nachricht" placeholder="Nachricht (Optional)"></textarea>
+                      <label><input type="checkbox" required name="_datenschutz"> Datenschutz akzeptiert</label>
+                      <button type="submit">Reservierungsanfrage senden</button>
+                    </form>
+
+                    Öffnungszeiten-Hinweis Modal nach Reservierungsanfrage:
+                    <div id="opening-hours-notice" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+                        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+                        <div class="relative bg-white rounded-lg shadow-2xl w-full max-w-md z-10 p-8 text-center">
+                            <h3>Anfrage gesendet!</h3>
+                            <p>Bitte beachten Sie unsere Oeffnungszeiten: Di - Sa: 10:00 - 21:00 Uhr</p>
+                            <button onclick="closeOpeningHoursNotice()">Verstanden</button>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </div>
         </div>
