@@ -85,7 +85,7 @@
       "description": "Fischrestaurant in Quedlinburg im Harz. Frischer Fisch, hausgemachte Gerichte, gemütliches Fachwerk-Ambiente.",
       "image": "https://www.fischkate-harz.de/TerasseJanaBlumen.jpg",
       "url": "https://www.fischkate-harz.de",
-      "email": "Fisch-Kate-qlb@gmx.de",
+      "email": "info@fischkate-harz.de",
       "priceRange": "€€",
       "currenciesAccepted": "EUR",
       "address": {
@@ -133,7 +133,7 @@
             "urlTemplate": "https://www.fischkate-harz.de/#reservierung",
             "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
           },
-          "description": "Tischreservierung per Formular. Felder: Name, Personen, Datum, Uhrzeit, Kontakt, Nachricht. Datenschutz-Checkbox erforderlich."
+          "description": "Tischreservierung per Telefon (+4939465198488) oder E-Mail (info@fischkate-harz.de). Bitte Name, Anzahl Personen, Datum, Uhrzeit und Telefonnummer angeben."
         },
         {
           "@type": "ApplyAction",
@@ -1944,82 +1944,61 @@ erif font-bold text-stone-800 mb-4 text-center">
                 <div id="reservierung" class="bg-white p-6 md:p-10 rounded-lg shadow-xl relative">
                     <div
                         class="absolute top-0 right-0 -mt-3 -mr-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-sm" data-i18n="reserve-badge">
-                        Online Anfrage</div>
-                    <h3 class="text-3xl font-serif font-bold text-stone-900 mb-8" data-i18n="reserve-title">Tisch anfragen</h3>
+                        Reservierung</div>
+                    <h3 class="text-3xl font-serif font-bold text-stone-900 mb-6" data-i18n="reserve-title">Tisch reservieren</h3>
 
-                    <!-- Hinweis zur Reservierungsbestätigung -->
-                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 mb-6 rounded">
-                        <div class="flex items-start gap-3">
-                            <i data-lucide="info" class="text-blue-600 w-5 h-5 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <p class="text-sm text-stone-800 font-semibold mb-1" data-i18n="reserve-notice-title">Wichtiger Hinweis</p>
-                                <p class="text-sm text-stone-700" data-i18n="reserve-notice-text">Ihre Anfrage wird erst nach unserer Bestätigung
-                                    gültig. Wir melden uns schnellstmöglich bei Ihnen telefonisch oder per E-Mail
-                                    zurück.</p>
-                            </div>
-                        </div>
+                    <p class="text-stone-700 mb-6" data-i18n="reserve-intro">Reservierungen nehmen wir gern persönlich per Telefon oder E-Mail entgegen – so können wir Ihnen direkt bestätigen, ob Ihr Wunschtermin frei ist.</p>
+
+                    <div class="space-y-3 mb-8">
+                        <a href="tel:039465198488"
+                            class="flex items-center gap-3 text-lg text-stone-900 hover:text-blue-700 transition-colors">
+                            <i data-lucide="phone" class="text-blue-600 w-5 h-5 flex-shrink-0"></i>
+                            <span class="font-mono">03946 5198488</span>
+                        </a>
+                        <a href="mailto:info@fischkate-harz.de?subject=Reservierungsanfrage&body=Name%3A%20%0D%0AAnzahl%20Personen%3A%20%0D%0ADatum%3A%20%0D%0AUhrzeit%3A%20%0D%0ATelefonnummer%3A%20%0D%0ANachricht%3A%20"
+                            class="flex items-center gap-3 text-lg text-stone-900 hover:text-blue-700 transition-colors break-all">
+                            <i data-lucide="mail" class="text-blue-600 w-5 h-5 flex-shrink-0"></i>
+                            <span>info@fischkate-harz.de</span>
+                        </a>
                     </div>
 
-                    <form action="https://formspree.io/f/xkovnbne" method="POST" data-form-type="reservation"
-                        data-api-endpoint="/api/menu.json" class="space-y-5">
-                        <div class="grid grid-cols-2 gap-5">
-                            <div>
-                                <label for="reservation-name"
-                                    class="block text-xs font-bold text-stone-500 uppercase mb-1" data-i18n="reserve-label-name">Name</label>
-                                <input required type="text" name="name" id="reservation-name"
-                                    data-field-purpose="guest-full-name" aria-label="Vollständiger Name"
-                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
-                            </div>
-                            <div>
-                                <label for="reservation-persons"
-                                    class="block text-xs font-bold text-stone-500 uppercase mb-1" data-i18n="reserve-label-persons">Personen</label>
-                                <input required type="number" name="personen" id="reservation-persons" min="1" max="20"
-                                    placeholder="5" data-field-purpose="party-size" aria-label="Anzahl Personen"
-                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-2 gap-5">
-                            <div>
-                                <label for="reservation-date"
-                                    class="block text-xs font-bold text-stone-500 uppercase mb-1" data-i18n="reserve-label-date">Datum</label>
-                                <input required type="date" name="datum" id="reservation-date"
-                                    data-field-purpose="reservation-date" aria-label="Reservierungsdatum"
-                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
-                            </div>
-                            <div>
-                                <label for="reservation-time"
-                                    class="block text-xs font-bold text-stone-500 uppercase mb-1" data-i18n="reserve-label-time">Uhrzeit</label>
-                                <input required type="time" name="uhrzeit" id="reservation-time"
-                                    data-field-purpose="reservation-time" aria-label="Reservierungsuhrzeit"
-                                    onchange="checkReservationTime(this)"
-                                    class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
-                            </div>
-                        </div>
-                        <div id="time-warning" class="hidden bg-amber-50 border border-amber-300 rounded p-3 text-xs text-amber-800" data-i18n="reserve-time-warning">
-                            <strong>Hinweis:</strong> Die gewählte Uhrzeit liegt außerhalb unserer regulären
-                            Öffnungszeiten (Di–Sa 10–21 Uhr). Sie können die Anfrage trotzdem absenden –
-                            wir melden uns bei Ihnen.
-                        </div>
-                        <input required type="text" name="kontakt" id="reservation-contact"
-                            placeholder="Telefon / Email" data-i18n-placeholder="reserve-ph-contact" data-field-purpose="guest-contact" aria-label="Kontaktdaten"
-                            class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3">
-                        <textarea rows="3" name="nachricht" id="reservation-message" placeholder="Nachricht (Optional)"
-                            data-i18n-placeholder="reserve-ph-message" data-field-purpose="special-requests" aria-label="Besondere Wünsche oder Anmerkungen"
-                            class="w-full bg-stone-50 border border-stone-300 rounded px-4 py-3"></textarea>
-                        <label class="flex items-start gap-3 text-xs text-stone-500 cursor-pointer">
-                            <input type="checkbox" required name="_datenschutz"
-                                class="mt-0.5 accent-blue-900 w-4 h-4 shrink-0">
-                            <span data-i18n="reserve-privacy">Ich habe die <a href="#" onclick="openPrivacyModal(); return false;"
-                                    class="underline text-blue-900 hover:text-blue-700">Datenschutzerklärung</a>
-                                gelesen und stimme der Verarbeitung meiner Daten zu. Mir ist bewusst, dass meine
-                                Daten an Formspree (USA) übermittelt werden.</span>
-                        </label>
+                    <div class="bg-gradient-to-br from-stone-50 to-white border border-stone-200 rounded-lg p-6 mb-6 shadow-sm">
+                        <p class="text-xs font-bold text-blue-900 uppercase tracking-widest mb-4" data-i18n="reserve-info-title">Bitte geben Sie uns folgende Informationen</p>
+                        <ul class="grid sm:grid-cols-2 gap-x-6 gap-y-3 text-sm text-stone-700">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="user" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-name">Name</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="users" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-persons">Anzahl der Personen</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="calendar" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-date">Datum</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="clock" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-time">Uhrzeit</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="phone" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-contact">Telefonnummer für den Rückruf</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="message-square" class="text-blue-600 w-4 h-4 flex-shrink-0"></i>
+                                <span data-i18n="reserve-info-notes">Besondere Wünsche (optional)</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <button type="submit"
-                            class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold py-4 rounded transition-all flex items-center justify-center gap-2 shadow-lg" data-i18n="reserve-submit">
-                            Reservierungsanfrage senden <span class="text-blue-300 text-xs font-normal">(Anfrage)</span>
-                        </button>
-                    </form>
+                    <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded">
+                        <p class="text-sm font-bold text-stone-900 mb-1 flex items-center gap-2">
+                            <i data-lucide="clock" class="text-blue-600 w-4 h-4"></i>
+                            <span data-i18n="reserve-hours-title">Öffnungszeiten</span>
+                        </p>
+                        <p class="text-sm text-stone-700" data-i18n="reserve-hours-text">Di – Sa: 10:00 – 21:00 Uhr<br>Sonntag &amp; Montag: Ruhetag</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2053,7 +2032,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                         Lange Gasse 1<br>
                         06484 Quedlinburg<br>
                         Telefon: +49 3946 5198488<br>
-                        E-Mail: Fisch-Kate-qlb@gmx.de</p>
+                        E-Mail: info@fischkate-harz.de</p>
                 </section>
 
                 <section>
@@ -2173,7 +2152,7 @@ erif font-bold text-stone-800 mb-4 text-center">
                 <section>
                     <h3 class="font-bold text-stone-900 text-lg mb-2" data-i18n="imprint-contact-heading">Kontakt</h3>
                     <p data-i18n="imprint-contact-content">Telefon: +49 3946 5198488<br>
-                        E-Mail: Fisch-Kate-qlb@gmx.de</p>
+                        E-Mail: info@fischkate-harz.de</p>
                 </section>
 
                 <section>
@@ -3670,19 +3649,18 @@ erif font-bold text-stone-800 mb-4 text-center">
             'contact-owner': 'Owner',
             'contact-call': '<i\n                                data-lucide="phone" class="text-blue-400"></i> Call us directly',
             'contact-follow': 'Follow us on:',
-            'reserve-title': 'Request a table',
-            'reserve-badge': '\n                        Online Request',
-            'reserve-notice-title': 'Important notice',
-            'reserve-notice-text': 'Your request will only become valid after our confirmation. We will get back to you as soon as possible by phone or email.',
-            'reserve-label-name': 'NAME',
-            'reserve-label-persons': 'GUESTS',
-            'reserve-label-date': 'DATE',
-            'reserve-label-time': 'TIME',
-            'reserve-time-warning': '<strong>Notice:</strong> The selected time is outside our regular opening hours (Tue\u2013Sat 10am\u20139pm). You can still submit the request \u2013 we will get back to you.',
-            'reserve-ph-contact': 'Phone / Email',
-            'reserve-ph-message': 'Message (Optional)',
-            'reserve-privacy': 'I have read the <a href="#" onclick="openPrivacyModal(); return false;" class="underline text-blue-900 hover:text-blue-700">Privacy Policy</a> and consent to the processing of my data. I am aware that my data will be transmitted to Formspree (USA).',
-            'reserve-submit': 'Send reservation request <span class="text-blue-300 text-xs font-normal">(Inquiry)</span>',
+            'reserve-title': 'Reserve a table',
+            'reserve-badge': 'Reservation',
+            'reserve-intro': 'We are happy to take reservations personally by phone or email \u2013 this way we can confirm directly whether your preferred time is available.',
+            'reserve-info-title': 'Please provide the following information:',
+            'reserve-info-name': 'Name',
+            'reserve-info-persons': 'Number of guests',
+            'reserve-info-date': 'Date',
+            'reserve-info-time': 'Time',
+            'reserve-info-contact': 'Phone number for callback',
+            'reserve-info-notes': 'Special requests (optional)',
+            'reserve-hours-title': 'Opening hours',
+            'reserve-hours-text': 'Tue \u2013 Sat: 10:00 \u2013 21:00<br>Sunday &amp; Monday: closed',
             // FOOTER
             'footer-imprint': 'Imprint',
             'footer-privacy': 'Privacy Policy',
@@ -3713,7 +3691,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'imprint-legal-heading': 'Information according to \u00a7 5 TMG',
             'imprint-legal-content': 'Fischkate Quedlinburg<br>Owner: Jana Bachmann<br>Lange Gasse 1<br>06484 Quedlinburg',
             'imprint-contact-heading': 'Contact',
-            'imprint-contact-content': 'Phone: +49 3946 5198488<br>Email: Fisch-Kate-qlb@gmx.de',
+            'imprint-contact-content': 'Phone: +49 3946 5198488<br>Email: info@fischkate-harz.de',
             'imprint-authority-heading': 'Supervisory authority',
             'imprint-authority-content': 'Ordnungsamt der Welterbestadt Quedlinburg<br>Markt 1<br>06484 Quedlinburg',
             'imprint-close': 'Close',
@@ -3727,7 +3705,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'privacy-h-6': '6. Disclosure of data',
             'privacy-h-7': '7. Your rights',
             'privacy-h-8': '8. Right to complain to the supervisory authority',
-            'privacy-1-body': 'Fischkate Quedlinburg<br>Owner: Jana Bachmann<br>Lange Gasse 1<br>06484 Quedlinburg<br>Phone: +49 3946 5198488<br>Email: Fisch-Kate-qlb@gmx.de',
+            'privacy-1-body': 'Fischkate Quedlinburg<br>Owner: Jana Bachmann<br>Lange Gasse 1<br>06484 Quedlinburg<br>Phone: +49 3946 5198488<br>Email: info@fischkate-harz.de',
             'privacy-2-body': 'When you visit our website, your browser automatically sends information to the server, which is stored in server log files. This includes: IP address, browser type and version, operating system, referrer URL, and time of the request. This data is technically necessary to deliver the website and is not merged with other data sources.',
             'privacy-2-legal': 'Legal basis: Art. 6 Abs. 1 lit. f DSGVO (legitimate interest in the stable provision of the website).',
             'privacy-3-body': 'Fonts and CSS files are loaded locally from our server. There is no connection to Google Fonts or other font services.',
@@ -4254,19 +4232,18 @@ erif font-bold text-stone-800 mb-4 text-center">
             'contact-owner': 'Владелец',
             'contact-call': '<i\n                                data-lucide="phone" class="text-blue-400"></i> Позвоните нам',
             'contact-follow': 'Подписывайтесь:',
-            'reserve-title': 'Запросить столик',
-            'reserve-badge': '\n                        Онлайн-запрос',
-            'reserve-notice-title': 'Важное замечание',
-            'reserve-notice-text': 'Ваш запрос станет действительным только после нашего подтверждения. Мы свяжемся с вами в кратчайшие сроки по телефону или электронной почте.',
-            'reserve-label-name': 'ИМЯ',
-            'reserve-label-persons': 'ГОСТИ',
-            'reserve-label-date': 'ДАТА',
-            'reserve-label-time': 'ВРЕМЯ',
-            'reserve-time-warning': '<strong>Примечание:</strong> Выбранное время находится за пределами наших обычных часов работы (Вт\u2013Сб 10\u201321ч). Вы всё равно можете отправить запрос \u2013 мы свяжемся с вами.',
-            'reserve-ph-contact': 'Телефон / Email',
-            'reserve-ph-message': 'Сообщение (необязательно)',
-            'reserve-privacy': 'Я прочитал(а) <a href="#" onclick="openPrivacyModal(); return false;" class="underline text-blue-900 hover:text-blue-700">Политику конфиденциальности</a> и согласен(на) на обработку моих данных. Мне известно, что мои данные передаются в Formspree (США).',
-            'reserve-submit': 'Отправить запрос на бронирование <span class="text-blue-300 text-xs font-normal">(Запрос)</span>',
+            'reserve-title': 'Забронировать столик',
+            'reserve-badge': 'Бронирование',
+            'reserve-intro': 'Мы с удовольствием примем бронирование лично по телефону или электронной почте \u2013 так мы сможем сразу подтвердить, свободно ли выбранное вами время.',
+            'reserve-info-title': 'Пожалуйста, сообщите нам следующие данные:',
+            'reserve-info-name': 'Имя',
+            'reserve-info-persons': 'Количество гостей',
+            'reserve-info-date': 'Дата',
+            'reserve-info-time': 'Время',
+            'reserve-info-contact': 'Номер телефона для обратного звонка',
+            'reserve-info-notes': 'Особые пожелания (необязательно)',
+            'reserve-hours-title': 'Часы работы',
+            'reserve-hours-text': 'Вт \u2013 Сб: 10:00 \u2013 21:00<br>Воскресенье и понедельник: выходной',
             // FOOTER
             'footer-imprint': 'Импрессум',
             'footer-privacy': 'Политика конфиденциальности',
@@ -4297,7 +4274,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'imprint-legal-heading': 'Сведения согласно \u00a7 5 TMG',
             'imprint-legal-content': 'Fischkate Quedlinburg<br>Владелец: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg',
             'imprint-contact-heading': 'Контакт',
-            'imprint-contact-content': 'Телефон: +49 3946 5198488<br>Эл. почта: Fisch-Kate-qlb@gmx.de',
+            'imprint-contact-content': 'Телефон: +49 3946 5198488<br>Эл. почта: info@fischkate-harz.de',
             'imprint-authority-heading': 'Надзорный орган',
             'imprint-authority-content': 'Ведомство порядка города всемирного наследия Кведлинбург<br>Markt 1<br>06484 Quedlinburg',
             'imprint-close': 'Закрыть',
@@ -4311,7 +4288,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'privacy-h-6': '6. Передача данных',
             'privacy-h-7': '7. Ваши права',
             'privacy-h-8': '8. Право на жалобу в надзорный орган',
-            'privacy-1-body': 'Fischkate Quedlinburg<br>Владелец: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg<br>Телефон: +49 3946 5198488<br>Эл. почта: Fisch-Kate-qlb@gmx.de',
+            'privacy-1-body': 'Fischkate Quedlinburg<br>Владелец: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg<br>Телефон: +49 3946 5198488<br>Эл. почта: info@fischkate-harz.de',
             'privacy-2-body': 'При посещении нашего сайта ваш браузер автоматически отправляет информацию на сервер, которая сохраняется в серверных лог-файлах. Сюда относятся: IP-адрес, тип и версия браузера, операционная система, URL-адрес перехода, время запроса. Эти данные технически необходимы для работы сайта и не объединяются с другими источниками данных.',
             'privacy-2-legal': 'Правовое основание: Art. 6 Abs. 1 lit. f DSGVO (законный интерес в стабильном предоставлении сайта).',
             'privacy-3-body': 'Шрифты и CSS-файлы загружаются локально с нашего сервера. Соединение с Google Fonts или другими сервисами шрифтов отсутствует.',
@@ -4584,19 +4561,18 @@ erif font-bold text-stone-800 mb-4 text-center">
             'contact-owner': 'Власник',
             'contact-call': '<i\n                                data-lucide="phone" class="text-blue-400"></i> Зателефонуйте нам',
             'contact-follow': 'Підписуйтесь:',
-            'reserve-title': 'Запросити столик',
-            'reserve-badge': '\n                        Онлайн-запит',
-            'reserve-notice-title': 'Важливе зауваження',
-            'reserve-notice-text': 'Ваш запит стане дійсним лише після нашого підтвердження. Ми зв\'яжемося з вами якнайшвидше по телефону або електронною поштою.',
-            'reserve-label-name': 'ІМ\'Я',
-            'reserve-label-persons': 'ГОСТІ',
-            'reserve-label-date': 'ДАТА',
-            'reserve-label-time': 'ЧАС',
-            'reserve-time-warning': '<strong>Зауваження:</strong> Обраний час знаходиться за межами наших звичайних годин роботи (Вт\u2013Сб 10\u201321год). Ви все одно можете надіслати запит \u2013 ми зв\'яжемося з вами.',
-            'reserve-ph-contact': 'Телефон / Email',
-            'reserve-ph-message': 'Повідомлення (необов\'язково)',
-            'reserve-privacy': 'Я прочитав(ла) <a href="#" onclick="openPrivacyModal(); return false;" class="underline text-blue-900 hover:text-blue-700">Політику конфіденційності</a> і погоджуюсь на обробку моїх даних. Мені відомо, що мої дані передаються до Formspree (США).',
-            'reserve-submit': 'Надіслати запит на бронювання <span class="text-blue-300 text-xs font-normal">(Запит)</span>',
+            'reserve-title': 'Забронювати столик',
+            'reserve-badge': 'Бронювання',
+            'reserve-intro': 'Ми з радістю приймемо бронювання особисто телефоном або електронною поштою \u2013 так ми зможемо одразу підтвердити, чи вільний обраний вами час.',
+            'reserve-info-title': 'Будь ласка, повідомте нам такі дані:',
+            'reserve-info-name': 'Ім\'я',
+            'reserve-info-persons': 'Кількість гостей',
+            'reserve-info-date': 'Дата',
+            'reserve-info-time': 'Час',
+            'reserve-info-contact': 'Номер телефону для зворотного дзвінка',
+            'reserve-info-notes': 'Особливі побажання (необов\'язково)',
+            'reserve-hours-title': 'Години роботи',
+            'reserve-hours-text': 'Вт \u2013 Сб: 10:00 \u2013 21:00<br>Неділя та понеділок: вихідний',
             // FOOTER
             'footer-imprint': 'Імпресум',
             'footer-privacy': 'Політика конфіденційності',
@@ -4627,7 +4603,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'imprint-legal-heading': 'Відомості згідно з \u00a7 5 TMG',
             'imprint-legal-content': 'Fischkate Quedlinburg<br>Власник: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg',
             'imprint-contact-heading': 'Контакт',
-            'imprint-contact-content': 'Телефон: +49 3946 5198488<br>Ел. пошта: Fisch-Kate-qlb@gmx.de',
+            'imprint-contact-content': 'Телефон: +49 3946 5198488<br>Ел. пошта: info@fischkate-harz.de',
             'imprint-authority-heading': 'Наглядовий орган',
             'imprint-authority-content': 'Відомство порядку міста всесвітньої спадщини Кведлінбург<br>Markt 1<br>06484 Quedlinburg',
             'imprint-close': 'Закрити',
@@ -4641,7 +4617,7 @@ erif font-bold text-stone-800 mb-4 text-center">
             'privacy-h-6': '6. Передача даних',
             'privacy-h-7': '7. Ваші права',
             'privacy-h-8': '8. Право на скаргу до наглядового органу',
-            'privacy-1-body': 'Fischkate Quedlinburg<br>Власник: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg<br>Телефон: +49 3946 5198488<br>Ел. пошта: Fisch-Kate-qlb@gmx.de',
+            'privacy-1-body': 'Fischkate Quedlinburg<br>Власник: Яна Бахманн<br>Lange Gasse 1<br>06484 Quedlinburg<br>Телефон: +49 3946 5198488<br>Ел. пошта: info@fischkate-harz.de',
             'privacy-2-body': 'При відвідуванні нашого сайту ваш браузер автоматично надсилає інформацію на сервер, яка зберігається в серверних лог-файлах. Це включає: IP-адресу, тип і версію браузера, операційну систему, URL-адресу переходу, час запиту. Ці дані технічно необхідні для роботи сайту і не об\'єднуються з іншими джерелами даних.',
             'privacy-2-legal': 'Правова основа: Art. 6 Abs. 1 lit. f DSGVO (законний інтерес у стабільному наданні сайту).',
             'privacy-3-body': 'Шрифти та CSS-файли завантажуються локально з нашого сервера. З\'єднання з Google Fonts або іншими сервісами шрифтів відсутнє.',
